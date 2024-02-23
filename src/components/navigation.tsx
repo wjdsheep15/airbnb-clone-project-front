@@ -3,10 +3,10 @@ import Link from "next/link";
 export default function NavigationBar() {
   return (
     <div className="flex border border-gray-100 w-full h-20">
-      <div className="flex w-full h-20 justify-center items-center">
+      <div className="flex w-full h-20 justify-center items-center relative">
         {/* div 3객 묶는 구역 */}
         {/* 로그 부분 */}
-        <div className="flex-none px-3 w-40 h-20 md-8 ps-8 ">
+        <div className="flex w-40 h-20 absolute left-10">
           <Link className="py-5 flex justify-center h-20 " href="/">
             <svg className="">
               <path
@@ -24,31 +24,31 @@ export default function NavigationBar() {
         {/* 중간 검색 구역 */}
 
         <div
-          className=" h-20 pl-19 grow flex  justify-center items-center"
+          className=" h-20 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)"
           role="group"
         >
           <button
             type="button"
-            className="px-4  text-sm font-medium text-gray-900 rounded-full hover:bg-gray-100 "
+            className="px-4  text-gray-900 rounded-full hover:bg-gray-100 "
           >
             숙소
           </button>
           <button
             type="button"
-            className="px-4 text-sm font-medium text-gray-900 rounded-full  hover:bg-gray-100"
+            className="px-4 text-gray-900 rounded-full  hover:bg-gray-100"
           >
             체험
           </button>
           <button
             type="button"
-            className="px-4 text-sm font-medium text-gray-900 rounded-full hover:bg-gray-100"
+            className="px-4 text-gray-900 rounded-full hover:bg-gray-100"
           >
             온라인 체험
           </button>
         </div>
 
         {/* 네비케이션 부분 */}
-        <div className="h-20 w-100 flex-none flex items-center justify-center">
+        <div className="h-20 w-100 flex-none flex items-center justify-center absolute right-10">
           <div className="inline-flexv w-full flex flex-row justify-center">
             <div className="items-center justify-center py-2">
               <button className="px-3 bg-stone-50 text-black rounded-full hover:bg-gray-100">
@@ -64,9 +64,16 @@ export default function NavigationBar() {
             </div>
             <div>
               <button className="flex px-3 flex-row px-3 border border-gray-300 rounded-full bg-stone-50 text-black shadow hover:shadow-lg">
-                <svg className="w-8 h-8 bg-black">
-                  <g fill="none"></g>
-                  <path d="M2 16h28M2 24h28M2 8h28" />
+                <svg
+                  className="w-8 h-8"
+                  xmlns="https://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  role="presentation"
+                  focusable="false"
+                >
+                  <g fill="none">
+                    <path d="M2 16h28M2 24h28M2 8h28" />
+                  </g>
                 </svg>
                 <svg className="w-8 h-8">
                   <path d="M16 .7C7.56.7.7 7.56.7 16S7.56 31.3 16 31.3 31.3 24.44 31.3 16 24.44.7 16 .7zm0 28c-4.02 0-7.6-1.88-9.93-4.81a12.43 12.43 0 0 1 6.45-4.4A6.5 6.5 0 0 1 9.5 14a6.5 6.5 0 0 1 13 0 6.51 6.51 0 0 1-3.02 5.5 12.42 12.42 0 0 1 6.45 4.4A12.67 12.67 0 0 1 16 28.7z" />
