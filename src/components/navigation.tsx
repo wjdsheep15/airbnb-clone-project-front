@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HomeNavigation from "@/components/homeNavigation";
 
 export default function NavigationBar() {
   return (
@@ -24,27 +25,10 @@ export default function NavigationBar() {
         {/* 중간 검색 구역 */}
 
         <div
-          className=" h-20 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)"
+          className="h-20 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%) hidden"
           role="group"
         >
-          <button
-            type="button"
-            className="px-4  text-gray-900 rounded-full hover:bg-gray-100 "
-          >
-            숙소
-          </button>
-          <button
-            type="button"
-            className="px-4 text-gray-900 rounded-full  hover:bg-gray-100"
-          >
-            체험
-          </button>
-          <button
-            type="button"
-            className="px-4 text-gray-900 rounded-full hover:bg-gray-100"
-          >
-            온라인 체험
-          </button>
+          <HomeNavigation />
         </div>
 
         {/* 네비케이션 부분 */}
