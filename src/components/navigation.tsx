@@ -1,10 +1,16 @@
+"use client";
 import Link from "next/link";
 import HomeNavigation from "@/components/homeNavigation";
+import PathOption from "@/components/pathOption";
 
 export default function NavigationBar() {
+  const pathOption = PathOption();
+
   return (
-    <div className="flex border border-gray-100 w-full h-20">
-      <div className="flex w-full h-20 justify-center items-center relative">
+    <div
+      className={`flex flex-col border border-gray-100 w-full  ${pathOption[1]}`}
+    >
+      <div className="flex w-full h-20  justify-center items-center relative">
         {/* div 3객 묶는 구역 */}
         {/* 로그 부분 */}
         <div className="flex w-40 h-20 absolute left-10">
@@ -24,41 +30,45 @@ export default function NavigationBar() {
 
         {/* 중간 검색 구역 */}
 
-        <div
-          className="h-20 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%) hidden"
-          role="group"
-        >
-          <HomeNavigation />
+        <div className="min-h-20 max-h-40  px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)">
+          <div className="flex flex-col min-h-20 max-h-40 p-8">
+            <HomeNavigation />
+          </div>
         </div>
 
         {/* 네비케이션 부분 */}
-        <div className="h-20 w-100 flex-none flex items-center justify-center absolute right-10">
+        <div className="h-20 w-100 flex-none flex items-center justify-center absolute right-10 pt-3">
           <div className="inline-flexv w-full flex flex-row justify-center">
             <div className="items-center justify-center py-2">
-              <button className="px-3 bg-stone-50 text-black rounded-full hover:bg-gray-100">
+              <button className="px-3 text-sm text-black rounded-full hover:bg-gray-100 pt-3 pb-3">
                 당신의 공간을 에어비엔비하세요
               </button>
             </div>
-            <div>
-              <button className="px-3 py-2 rounded-full hover:bg-gray-100 bg-stone-50 text-black">
+            <div className="items-center  justify-center pt-2">
+              <button className="px-3 py-2 rounded-full hover:bg-gray-100 text-black pt-3 pb-3">
                 <svg className="w-4 h-4">
                   <path d="M8 .25a7.77 7.77 0 0 1 7.75 7.78 7.75 7.75 0 0 1-7.52 7.72h-.25A7.75 7.75 0 0 1 .25 8.24v-.25A7.75 7.75 0 0 1 8 .25zm1.95 8.5h-3.9c.15 2.9 1.17 5.34 1.88 5.5H8c.68 0 1.72-2.37 1.93-5.23zm4.26 0h-2.76c-.09 1.96-.53 3.78-1.18 5.08A6.26 6.26 0 0 0 14.17 9zm-9.67 0H1.8a6.26 6.26 0 0 0 3.94 5.08 12.59 12.59 0 0 1-1.16-4.7l-.03-.38zm1.2-6.58-.12.05a6.26 6.26 0 0 0-3.83 5.03h2.75c.09-1.83.48-3.54 1.06-4.81zm2.25-.42c-.7 0-1.78 2.51-1.94 5.5h3.9c-.15-2.9-1.18-5.34-1.89-5.5h-.07zm2.28.43.03.05a12.95 12.95 0 0 1 1.15 5.02h2.75a6.28 6.28 0 0 0-3.93-5.07z" />
                 </svg>
               </button>
             </div>
-            <div>
-              <button className="flex px-3 flex-row px-3 border border-gray-300 rounded-full bg-stone-50 text-black shadow hover:shadow-lg">
+            <div className="ml-2">
+              <button className="h-[49px] w-[80px] items-center flex flex-row border border-gray-300 rounded-full text-black shadow hover:shadow-lg">
                 <svg
-                  className="w-8 h-8"
-                  xmlns="https://www.w3.org/2000/svg"
+                  className="w-[15px] h-[10px] ml-3 mr-3"
                   aria-hidden="true"
-                  role="presentation"
-                  focusable="false"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 14"
                 >
-                  <g fill="none">
-                    <path d="M2 16h28M2 24h28M2 8h28" />
-                  </g>
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.8"
+                    d="M1 1h15M1 7h15M1 13h15"
+                  />
                 </svg>
+
                 <svg className="w-8 h-8">
                   <path d="M16 .7C7.56.7.7 7.56.7 16S7.56 31.3 16 31.3 31.3 24.44 31.3 16 24.44.7 16 .7zm0 28c-4.02 0-7.6-1.88-9.93-4.81a12.43 12.43 0 0 1 6.45-4.4A6.5 6.5 0 0 1 9.5 14a6.5 6.5 0 0 1 13 0 6.51 6.51 0 0 1-3.02 5.5 12.42 12.42 0 0 1 6.45 4.4A12.67 12.67 0 0 1 16 28.7z" />
                 </svg>
