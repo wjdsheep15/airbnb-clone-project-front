@@ -25,6 +25,15 @@ export default function review({ name }: { name: string }) {
       >
         후기 표시하기
       </button>
+      <br />
+      <br />
+      <br />
+      <a
+        href="#"
+        className="font-semibold underline text-gray-900 dark:text-white decoration-black"
+      >
+        내가 작성한 후기
+      </a>
     </div>
   );
 }
