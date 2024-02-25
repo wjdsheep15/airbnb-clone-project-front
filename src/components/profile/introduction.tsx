@@ -12,6 +12,19 @@ export default function introduction({ name }: { name: string }) {
       </button>
       <br />
       <br />
+      <div className="flex items-center">
+        <img src="../../image/profile1.png" alt="프로필1" />
+        <span className="text-center mr-20">거주지: Icheon-si, 한국</span>
+        <img
+          src="../../image/profile1.png"
+          alt="프로필2"
+          className="text-center ml-20"
+        />
+        <span>취미: 넷플릭스 보기</span>
+      </div>
+      <br />
+      <br />
+      <hr />
     </div>
   );
 }
