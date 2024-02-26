@@ -8,11 +8,8 @@ interface IdParams {
 export default function RoomDetailPage({ params: { id } }: IdParams) {
   return (
     <>
-      <div className="w-988 h-80">
-        <NavigationBar />
-      </div>
-      <main className="w-988 h-full">
-        <div className="relative w-full h-full">
+      <main>
+        <div>
           <RoomAlbum id={id} />
         </div>
       </main>
