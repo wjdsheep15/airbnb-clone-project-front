@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 export default function introduction({ name }: { name: string }) {
   return (
-    <div>
+    <section>
       <h1 className="text-4xl font-extrabold dark:text-white ">
         {name} 님 소개
       </h1>
@@ -13,18 +15,25 @@ export default function introduction({ name }: { name: string }) {
       <br />
       <br />
       <div className="flex items-center">
-        <img src="../../image/profile1.png" alt="프로필1" />
+        <Image
+          src="/images/profile1.png"
+          alt="프로필1"
+          width={25}
+          height={25}
+        />
         <span className="text-center mr-20">거주지: Icheon-si, 한국</span>
-        <img
-          src="../../image/profile1.png"
+        <Image
+          src="/images/profile2.png"
           alt="프로필2"
           className="text-center ml-20"
+          width={25}
+          height={25}
         />
         <span>취미: 넷플릭스 보기</span>
       </div>
       <br />
       <br />
       <hr />
-    </div>
+    </section>
   );
 }
