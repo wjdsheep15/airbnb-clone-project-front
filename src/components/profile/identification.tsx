@@ -1,10 +1,24 @@
+import Image from "next/image";
+
 export default function identification({ name }: { name: string }) {
   return (
     <span className="block w-[400px] h-[200px] p-6 bg-white border border-gray-200 rounded-e-3xl shadow-xl drop-shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
       <div className="flex">
         {/* 첫 번째 가로 칸 */}
         <div className="w-2/3 mr-2 flex items-center justify-center">
-          {"첫 번째 가로 칸"}
+          <div>
+            <Image
+              className="rounded-full"
+              src="/images/profile1.png"
+              alt="image description"
+              width={60}
+              height={60}
+            />
+          </div>
+          <div>
+            <h2 className="text-xl font-bold ">{name}</h2>
+            <h1 className="text-xs"> 게스트</h1>
+          </div>
         </div>
 
         {/* 두 번째 가로 칸 */}
