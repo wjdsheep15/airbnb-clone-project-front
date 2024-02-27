@@ -1,19 +1,25 @@
-export default function SearchButton() {
+export default function SearchButton({
+  buttonsizeboolen,
+}: {
+  buttonsizeboolen: boolean;
+}) {
   const handleClick = () => {
     alert("Div was clicked!");
   };
   return (
     <div
-      className="flex w-10 h-10 bg-[#FF385C] rounded-full items-center justify-center hover:bg-[#FF999C]"
+      className={`flex ${
+        buttonsizeboolen ? "w-10 h-10" : "w-8 h-8"
+      } bg-[#FF385C] rounded-full items-center justify-center hover:bg-[#FF999C]`}
       onClick={handleClick}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        strokeWidth={3}
         stroke="currentColor"
-        className="w-6 h-6 text-white"
+        className="w-4 h-4 text-white"
       >
         <path
           strokeLinecap="round"

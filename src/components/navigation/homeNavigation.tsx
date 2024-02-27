@@ -2,20 +2,19 @@
 import SearchButton from "@/components/navigation/searchButton";
 
 export default function HomeNavigation() {
+  const buttonsizeboolen = true;
   return (
     <div className="flex flex-col h-40 mt-3">
       <div
         className="flex flex-row h-20 justify-center items-center"
         role="group"
       >
-        <span className="h-8">
-          <button
-            type="button"
-            className="px-4 h-8 text-gray-900 rounded-full hover:bg-gray-100 "
-          >
-            숙소
-          </button>
-        </span>
+        <button
+          type="button"
+          className="px-4 h-8 text-gray-900 rounded-full hover:bg-gray-100 "
+        >
+          숙소
+        </button>
 
         <button
           type="button"
@@ -56,7 +55,7 @@ export default function HomeNavigation() {
               <span className="text-sm mt-1 text-gray-400">게스트 추가</span>
             </div>
             <div className=" absolute right-3">
-              <SearchButton />
+              <SearchButton buttonsizeboolen={buttonsizeboolen} />
             </div>
           </button>
         </div>

@@ -3,10 +3,11 @@ import Logo from "@/components/navigation/logo";
 import LanguageImage from "@/components/navigation/languageImage";
 import MenuImage from "@/components/navigation/menuImage";
 import UserNavigationImge from "@/components/navigation/userNavigationImage";
+import RoomSearchNavigation from "@/components/navigation/roomSearchNavigation";
 
 export default function NavigationBar() {
   return (
-    <div className="flex w-full h-20 justify-center border border-gray-100">
+    <div className="flex w-full h-20 justify-center items-center border border-gray-100">
       <div className="flex w-9/12 h-20 ">
         <div className="flex w-full h-20  justify-center items-center relative">
           {/* div 3객 묶는 구역 */}
@@ -19,7 +20,9 @@ export default function NavigationBar() {
 
           {/* 중간 검색 구역 */}
 
-          <div className="min-h-20 max-h-40  px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)"></div>
+          <div className="h-20 w-84 grow flex justify-center items-center absolute translate(-50%, -50%)">
+            <RoomSearchNavigation />
+          </div>
 
           {/* 네비케이션 부분 */}
           <div className="h-20 w-100 mr-2 flex-none flex items-center justify-center absolute right-20 top-1">
