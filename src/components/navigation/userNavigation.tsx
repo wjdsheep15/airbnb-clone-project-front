@@ -5,10 +5,6 @@ import MenuImage from "@/components/navigation/menuImage";
 import UserNavigationImge from "@/components/navigation/userNavigationImage";
 
 export default function NavigationBar() {
-  // 좌우 패딩? 여백 줄때 사용 할 것
-  // 로그 부분 left-숫자 변경
-  // 네비게이션 부분 right-숫자 변경
-
   return (
     <div className="flex w-full h-20 justify-center border border-gray-100">
       <div className="flex w-10/12 h-20 ">
