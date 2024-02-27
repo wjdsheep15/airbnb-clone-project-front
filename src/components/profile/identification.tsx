@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function identification({ name }: { name: string }) {
   return (
-    <span className="relative block w-[350px] h-[200px] p-6 bg-white border border-gray-200 rounded-s-3xl  rounded-e-3xl shadow-xl drop-shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 right-[-10px]">
-      <div className="flex">
+    <span className="relative block w-[342px] h-[240px] p-6 bg-white border border-gray-200 rounded-s-3xl  rounded-e-3xl shadow-xl drop-shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 right-[-10px] ">
+      <div className="relative flex bottom-[-20px]">
         {/* 첫 번째 가로 칸 */}
         <div className="w-2/3 mr-2 flex flex-col  items-center justify-center">
-          <div className="mt-2">
+          <div>
             <Image
-              className="rounded-full"
+              className="w-[100px] h-[100px] rounded-full"
               src="/images/profile-image.jpg"
               alt="image description"
               width={120}
@@ -16,9 +16,11 @@ export default function identification({ name }: { name: string }) {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-bold ">{name}</h2>
+            <h2 className="relative text-3xl font-bold bottom-[-5px] ">
+              {name}
+            </h2>
           </div>
-          <h1 className="text-xs font-bold"> 게스트</h1>
+          <h1 className="relative text-xs font-bold bottom-[-5px]"> 게스트</h1>
         </div>
 
         {/* 두 번째 가로 칸 */}

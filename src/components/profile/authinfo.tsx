@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function authinfo({ name }: { name: string }) {
   return (
-    <div className="relative mt-4 block w-[350px] h-[400px] p-6 bg-white border border-gray-200 rounded-s-3xl  rounded-e-3xl shadow left-[10px] ">
+    <div className="relative mt-4 block w-[342px] h-[400px] p-6 bg-white border border-gray-200 rounded-s-3xl  rounded-e-3xl shadow left-[10px] ">
       <div className="flex flex-col">
         <div className="h-1/3">
           {/* 세로 칸 위 */}
-          <h2 className="mt-10 text-2xl font-bold dark:text-white ">
+          <h2 className="mt-2 text-2xl font-bold dark:text-white ">
             {name} 님의 인증 정보
           </h2>
         </div>
@@ -19,7 +19,7 @@ export default function authinfo({ name }: { name: string }) {
             width={15}
             height={15}
           />
-          <span className="text-center mr-20">이메일 주소</span>
+          <span className="text-center mr-20 ">이메일 주소</span>
         </div>
 
         <br />
