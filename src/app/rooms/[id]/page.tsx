@@ -1,5 +1,3 @@
-import NavigationBar from "@/components/navigation/roomsNavigation";
-
 export default function RoomDetailPage() {
-  return <NavigationBar />;
+  return <h1>Room Detail page!</h1>;
 }
