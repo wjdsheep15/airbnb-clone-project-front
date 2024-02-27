@@ -27,10 +27,10 @@ export default function review({ name }: { name: string }) {
       </button>
       <br />
       <br />
-      <br />
+      <hr />
       <a
         href="#"
-        className="font-semibold underline text-gray-900 dark:text-white decoration-black"
+        className="relative font-semibold underline text-gray-900 dark:text-white decoration-black bottom-[-30px]"
       >
         내가 작성한 후기
       </a>

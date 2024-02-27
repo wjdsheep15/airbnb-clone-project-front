@@ -17,7 +17,7 @@ export default function introduction({ name }: { name: string }) {
       <div className="flex items-center">
         <Image
           src="/images/profile1.png"
-          className="mr-2"
+          className="mr-1"
           alt="프로필1"
           width={25}
           height={25}
