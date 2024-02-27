@@ -17,6 +17,7 @@ export default function introduction({ name }: { name: string }) {
       <div className="flex items-center">
         <Image
           src="/images/profile1.png"
+          className="mr-2"
           alt="프로필1"
           width={25}
           height={25}
@@ -25,7 +26,7 @@ export default function introduction({ name }: { name: string }) {
         <Image
           src="/images/profile2.png"
           alt="프로필2"
-          className="text-center ml-20"
+          className="ml-20 mr-2"
           width={25}
           height={25}
         />
