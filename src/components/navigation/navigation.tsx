@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import HomeNavigation from "@/components/homeNavigation";
+import HomeNavigation from "@/components/navigation/homeNavigation";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
