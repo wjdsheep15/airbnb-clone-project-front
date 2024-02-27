@@ -1,18 +1,21 @@
 import Link from "next/link";
-import HomeNavigation from "@/components/navigation/homeNavigation";
 import Logo from "@/components/navigation/logo";
 import LanguageImage from "@/components/navigation/languageImage";
 import MenuImage from "@/components/navigation/menuImage";
 import UserNavigationImge from "@/components/navigation/userNavigationImage";
 
 export default function NavigationBar() {
+  // 좌우 패딩? 여백 줄때 사용 할 것
+  // 로그 부분 left-숫자 변경
+  // 네비게이션 부분 right-숫자 변경
+
   return (
-    <div className="flex w-full h-40 justify-center border border-gray-100">
-      <div className="flex w-11/12 h-20">
+    <div className="flex w-full h-20 justify-center border border-gray-100">
+      <div className="flex w-10/12 h-20 ">
         <div className="flex w-full h-20  justify-center items-center relative">
           {/* div 3객 묶는 구역 */}
           {/* 로그 부분 */}
-          <div className="flex w-40 h-20 ml-1 items-center absolute left-1">
+          <div className="flex w-40 h-20 items-center absolute left-16">
             <Link className="w-[102px] h-[32px]" href="/">
               <Logo />
             </Link>
@@ -20,14 +23,10 @@ export default function NavigationBar() {
 
           {/* 중간 검색 구역 */}
 
-          <div className="min-h-20 max-h-40 mb-4 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)">
-            <div className=" flex flex-col min-h-20 max-h-40 p-8">
-              <HomeNavigation />
-            </div>
-          </div>
+          <div className="min-h-20 max-h-40  px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)"></div>
 
           {/* 네비케이션 부분 */}
-          <div className="h-20 w-100 mr-4 flex-none flex items-center justify-center absolute right-1 top-1">
+          <div className="h-20 w-100 flex-none flex items-center justify-center absolute right-20 top-1">
             <div className="inline-flexv w-full flex flex-row justify-center">
               <div className="items-center justify-center py-2 mt-1">
                 <button className="px-3 text-sm text-black rounded-full hover:bg-gray-100 pb-3">

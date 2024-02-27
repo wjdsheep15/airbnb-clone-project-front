@@ -1,7 +1,4 @@
 "use client";
-
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
 import SearchButton from "@/components/navigation/searchButton";
 
 export default function HomeNavigation() {
@@ -51,12 +48,14 @@ export default function HomeNavigation() {
             <span className="text-sm mt-1 text-gray-400">날짜 추가</span>
           </button>
           <span className="text-lg text-gray-300">|</span>
-          <button className="flex flex-row h-13 w-80 rounded-full pl-4 pt-3 pb-3 relative hover:bg-gray-100 ">
+          <button
+            className={`flex flex-row h-13 w-80 rounded-full pl-4 pt-3 pb-3 relative hover:bg-gray-100 has-[:hover]:bg-white`}
+          >
             <div className="flex flex-col">
               <span className="text-xs pr-[30px]">여행자</span>
               <span className="text-sm mt-1 text-gray-400">게스트 추가</span>
             </div>
-            <div>
+            <div className=" absolute right-3">
               <SearchButton />
             </div>
           </button>
