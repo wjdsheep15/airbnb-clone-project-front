@@ -1,9 +1,15 @@
-import NavigationBar from "@/components/navigation/navigation";
+import FitterButton from "@/components/categroyScroll/fillterButton";
+// import HorizonScroll from "@/components/categroyScroll/horizonScroll";
 
 export default function HomePage() {
   return (
-    <main>
-      <NavigationBar />
+    <main className="flex items-center justify-center w-full h-full">
+      <div className="flex flex-row items-center justify-center pt-8 w-10/12 h-24">
+        <div className="flex w-full h-20 grow">{/* <HorizonScroll /> */}</div>
+        <div className="flex grow-0">
+          <FitterButton />
+        </div>
+      </div>
     </main>
   );
 }
