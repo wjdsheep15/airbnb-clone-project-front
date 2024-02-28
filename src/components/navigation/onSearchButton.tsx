@@ -1,18 +1,10 @@
-export default function SearchButton({
-  buttonsizeboolen,
-  searchButtonHover,
-}: {
-  buttonsizeboolen: boolean;
-  searchButtonHover: boolean;
-}) {
+export default function OnSearchButton() {
   const handleClick = () => {
-    console.log("search button click");
+    alert("Div was clicked!");
   };
   return (
     <div
-      className={`flex ${buttonsizeboolen ? "w-12 h-12" : "w-8 h-8"}
-      ${searchButtonHover ? "bg-[#FF999C]" : "bg-[#FF385C]"}
-       rounded-full items-center justify-center`}
+      className="flex w-20 h-12 bg-[#FF385C] rounded-full items-center justify-center hover:bg-[#FF999C]"
       onClick={handleClick}
     >
       <svg
@@ -29,6 +21,7 @@ export default function SearchButton({
           d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
         />
       </svg>
+      <span className="ml-2 text-white">검색</span>
     </div>
   );
 }
