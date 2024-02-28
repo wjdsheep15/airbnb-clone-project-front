@@ -1,0 +1,49 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "email": "aaron@naver.com",
+      "password": "aaron",
+      "name": "aaron",
+      "profileImageUrl": "https://www.ghibli.jp/gallery/totoro030.jpg",
+      "isLoged": true,
+      "isAuth": true
+    },
+    {
+      "id": 2,
+      "email": "baron@naver.com",
+      "password": "baron",
+      "name": "baron",
+      "profileImageUrl": "https://www.ghibli.jp/gallery/totoro031.jpg",
+      "isLoged": false,
+      "isAuth": true
+    },
+    {
+      "id": 3,
+      "email": "caron@naver.com",
+      "password": "caron",
+      "name": "caron",
+      "profileImageUrl": "https://www.ghibli.jp/gallery/totoro032.jpg",
+      "isLoged": true,
+      "isAuth": false
+    },
+    {
+      "id": 4,
+      "email": "daron@naver.com",
+      "password": "daron",
+      "name": "daron",
+      "profileImageUrl": "https://www.ghibli.jp/gallery/totoro033.jpg",
+      "isLoged": false,
+      "isAuth": false
+    },
+    {
+      "id": 5,
+      "email": "earon@naver.com",
+      "password": "earon",
+      "name": "earon",
+      "profileImageUrl": "https://www.ghibli.jp/gallery/totoro034.jpg",
+      "isLoged": true,
+      "isAuth": true
+    }
+  ]
+}
