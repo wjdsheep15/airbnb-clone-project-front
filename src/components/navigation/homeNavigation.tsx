@@ -118,18 +118,18 @@ export default function HomeNavigation() {
             |
           </span>
           <button
-            className={`flex flex-row h-full w-64 items-center rounded-full pl-3 pt-3 pb-3 relative has-[:hover]:bg-inherit  ${
+            className={`flex flex-row h-full w-64 items-center rounded-full pl-3 pt-3 pb-3 relative group  ${
               activeButton === 4
                 ? "bg-white border border-gray-300 shadow"
-                : "hover:bg-zinc-300"
+                : "group-hover:bg-inherit hover:bg-zinc-300"
             }`}
             onClick={() => setActiveButton(4)}
           >
-            <span className="flex flex-col">
-              <span className={`text-xs pr-[30px]  `}>여행자</span>
+            <span className="flex flex-col group-hover:bg-zinc-300">
+              <span className={`text-xs pr-[30px]`}>여행자</span>
               <span className="text-sm mt-1 text-gray-400">게스트 추가</span>
             </span>
-            <div className=" absolute right-3 hover:bg-inherit">
+            <div className=" absolute right-3 group-hover:bg-inherit">
               <div className={`${activeButton === 0 ? "" : "hidden"}`}>
                 <SearchButton buttonsizeboolen={buttonsizeboolen} />
               </div>
