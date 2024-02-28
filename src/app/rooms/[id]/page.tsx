@@ -1,5 +1,3 @@
-import NavigationBar from "@/components/navigation";
-import RoomAlbum from "@/components/rooms/room-album";
 import Screen from "@/components/rooms/screen";
 
 interface IdParams {
