@@ -5,15 +5,16 @@ import Review from "@/components/profile/review";
 
 export default function UserProfilePage() {
   return (
-    <section className="relative flex top-[40px] ">
-      <div className="relative w-1/3 left-[200px]">
+    <section className="relative flex top-[40px] flex-wrap ">
+      <div className="relative left-[200px] md:w-1/3 mb-4 md:mb-0">
         <Identification name="승주" />
         <Authinfo name="승주" />
       </div>
-      <div className="w-2/3">
+      <div className="relative w-full md:w-2/3  ">
         <Introduction name="승주" />
         <Review name="승주" />
       </div>
     </section>
   );
 }
+//md:left-[200px]
