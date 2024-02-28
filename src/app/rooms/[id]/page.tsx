@@ -1,3 +1,17 @@
-export default function RoomDetailPage() {
-  return <h1>Room Detail page!</h1>;
+import Screen from "@/components/rooms/screen";
+
+interface IdParams {
+  params: { id: number };
+}
+
+export default function RoomDetailPage({ params: { id } }: IdParams) {
+  return (
+    <>
+      <main>
+        <div className="flex justify-center">
+          <Screen />
+        </div>
+      </main>
+    </>
+  );
 }
