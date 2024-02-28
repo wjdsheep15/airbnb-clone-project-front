@@ -6,91 +6,74 @@ export default function RoomAlbum({ id }: { id: number }) {
   return (
     <>
       <div>
-        <div className="pt-6">
-          {/* 좌측 버튼 + 숙소명 */}
-          <section>
-            <div className="px-20 flex flex-wrap justify-between items-end">
-              <div>
-                <span className="mr-3 inline-flex">
-                  <button>
-                    button
-                    {/* <Image
-                  src="C:\ASAC\Airbnb-project\airbnb-clone-front\image\translationImage.jpeg"
-                  alt={"/translationImage"}
-                  width={24}
-                  height={24}
-                /> */}
-                  </button>
-                </span>
-                <span className="inline-flex text-26 font-circular text-gray-900 dark:text-white">
-                  <h1>
-                    숙소 이름
-                  </h1>
-                </span>
-              </div>
-
-              {/* 우측 버튼 그룹 */}
-              <div className="flex justify-end items-center font-base font-sans">
-                <div className="mr-5 inline-flex">
-                  <span>
-                    <button>공유하기</button>
-                  </span>
-                </div>
-                <div>
-                  <span>
-                    <button>좋아요</button>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        {/* 이미지 그리드
-        <div className="relative w-full h-506 rounded-lg">
-          <div className="grid grid-cols-4 grid-rows-4 gap-4">
-            <div className="col-span-2 row-span-2 bg-gray-200">
-              <button>
-                <img
-                  src="https://a0.muscache.com/im/pictures/miso/Hosting-13903824/original/82d996fb-d7c4-46a8-a713-febd281cd69f.jpeg?im_w=1200"
-                  className="w-full h-full"
+        {/* 이미지 그리드 */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-4 grid-rows-2 gap-4 px-20 pt-6 md:h-[340px] lg:h-[450px] md:w-[800px] lg:w-[1250px]">
+            <div className="col-span-2 row-span-2 aspect-w-1 aspect-h-1">
+              <button className="relative w-full h-full">
+                <Image
+                  src={
+                    "/images/rooms/2b37bfd0-8af5-4cb7-9452-ea240297bbb7.webp"
+                  }
+                  alt={"image1"}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-tl-md rounded-bl-lg"
                 />
               </button>
             </div>
-            <div className="col-span-1 row-span-1 bg-gray-200">
-              <button>
-                <img
-                  src="https://a0.muscache.com/im/pictures/miso/Hosting-13903824/original/82d996fb-d7c4-46a8-a713-febd281cd69f.jpeg?im_w=1200"
-                  className="w-full h-full"
+            <div className="col-span-1 row-span-1 aspect-w-1 aspect-h-1">
+              <button className="relative w-full h-full">
+                <Image
+                  src={
+                    "/images/rooms/145c26b8-ca6f-4835-992c-ea98e36ee2d8.webp"
+                  }
+                  alt={"image2"}
+                  layout="fill"
+                  objectFit="cover"
                 />
               </button>
             </div>
-            <div className="col-span-1 row-span-1 bg-gray-200">
-              <button>
-                <img
-                  src="https://a0.muscache.com/im/pictures/miso/Hosting-13903824/original/82d996fb-d7c4-46a8-a713-febd281cd69f.jpeg?im_w=1200"
-                  className="w-full h-full"
+            <div className="col-span-1 row-span-1 aspect-w-1 aspect-h-1">
+              <button className="relative w-full h-full">
+                <Image
+                  src={
+                    "/images/rooms/666d410d-6e3f-4801-91fd-4fb1afe5f7d3.webp"
+                  }
+                  alt={"image3"}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-tr-md rounded-br-lg"
                 />
               </button>
             </div>
-            <div className="col-span-1 row-span-1 bg-gray-200">
-              <button>
-                <img
-                  src="https://a0.muscache.com/im/pictures/miso/Hosting-13903824/original/82d996fb-d7c4-46a8-a713-febd281cd69f.jpeg?im_w=1200"
-                  className="w-full h-full"
+            <div className="col-span-1 row-span-1 aspect-w-1 aspect-h-1">
+              <button className="relative w-full h-full">
+                <Image
+                  src={
+                    "/images/rooms/5283e5f3-f75e-4b52-8b20-ab1dc01f7cf6.webp"
+                  }
+                  alt={"image4"}
+                  layout="fill"
+                  objectFit="cover"
                 />
               </button>
             </div>
-            <div className="col-span-1 row-span-1 bg-gray-200">
-              <button>
-                <img
-                  src="https://a0.muscache.com/im/pictures/miso/Hosting-13903824/original/82d996fb-d7c4-46a8-a713-febd281cd69f.jpeg?im_w=1200"
-                  className="w-full h-full"
+            <div className="col-span-1 row-span-1 aspect-w-1 aspect-h-1">
+              <button className="relative w-full h-full">
+                <Image
+                  src={
+                    "/images/rooms/ba01a6af-2f73-4732-85cf-76eb1f2c3a05.webp"
+                  }
+                  alt={"image5"}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-tr-md rounded-br-lg"
                 />
               </button>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   );
