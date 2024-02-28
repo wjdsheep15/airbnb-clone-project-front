@@ -166,8 +166,10 @@ export default function HomeNavigation() {
               onClick={() => setActiveButton(4)}
             >
               <span
-                className={`flex flex-col group-hover:bg-zinc-300 ${
-                  activeButton === 4 ? "group-hover:bg-white" : ""
+                className={`flex flex-col  ${
+                  activeButton === 4
+                    ? "group-hover:bg-white"
+                    : "group-hover:bg-zinc-300"
                 }`}
               >
                 <span className={`text-xs pr-[30px]`}>여행자</span>
