@@ -125,7 +125,13 @@ export default function HomeNavigation() {
             }`}
             onClick={() => setActiveButton(4)}
           >
-            <span className="flex flex-col group-hover:bg-zinc-300">
+            <span
+              className={`flex flex-col  ${
+                activeButton === 4
+                  ? "hover:bg-inherit"
+                  : "group-hover:bg-zinc-300"
+              }`}
+            >
               <span className={`text-xs pr-[30px]`}>여행자</span>
               <span className="text-sm mt-1 text-gray-400">게스트 추가</span>
             </span>
