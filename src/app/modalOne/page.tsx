@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import * as React from "react";
@@ -10,6 +8,8 @@ import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import styles from "./styles.module.css";
+import SignUpButton from "./signUp";
+import Image from "next/image";
 
 // 셀렉트 박스 값과 CSS
 const options = [
@@ -108,18 +108,23 @@ export default function BasicModal() {
           <Typography className="underline text-black font-bold">
             개인정보 처리방침
           </Typography>
-          <Button className="text-white bg-pink-700 mt-5 border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]">
-            계속
-          </Button>
+
+          <SignUpButton />
 
           <Typography className={styles.hrSect}>또는</Typography>
           <Button className="text-black -mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]">
-            <img
-              src="https://developers.kakao.com/static/images/pc/product/homeicon/kakaoLogin.png"
-              alt="metamask"
-              className="absolute left-[25px] w-[70px]"
+            <Image
+              src="/kakaoLogin.png"
+              alt="KakaoLogin"
+              width={80}
+              height={80}
+              className="-ml-40 mr-20"
             />
             카카오로 로그인하기
+          </Button>
+
+          <Button className="text-black mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]">
+            이메일로 로그인하기
           </Button>
         </Box>
       </Modal>
