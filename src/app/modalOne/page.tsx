@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import * as React from "react";
@@ -5,49 +7,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import styled from "styled-components";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import styles from "./styles.module.css";
-
-// 모달 박스 CSS
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  borderRadius: "20px",
-  transform: "translate(-50%, -50%)",
-  height: 830,
-  width: 780,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 10,
-  p: 4,
-};
-
-// 모달 X 버튼 CSS
-export const ModalBtn = styled.button`
-  background-color: var(--coz-purple-600);
-  text-decoration: none;
-  border: none;
-  padding: 20px;
-  color: white;
-  border-radius: 30px;
-  cursor: grab;
-`;
-
-export const ExitBtn = styled(ModalBtn)`
-  background-color: #4000c7;
-  border-radius: 10px;
-  text-decoration: none;
-  margin: 10px;
-  padding: 5px 10px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 // 셀렉트 박스 값과 CSS
 const options = [
@@ -55,36 +17,13 @@ const options = [
   { value: "미국 (+1)", label: "미국 (+1)" },
 ];
 
-// 버튼 CSS
-const btnStyle = {
-  color: "white",
-  background: "#D81B60",
-  marginTop: "40px",
-  border: "1px solid",
-  borderRadius: "10px",
-  fontSize: "24px",
-  width: 700,
-  height: 60,
-  fontWeight: "bold",
-};
-
-const btnLoginStyle = {
-  color: "black",
-  marginTop: "-10px",
-  border: "1px solid",
-  borderRadius: "10px",
-  fontSize: "20px",
-  width: 700,
-  height: 60,
-  fontWeight: "bold",
-};
-
 export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
+
+  const openModalHandler = () => {
+    setOpen(!open);
+  };
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  // Modal 닫기 함수
-  const [close, setClose] = React.useState(false);
 
   const [selectedOption, setSelectedOption] = React.useState("한국 (+82)"); // 셀렉트 박스
   const handleChange = (event: {
@@ -93,10 +32,14 @@ export default function BasicModal() {
     setSelectedOption(event.target.value);
   };
 
-  const closeModalHandler = () => {
-    // isOpen의 상태를 변경하는 메소드를 구현
-    // !false -> !true -> !false
-    setClose(!close);
+  const [value, setValue] = React.useState("");
+
+  const handleNumber = (event: { target: { value: any } }) => {
+    const inputValue = event.target.value;
+    // 입력값이 숫자인지 확인
+    if (/^\d*$/.test(inputValue)) {
+      setValue(inputValue);
+    }
   };
 
   return (
@@ -104,27 +47,35 @@ export default function BasicModal() {
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={openModalHandler}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white border-2 border-black shadow-lg p-16 w-[745px] h-[820px]">
           <div>
             {/* 제목 + X버튼 영역 */}
-            <ExitBtn onClick={closeModalHandler}>x</ExitBtn>
-            <Typography
-              id="modal-modal-title"
-              variant="h6"
-              align="center"
-              fontWeight={600}
-              sx={{ borderBottom: "1px solid #bdbdbd" }}
-            >
-              로그인 또는 회원가입
-            </Typography>
+            <div className="flex border-b-2">
+              <Button
+                className="border-none text-black -mt-5 -mb-0 -ml-10"
+                onClick={openModalHandler}
+              >
+                <svg
+                  className="block h-4 w-4 stroke-current stroke-2 overflow-visible -ml-10 -mt-9"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                  role="presentation"
+                  focusable="false"
+                >
+                  <path d="m6 6 20 20M26 6 6 26"></path>
+                </svg>
+              </Button>
+              <Typography className="text-xl font-semibold -mt-10 ml-[180px]">
+                로그인 또는 회원가입
+              </Typography>
+            </div>
           </div>
-
-          <hr />
-          <Typography sx={{ mt: 2, fontSize: "24px", fontWeight: "bold" }}>
+          <Typography className="mt-10 text-2xl font-semibold">
             에어비앤비에 오신 것을 환영합니다.
           </Typography>
 
@@ -144,19 +95,30 @@ export default function BasicModal() {
             ))}
           </TextField>
           <TextField
-            type="number"
-            id="phoneNumber"
             aria-required="true"
+            placeholder="전화번호"
+            value={value}
+            onChange={handleNumber}
             fullWidth
           />
-          <Typography id="modal-modal-process" sx={{ mt: 1 }}>
+          <Typography>
             전화나 문자로 전화번호를 확인하겠습니다. 일반 문자 메시지 요금 및
             데이터 요금이 부과됩니다.
           </Typography>
-          <Button style={btnStyle}>계속</Button>
+          <Typography className="underline text-black font-bold">
+            개인정보 처리방침
+          </Typography>
+          <Button className="text-white bg-pink-700 mt-5 border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]">
+            계속
+          </Button>
 
           <Typography className={styles.hrSect}>또는</Typography>
-          <Button style={btnLoginStyle} className={styles.imageInButton}>
+          <Button className="text-black -mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]">
+            <img
+              src="https://developers.kakao.com/static/images/pc/product/homeicon/kakaoLogin.png"
+              alt="metamask"
+              className="absolute left-[25px] w-[70px]"
+            />
             카카오로 로그인하기
           </Button>
         </Box>
