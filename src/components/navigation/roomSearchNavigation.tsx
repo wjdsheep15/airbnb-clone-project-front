@@ -1,5 +1,5 @@
 "use client";
-import SearchButton from "@/components/navigation/searchButton";
+import SearchButton from "@/components/navigation/navibarButtons/searchButton";
 
 export default function RoomSearchNavigation() {
   const buttonsizeboolen = false;

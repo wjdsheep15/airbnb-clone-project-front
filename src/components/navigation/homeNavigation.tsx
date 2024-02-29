@@ -1,6 +1,6 @@
 "use client";
-import OnSearchButton from "@/components/navigation/onSearchButton";
-import SearchButton from "@/components/navigation/searchButton";
+import OnSearchButton from "@/components/navigation/navibarButtons/onSearchButton";
+import SearchButton from "@/components/navigation/navibarButtons/searchButton";
 import { useEffect, useRef, useState } from "react";
 
 export default function HomeNavigation() {
@@ -66,7 +66,7 @@ export default function HomeNavigation() {
       >
         <div
           className={`border border-gray-300 rounded-full shadow-lg flex h-full items-center  ${
-            activeButton ? "bg-gray-200" : ""
+            activeButton ? "bg-navigatorOneLayoutColor" : ""
           }`}
           ref={ref}
         >
@@ -74,7 +74,7 @@ export default function HomeNavigation() {
             className={`h-full w-[282px] rounded-full flex flex-col pl-4 pt-3 pb-3 ${
               activeButton === 1
                 ? "bg-white border border-gray-300 shadow"
-                : "hover:bg-zinc-300"
+                : "hover:bg-navigatorTwoLayoutColor"
             }`}
             onClick={() => setActiveButton(1)}
           >
@@ -101,7 +101,7 @@ export default function HomeNavigation() {
               className={`h-full w-36 rounded-full flex flex-col pl-4 pt-3 pb-3 ${
                 activeButton === 2
                   ? "bg-white border border-gray-300 shadow"
-                  : "hover:bg-zinc-300"
+                  : "hover:bg-navigatorTwoLayoutColor"
               }`}
               onClick={() => setActiveButton(2)}
             >
@@ -121,7 +121,7 @@ export default function HomeNavigation() {
               className={`h-full w-36 rounded-full flex flex-col pl-4 pt-3 pb-3 ${
                 activeButton === 3
                   ? "bg-white border border-gray-300 shadow"
-                  : "hover:bg-zinc-300"
+                  : "hover:bg-navigatorTwoLayoutColor"
               }`}
               onClick={() => setActiveButton(3)}
             >
@@ -138,7 +138,7 @@ export default function HomeNavigation() {
               className={`h-full w-full rounded-full flex flex-col pl-4 pt-3 pb-3 ${
                 activeButton === 3
                   ? "bg-white border border-gray-300 shadow"
-                  : "hover:bg-zinc-300"
+                  : "hover:bg-navigatorTwoLayoutColor"
               }`}
               onClick={() => setActiveButton(3)}
             >
@@ -161,7 +161,7 @@ export default function HomeNavigation() {
               className={`flex-grow pt-3 pb-3 pl-3 flex rounded-full group ${
                 activeButton === 4
                   ? "bg-white border border-gray-300 shadow"
-                  : "hover:bg-zinc-300"
+                  : "hover:bg-navigatorTwoLayoutColor"
               }`}
               onClick={() => setActiveButton(4)}
             >
@@ -169,7 +169,7 @@ export default function HomeNavigation() {
                 className={`flex flex-col  ${
                   activeButton === 4
                     ? "group-hover:bg-white"
-                    : "group-hover:bg-zinc-300"
+                    : "group-hover:bg-navigatorTwoLayoutColor"
                 }`}
               >
                 <span className={`text-xs pr-[30px]`}>여행자</span>

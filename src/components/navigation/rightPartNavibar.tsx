@@ -1,4 +1,4 @@
-import LanguageImage from "@/components/navigation/languageImage";
+import LanguageImage from "@/components/navigation/languageIcon";
 import MenuImage from "@/components/navigation/menuImage";
 import UserNavigationImge from "@/components/navigation/userNavigationImage";
 
