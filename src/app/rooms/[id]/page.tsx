@@ -1,7 +1,7 @@
-import Screen from "@/components/rooms/screen";
+import Screen from '@/components/rooms/screen'
 
 interface IdParams {
-  params: { id: number };
+  params: { id: number }
 }
 
 export default function RoomDetailPage({ params: { id } }: IdParams) {
@@ -13,5 +13,5 @@ export default function RoomDetailPage({ params: { id } }: IdParams) {
         </div>
       </main>
     </>
-  );
+  )
 }
