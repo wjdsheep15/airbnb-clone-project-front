@@ -7,21 +7,21 @@ import RoomSearchNavigation from '@/components/navigation/roomSearchNavigation'
 import { useEffect, useRef, useState } from 'react'
 
 export default function NavigationBar() {
-  const [buttonClick, setButtonClick] = useState(false);
+  const [buttonClick, setButtonClick] = useState(false)
 
-  const ref = useRef<any>(null);
+  const ref = useRef<any>(null)
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        setButtonClick(false);
+        setButtonClick(false)
       }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
+    }
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
   return (
     <div className='flex w-full h-20 justify-center items-center border border-gray-100'>
       <div className='flex w-9/12 h-20 '>
@@ -45,7 +45,7 @@ export default function NavigationBar() {
             <div className='inline-flexv w-full flex flex-row justify-center'>
               <div className='items-center justify-center py-2 mt-1'>
                 <button className='px-3 text-sm text-black rounded-full hover:bg-gray-100 pb-3'>
-                  당신의 공간을 에어비엔비하세요
+                  당신의 공간을 에어비엔비하세요
                 </button>
               </div>
               <div className='items-center  justify-center pt-1 mt-1'>
