@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -15,9 +15,10 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import ViewMore1 from "./viewMore1";
+import ViewMore2 from "./viewMore2";
 
 export default function SignUpButton() {
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = useState(false);
 
   const handleCheckboxChange = (event: {
     target: { checked: boolean | ((prevState: boolean) => boolean) };
@@ -80,7 +81,7 @@ export default function SignUpButton() {
                 <header>
                   <Button onClick={handleClose}>
                     <Image
-                      src="/leftAngle.svg"
+                      src="/svgIcons/leftAngle.svg"
                       alt="My leftAngle SVG"
                       width={20}
                       height={20}
@@ -181,9 +182,8 @@ export default function SignUpButton() {
                 />
 
                 {/* 추가 모달 */}
-                <Button className="ml-8 mt-4 font-bold underline decoration-2">
-                  더보기
-                </Button>
+
+                <ViewMore1 />
               </div>
 
               {/* 체크 박스 */}
@@ -208,7 +208,7 @@ export default function SignUpButton() {
                 />
 
                 {/* 추가 모달 */}
-                <ViewMore1 />
+                <ViewMore2 />
               </div>
               <div className="mt-4 border-t border-gray-400"></div>
 

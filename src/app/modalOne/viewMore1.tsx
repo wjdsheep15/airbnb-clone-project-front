@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
-import * as React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogContent from "@mui/material/DialogContent";
 import Slide from "@mui/material/Slide";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
 import { TransitionProps } from "@mui/material/transitions";
 
-// 다이얼로그 창 밑에서 위로 올라오도록 함.
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement;
@@ -19,9 +19,9 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export default function ViewMore1() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
-  const handleClickOpen = () => {
+  const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
@@ -32,24 +32,47 @@ export default function ViewMore1() {
     <>
       <Button
         className="ml-8 mt-4 font-bold underline decoration-2 text-black"
-        onClick={handleClickOpen}
+        onClick={handleOpen}
       >
         더보기
       </Button>
 
-      <Dialog
+      <Modal
         open={open}
         onClose={handleClose}
-        TransitionComponent={Transition}
-        className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl
-        bg-white border-2 border-black shadow-lg p-16 w-[745px] h-[520px] mt-80"
+        // onTransitionEnter={Transition}
       >
-        <DialogContent>
-          {/* 여기에 다이얼로그 내용을 넣어줍니다. */}
-          <p className="text-[20px]">법적 약관</p>
-          <p className="text-5xl">한국 사용자 대상 마케팅 이메일</p>
-        </DialogContent>
-      </Dialog>
+        <Box className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white border-2 shadow-lg p-16 w-[745px] h-[620px]">
+          <div>
+            <div className="flex">
+              <Button
+                className="border-none text-black -mt-5 -mb-0 -ml-10"
+                onClick={handleClose}
+              >
+                <svg
+                  className="block h-4 w-4 stroke-current stroke-2 overflow-visible -ml-10 -mt-9"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                  role="presentation"
+                  focusable="false"
+                >
+                  <path d="m6 6 20 20M26 6 6 26"></path>
+                </svg>
+              </Button>
+            </div>
+          </div>
+          <Typography className="text-xl font-semibold">
+            로그인 또는 회원가입
+          </Typography>
+          <Typography className="mt-4 text-5xl font-semibold">
+            한국 사용자 대상 마케팅
+          </Typography>
+          <Typography className="mt-10 text-5xl font-semibold">
+            이메일
+          </Typography>
+        </Box>
+      </Modal>
     </>
   );
 }
