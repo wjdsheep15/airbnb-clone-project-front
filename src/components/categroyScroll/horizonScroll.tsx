@@ -1,6 +1,8 @@
 "use client";
 import ScrollCardView from "@/components/categroyScroll/scrollCardView";
 import React, { useRef, useState } from "react";
+import LeftButtonIcon from "/public/images/LeftButtonIcon.svg";
+import RightButtonIcon from "/public/images/RightButtonIcon.svg";
 
 const list = [
   {
@@ -331,10 +333,17 @@ export default function HorizonScroll() {
       scrollRef.current.scrollLeft += scrollOffset;
       console.log("* 스크롤 왼쪽 현재 위치 : " + scrollRef.current.scrollLeft);
       console.log("* 스크롤 현재 넓이" + scrollRef.current.scrollWidth);
+      console.log(
+        "* 스크롤 현재 넓이 + 조정 위치 :" +
+          scrollRef.current.scrollLeft +
+          scrollOffset
+      );
+      console.log("-----------------------");
 
-      if (scrollRef.current.scrollLeft < 1000) {
+      if (scrollRef.current.scrollLeft + scrollOffset < 200) {
         SetScrollPosition(0);
-      } else if (scrollRef.current.scrollLeft > 4400) {
+        scrollRef.current.scrollLeft = 0;
+      } else if (scrollRef.current.scrollLeft + scrollOffset > 3900) {
         SetScrollPosition(1);
       } else {
         SetScrollPosition(2);
@@ -346,35 +355,22 @@ export default function HorizonScroll() {
     <div className=" h-20 flex w-full grow items-center relative">
       {/* 왼쪽 버튼 */}
       <div
-        className={`h-20 w-[80px] flex items-center absolute left-0 ${
+        className={`h-20 w-[70px] flex items-center absolute left-0 ${
           scrollPosition === 0
             ? "hidden"
             : "bg-gradient-to-l from-transparent-70 to-white"
         }`}
       >
         <button
-          className="flex items-center rounded-full border bg-white border-gray-300 "
+          className="flex items-center rounded-full border bg-white border-gray-300 p-2"
           onClick={() => scroll(-1000)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 19.5 8.25 12l7.5-7.5"
-            />
-          </svg>
+          <LeftButtonIcon />
         </button>
       </div>
       {/* 스크롤 */}
       <div
-        className="overflow-x-auto scroll-smooth overflow-y-hidden overflow-x-hidden grid flex items-center space-x-10 grid-rows-1 grid-flow-col"
+        className="overflow-x-auto scroll-smooth overflow-y-hidden overflow-x-hidden grid flex items-center space-x-8 grid-rows-1 grid-flow-col scroll-pr-10"
         ref={scrollRef}
       >
         {listmap}
@@ -385,27 +381,14 @@ export default function HorizonScroll() {
         className={`h-20 w-[50px] flex flex-row-reverse items-center absolute right-0 ${
           scrollPosition === 1
             ? "hidden"
-            : "bg-gradient-to-r from-transparent-70 to-white"
+            : "bg-gradient-to-r from-transparent to-white"
         }`}
       >
         <button
-          className="border border-gray-300 rounded-full"
+          className="border border-gray-300 rounded-full p-2"
           onClick={() => scroll(1000)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m8.25 4.5 7.5 7.5-7.5 7.5"
-            />
-          </svg>
+          <RightButtonIcon />
         </button>
       </div>
     </div>
