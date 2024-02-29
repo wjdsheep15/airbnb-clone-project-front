@@ -1,17 +1,17 @@
-import Screen from "@/components/rooms/screen";
+import Screen from '@/components/rooms/screen'
 
 interface IdParams {
-  params: { id: number };
+  params: { id: number }
 }
 
 export default function RoomDetailPage({ params: { id } }: IdParams) {
   return (
     <>
       <main>
-        <div className="flex justify-center">
+        <div className='flex justify-center'>
           <Screen />
         </div>
       </main>
     </>
-  );
+  )
 }
