@@ -18,9 +18,9 @@ const config: Config = {
         "mainColorHover": "#FF999C",
         "mainBlack": "#222222",
         "mainGray": "#717171",
+        "transparent-70": "rgba(255, 255, 255, 0.7)",
       }
-    },
-  },
-  plugins: [],
-};
+    }
+  }
+}
 export default config;
