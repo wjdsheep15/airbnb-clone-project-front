@@ -358,7 +358,7 @@ export default function HorizonScroll() {
         className={`h-20 w-[70px] flex items-center absolute left-0 ${
           scrollPosition === 0
             ? "hidden"
-            : "bg-gradient-to-l from-transparent-70 to-white"
+            : "bg-gradient-to-l from-transparent-70 from-10% via-white to-white"
         }`}
       >
         <button
@@ -370,7 +370,7 @@ export default function HorizonScroll() {
       </div>
       {/* 스크롤 */}
       <div
-        className="overflow-x-auto scroll-smooth overflow-y-hidden overflow-x-hidden grid flex items-center space-x-8 grid-rows-1 grid-flow-col scroll-pr-10"
+        className="overflow-x-auto h-full scroll-smooth overflow-y-hidden overflow-x-hidden grid flex items-center space-x-8 grid-rows-1 grid-flow-col scroll-pr-10"
         ref={scrollRef}
       >
         {listmap}
@@ -378,10 +378,10 @@ export default function HorizonScroll() {
 
       {/* 오른 버튼 */}
       <div
-        className={`h-20 w-[50px] flex flex-row-reverse items-center absolute right-0 ${
+        className={`h-20 w-[70px] flex flex-row-reverse items-center absolute right-0 ${
           scrollPosition === 1
             ? "hidden"
-            : "bg-gradient-to-r from-transparent to-white"
+            : "bg-gradient-to-r from-transparent-70 from-10% via-white to-white"
         }`}
       >
         <button

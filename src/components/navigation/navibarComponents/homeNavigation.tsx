@@ -9,6 +9,7 @@ export default function HomeNavigation() {
   const [activeButton, setActiveButton] = useState(0);
   const [topActivityMenu, setTopActivityMenu] = useState(true);
   const ref = useRef<any>(null);
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -71,7 +72,7 @@ export default function HomeNavigation() {
           ref={ref}
         >
           <button
-            className={`h-full w-[282px] rounded-full flex flex-col pl-4 pt-3 pb-3 ${
+            className={`h-full w-[282px] rounded-full flex flex-col pl-4 pt-3 pb-3 group ${
               activeButton === 1
                 ? "bg-white border border-gray-300 shadow"
                 : "hover:bg-navigatorTwoLayoutColor"
@@ -79,7 +80,16 @@ export default function HomeNavigation() {
             onClick={() => setActiveButton(1)}
           >
             <span className="text-xs ml-4">여행지</span>
-            <span className="text-sm mt-1 ml-4 text-gray-400">여행지 검색</span>
+            {/* <span className="text-sm mt-1 ml-4 text-gray-400">여행지 검색</span> */}
+            <input
+              placeholder="여행지 검색"
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              className={`text-sm mt-1 ml-4 w-52 bg-inherit group-focus:active focus:outline-none text-gray-400 ${
+                activeButton === 1 ? "active" : ""
+              }`}
+            />
           </button>
           <span
             className={`text-xl ${

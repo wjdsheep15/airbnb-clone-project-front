@@ -26,6 +26,7 @@ const config: Config = {
         navigatorTwoLayoutColor: "#D9D9D9",
         mainHoverColor: "#f7f7f7",
         "transparent-70": "rgba(255, 255, 255, 0.7)",
+        "transparent-90": "rgba(255, 255, 255, 0.9)",
       },
     },
   },
