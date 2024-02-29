@@ -9,7 +9,7 @@
 
 .hrSect::before,
 .hrSect::after {
-  content: "";
+  content: '';
   flex-grow: 2;
   background: rgba(0, 0, 0, 0.35);
   height: 1px;
