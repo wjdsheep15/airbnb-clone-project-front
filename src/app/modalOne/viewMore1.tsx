@@ -54,7 +54,7 @@ export default function ViewMore1() {
                   alt="My closeIcon SVG"
                   width={20}
                   height={20}
-                  className="block h-4 w-4 stroke-current stroke-2 overflow-visible -ml-10 -mt-9"
+                  className="block h-4 w-4 overflow-visible -ml-10 -mt-9"
                 />
               </Button>
             </div>

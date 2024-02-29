@@ -51,7 +51,7 @@ export default function BasicModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white border-2 border-black shadow-lg p-16 w-[745px] h-[820px]">
+        <Box className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white border-2 border-black shadow-lg p-16 w-[745px] h-[820px]">
           <div>
             {/* 제목 + X버튼 영역 */}
             <div className="flex border-b-2">
@@ -59,16 +59,13 @@ export default function BasicModal() {
                 className="border-none text-black -mt-5 -mb-0 -ml-10"
                 onClick={openModalHandler}
               >
-                <svg
-                  className="block h-4 w-4 stroke-current stroke-2 overflow-visible -ml-10 -mt-9"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  aria-hidden="true"
-                  role="presentation"
-                  focusable="false"
-                >
-                  <path d="m6 6 20 20M26 6 6 26"></path>
-                </svg>
+                <Image
+                  src="/svgIcons/closeIcon.svg"
+                  alt="My closeIcon SVG"
+                  width={20}
+                  height={20}
+                  className="block h-4 w-4 overflow-visible -ml-10 -mt-9"
+                />
               </Button>
               <Typography className="text-xl font-semibold -mt-10 ml-[180px]">
                 로그인 또는 회원가입
