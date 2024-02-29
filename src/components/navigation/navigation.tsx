@@ -1,7 +1,7 @@
 import Link from "next/link";
-import HomeNavigation from "@/components/navigation/homeNavigation";
-import LogoImage from "/public/images/naviBarIcon/logo.svg"
-import RightPartNavibar from "@/components/navigation/rightPartNavibar";
+import HomeNavigation from "@/components/navigation/navibarComponents/homeNavigation";
+import RightPartNavibar from "@/components/navigation/navibarComponents/rightPartNavibar";
+import LogoIcon from "/public/images/naviBarIcon/logo.svg"
 
 export default function NavigationBar() {
   return (
@@ -12,7 +12,7 @@ export default function NavigationBar() {
           {/* 로그 부분 */}
           <div className="flex w-40 h-20 ml-1 items-center absolute left-1">
             <Link className="w-[102px] h-[32px]" href="/">
-              <LogoImage />
+              <LogoIcon />
             </Link>
           </div>
 

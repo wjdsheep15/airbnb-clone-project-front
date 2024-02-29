@@ -1,4 +1,4 @@
-import Image from "next/image";
+import SearchIcon from "/public/images/naviBarIcon/searchIcon.svg";
 
 export default function SearchButton({
   buttonsizeboolen,
@@ -21,12 +21,7 @@ export default function SearchButton({
        rounded-full items-center justify-center`}
       onClick={handleClick}
     >
-      <Image
-        width={16}
-        height={16}
-        src="/images/naviBarIcon/searchIcon.svg"
-        alt="검색 버튼"
-      />
+      <SearchIcon />
     </div>
   );
 }

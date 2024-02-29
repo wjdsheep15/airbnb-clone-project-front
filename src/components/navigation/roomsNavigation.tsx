@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import Logo from "@/components/navigation/navibarIcon/logo";
-import RoomSearchNavigation from "@/components/navigation/roomSearchNavigation";
+import LogoIcon from "/public/images/naviBarIcon/logo.svg"
+import RoomSearchNavigation from "@/components/navigation/navibarComponents/roomSearchNavigation";
 import { useEffect, useRef, useState } from "react";
-import HomeNavigation from "@/components/navigation/homeNavigation";
-import RightPartNavibar from "@/components/navigation/rightPartNavibar";
+import HomeNavigation from "@/components/navigation/navibarComponents/homeNavigation";
+import RightPartNavibar from "@/components/navigation/navibarComponents/rightPartNavibar";
 
 export default function NavigationBar() {
   const [buttonClick, setButtonClick] = useState(false);
@@ -34,7 +34,7 @@ export default function NavigationBar() {
           {/* 로그 부분 */}
           <div className="flex w-40 h-20 ml-2 items-center absolute left-16">
             <Link className="w-[102px] h-[32px]" href="/">
-              <Logo />
+              <LogoIcon />
             </Link>
           </div>
 

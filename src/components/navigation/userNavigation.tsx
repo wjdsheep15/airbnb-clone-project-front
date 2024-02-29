@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Logo from "@/components/navigation/navibarIcon/logo";
-import RightPartNavibar from "@/components/navigation/rightPartNavibar";
+import LogoIcon from "/public/images/naviBarIcon/logo.svg"
+import RightPartNavibar from "@/components/navigation/navibarComponents/rightPartNavibar";
 
 export default function NavigationBar() {
   return (
@@ -11,7 +11,7 @@ export default function NavigationBar() {
           {/* 로그 부분 */}
           <div className="flex w-40 h-20 items-center absolute left-16">
             <Link className="w-[102px] h-[32px]" href="/">
-              <Logo />
+              <LogoIcon />
             </Link>
           </div>
 
