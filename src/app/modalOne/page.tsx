@@ -114,7 +114,7 @@ export default function BasicModal() {
           <Typography className={styles.hrSect}>또는</Typography>
           <Button className="text-black -mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]">
             <Image
-              src="/kakaoLogin.png"
+              src="/images/kakaoLogin.png"
               alt="KakaoLogin"
               width={80}
               height={80}

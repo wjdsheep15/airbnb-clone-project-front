@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { TransitionProps } from "@mui/material/transitions";
+import Image from "next/image";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -49,16 +50,13 @@ export default function ViewMore2() {
                 className="border-none text-black -mt-5 -mb-0 -ml-10"
                 onClick={handleClose}
               >
-                <svg
+                <Image
+                  src="/svgIcons/closeIcon.svg"
+                  alt="My closeIcon SVG"
+                  width={20}
+                  height={20}
                   className="block h-4 w-4 stroke-current stroke-2 overflow-visible -ml-10 -mt-9"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  aria-hidden="true"
-                  role="presentation"
-                  focusable="false"
-                >
-                  <path d="m6 6 20 20M26 6 6 26"></path>
-                </svg>
+                />
               </Button>
             </div>
           </div>

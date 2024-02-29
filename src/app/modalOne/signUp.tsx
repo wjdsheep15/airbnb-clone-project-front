@@ -38,14 +38,14 @@ export default function SignUpButton() {
 
   const handleHangeulLastName = (event: { target: { value: any } }) => {
     const inputLast = event.target.value;
-    // 입력값이 숫자인지 확인
+    // 입력값이 한글인지 확인
     if (/^[ㄱ-ㅎㅏ-ㅣ가-힣]*$/.test(inputLast)) {
       setLastName(inputLast);
     }
   };
   const handleHangeulFirstName = (event: { target: { value: any } }) => {
     const inputFirst = event.target.value;
-    // 입력값이 숫자인지 확인
+    // 입력값이 한글인지 확인
     if (/^[ㄱ-ㅎㅏ-ㅣ가-힣]*$/.test(inputFirst)) {
       setFirstName(inputFirst);
     }
