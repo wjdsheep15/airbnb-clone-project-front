@@ -1,3 +1,4 @@
+"use client";
 import KakaoLogin from "@/components/kakaoLogin/KakaoLogin";
 
 const KakaoLoginPage = () => {
