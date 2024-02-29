@@ -11,8 +11,10 @@ const KakaoLogin = () => {
     const search = new URLSearchParams(window.location.search); //인가 코드 요청시 redirect로 받는 값 http://localhost:3000/login?code=ZdlTAr6tyohWbOQeuIbHE5eiIl2nVGdUb6pliUsgJuc52b6gYS3724NdXmYKPXNOAAABje_bzurC3p98Pd5TpQ
     const code = search.get("code"); // code부분인 인가 코드 추츨 ZdlTAr6tyohWbOQeuIbHE5eiIl2nVGdUb6pliUsgJuc52b6gYS3724NdXmYKPXNOAAABje_bzurC3p98Pd5TpQ
 
+    const accessToken = localStorage.getItem("access_token");
+
     //카카오로부터 redirect 당한 경우 code가 들어있을 것이다!
-    if (code) {
+    if (code && (!accessToken || accessToken === "undefined")) {
       //post로 aouth/token 토큰 요청하는 부분
       handleGetToken();
     }
