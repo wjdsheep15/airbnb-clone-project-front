@@ -9,7 +9,7 @@ export default function RoomDetailPage({ params: { id } }: IdParams) {
     <>
       <main>
         <div className="flex justify-center">
-          <Screen />
+          <Screen id={id}/>
         </div>
       </main>
     </>

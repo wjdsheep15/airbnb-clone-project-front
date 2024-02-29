@@ -1,4 +1,31 @@
-export default function RoomTitle() {
+import roomsData from "../../dummyDatas/roomsData.json"
+
+/**
+ * JSON import 메서드 - 미작동
+ * @param param0 id
+ * @returns json data 하나
+ */
+// export function getRoomJson(id: number) {
+//     if (!roomsData || !roomsData.Room || !Array.isArray(roomsData.Room)) {
+//         return undefined;
+//     }
+//     return roomsData.Room.find((room) => room.id === id);
+// }
+
+export default async function RoomTitle({ id }: { id: number }) {
+    /**
+     * 위의 getRoomJson 사용 시
+     */
+    // const roomData = getRoomJson(id);
+
+    const result = await fetch('http://localhost:3000/api/room')
+    const inner = await result.json()
+    const roomData = inner.data
+    console.log(roomData)
+    if (!roomData) {
+        return <div>존재하지 않는 방입니다.</div>;
+    }
+
   return (
     <>
       <div>
@@ -8,7 +35,7 @@ export default function RoomTitle() {
             <div className="px-20 h-30 flex flex-wrap justify-between items-end">
               <div className="inline-flex">
                 <span className="text-gray-900 dark:text-white text-2xl font-semibold">
-                  안락함을 주는 우디한 객실_세이지
+                  {roomData.name}
                 </span>
               </div>
 

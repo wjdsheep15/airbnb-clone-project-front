@@ -16,9 +16,8 @@ export default function RoomAlbum({ id }: { id: number }) {
                     "/images/rooms/2b37bfd0-8af5-4cb7-9452-ea240297bbb7.webp"
                   }
                   alt={"image1"}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-tl-md rounded-bl-lg"
+                  fill
+                  className="object-cover rounded-tl-md rounded-bl-lg"
                 />
               </button>
             </div>
@@ -29,8 +28,8 @@ export default function RoomAlbum({ id }: { id: number }) {
                     "/images/rooms/145c26b8-ca6f-4835-992c-ea98e36ee2d8.webp"
                   }
                   alt={"image2"}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  className="object-cover "
                 />
               </button>
             </div>
@@ -41,9 +40,8 @@ export default function RoomAlbum({ id }: { id: number }) {
                     "/images/rooms/666d410d-6e3f-4801-91fd-4fb1afe5f7d3.webp"
                   }
                   alt={"image3"}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-tr-md rounded-br-lg"
+                  fill
+                  className="object-cover rounded-tr-md rounded-br-lg"
                 />
               </button>
             </div>
@@ -54,8 +52,8 @@ export default function RoomAlbum({ id }: { id: number }) {
                     "/images/rooms/5283e5f3-f75e-4b52-8b20-ab1dc01f7cf6.webp"
                   }
                   alt={"image4"}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  className="object-cover"
                 />
               </button>
             </div>
@@ -66,9 +64,8 @@ export default function RoomAlbum({ id }: { id: number }) {
                     "/images/rooms/ba01a6af-2f73-4732-85cf-76eb1f2c3a05.webp"
                   }
                   alt={"image5"}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-tr-md rounded-br-lg"
+                  fill
+                  className="object-cover rounded-tr-md rounded-br-lg"
                 />
               </button>
             </div>
