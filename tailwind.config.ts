@@ -24,6 +24,7 @@ const config: Config = {
         mainGray: "#717171",
         navigatorOneLayoutColor: "#EBEBEB",
         navigatorTwoLayoutColor: "#D9D9D9",
+        mainHoverColor: "#f7f7f7",
         "transparent-70": "rgba(255, 255, 255, 0.7)",
       },
     },

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Logo from "@/components/navigation/logo";
+import Logo from "@/components/navigation/navibarIcon/logo";
 import RoomSearchNavigation from "@/components/navigation/roomSearchNavigation";
 import { useEffect, useRef, useState } from "react";
 import HomeNavigation from "@/components/navigation/homeNavigation";

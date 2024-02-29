@@ -1,7 +1,6 @@
 "use client";
-import { keys } from "@mui/system";
+
 import Image from "next/image";
-import { useState } from "react";
 
 type NewType = {
   iconId: number;

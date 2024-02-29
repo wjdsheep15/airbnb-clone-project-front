@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Logo from "@/components/navigation/logo";
+import Logo from "@/components/navigation/navibarIcon/logo";
 import RightPartNavibar from "@/components/navigation/rightPartNavibar";
 
 export default function NavigationBar() {
