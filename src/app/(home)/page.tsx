@@ -1,5 +1,3 @@
-import FitterButton from "@/components/categroyScroll/fillterButton";
-import HorizonScroll from "@/components/categroyScroll/horizonScroll";
 import NavigationBar from "@/components/navigation/navigation";
 
 export default function HomePage() {
