@@ -7,21 +7,21 @@ import RoomSearchNavigation from '@/components/navigation/roomSearchNavigation'
 import { useEffect, useRef, useState } from 'react'
 
 export default function NavigationBar() {
-  const [buttonClick, setButtonClick] = useState(false);
+  const [buttonClick, setButtonClick] = useState(false)
 
-  const ref = useRef<any>(null);
+  const ref = useRef<any>(null)
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
-        setButtonClick(false);
+        setButtonClick(false)
       }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
+    }
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
   return (
     <div className='flex w-full h-20 justify-center items-center border border-gray-100'>
       <div className='flex w-9/12 h-20 '>
