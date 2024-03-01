@@ -1,19 +1,19 @@
-export default function RoomTitle() {
+export default async function RoomTitle({ roomName }: { roomName: string }) {
   return (
     <>
       <div>
         <div className='pt-6'>
-          {/* 좌측 버튼 + 숙소명 */}
           <section>
-            <div className='px-20 h-30 flex flex-wrap justify-between items-end'>
-              <div className='inline-flex'>
+            <div className='px-20 h-30 flex justify-between space-x-16'>
+              {/* 숙소명 */}
+              <div className='flex justify-start'>
                 <span className='text-gray-900 dark:text-white text-2xl font-semibold'>
-                  안락함을 주는 우디한 객실_세이지
+                  {roomName}
                 </span>
               </div>
 
               {/* 우측 버튼 그룹 */}
-              <div className='flex justify-end items-center font-base font-sans'>
+              <div className='flex justify-end font-base font-sans'>
                 <div className='mr-5 flex'>
                   <span>
                     <svg
