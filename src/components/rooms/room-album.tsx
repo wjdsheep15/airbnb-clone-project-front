@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function RoomAlbum({ id }: { id: number }) {
+export default function RoomAlbum({ images }: { images: string[] }) {
   // const roomAlbum = getRoomAlbum(id);
 
   return (
@@ -13,7 +13,7 @@ export default function RoomAlbum({ id }: { id: number }) {
               <button className='relative w-full h-full'>
                 <Image
                   src={
-                    "/images/rooms/2b37bfd0-8af5-4cb7-9452-ea240297bbb7.webp"
+                    images[0]
                   }
                   alt={"image1"}
                   fill
@@ -25,7 +25,7 @@ export default function RoomAlbum({ id }: { id: number }) {
               <button className='relative w-full h-full'>
                 <Image
                   src={
-                    "/images/rooms/145c26b8-ca6f-4835-992c-ea98e36ee2d8.webp"
+                    images[1]
                   }
                   alt={"image2"}
                   fill
@@ -37,7 +37,7 @@ export default function RoomAlbum({ id }: { id: number }) {
               <button className='relative w-full h-full'>
                 <Image
                   src={
-                    "/images/rooms/666d410d-6e3f-4801-91fd-4fb1afe5f7d3.webp"
+                    images[2]
                   }
                   alt={"image3"}
                   fill
@@ -49,7 +49,7 @@ export default function RoomAlbum({ id }: { id: number }) {
               <button className='relative w-full h-full'>
                 <Image
                   src={
-                    "/images/rooms/5283e5f3-f75e-4b52-8b20-ab1dc01f7cf6.webp"
+                    images[3]
                   }
                   alt={"image4"}
                   fill
@@ -61,7 +61,7 @@ export default function RoomAlbum({ id }: { id: number }) {
               <button className='relative w-full h-full'>
                 <Image
                   src={
-                    "/images/rooms/ba01a6af-2f73-4732-85cf-76eb1f2c3a05.webp"
+                    images[4]
                   }
                   alt={"image5"}
                   fill
