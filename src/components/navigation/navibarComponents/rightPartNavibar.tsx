@@ -1,5 +1,4 @@
-import MenuImage from "@/components/navigation/navibarIcon/menuImage";
-
+import MenuIcon from "/public/images/naviBarIcon/menuIcon.svg";
 import LanguageIcon from "/public/images/naviBarIcon/languageIcon.svg"
 import UserIcon from "/public/images/naviBarIcon/UserIcon.svg"
 
@@ -14,10 +13,10 @@ export default function RightPartNavibar() {
       </button>
 
       <button className="ml-2 h-[48px] w-[86px] items-center flex flex-row border border-gray-300 rounded-full text-black shadow hover:shadow-lg">
-        <MenuImage />
+        <MenuIcon className="ml-3 mr-3"/>
         <div className="w-8 h-8">
-      <UserIcon className="w-8 h-8" />
-    </div>
+          <UserIcon className="w-8 h-8" />
+        </div>
       </button>
     </>
   );

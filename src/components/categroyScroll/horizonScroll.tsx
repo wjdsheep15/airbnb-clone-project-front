@@ -337,20 +337,13 @@ export default function HorizonScroll() {
   const scroll = (scrollOffset: number) => {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft += scrollOffset;
-      console.log("* 스크롤 왼쪽 현재 위치 : " + scrollRef.current.scrollLeft);
-      console.log("* 스크롤 현재 넓이" + scrollRef.current.scrollWidth);
-      console.log(
-        "* 스크롤 현재 넓이 + 조정 위치 :" +
-          scrollRef.current.scrollLeft +
-          scrollOffset
-      );
-      console.log("-----------------------");
-
+      
       if (scrollRef.current.scrollLeft + scrollOffset < 200) {
         SetScrollPosition(0);
         scrollRef.current.scrollLeft = 0;
-      } else if (scrollRef.current.scrollLeft + scrollOffset > 3900) {
+      } else if (scrollRef.current.scrollLeft + scrollOffset > 3800) {
         SetScrollPosition(1);
+        scrollRef.current.scrollLeft += scrollOffset;
       } else {
         SetScrollPosition(2);
       }

@@ -27,8 +27,10 @@ export default function ScrollCardView({
       } `}
       onClick={() => onSelectIcon(iconId)}
     >
-      <div className="h-[48px] w-[57px] flex flex-col space-y-2 items-center justify-center">
-        <Image src={iconPath} width={24} height={24}  alt="Icon" />
+      <div className={`h-[48px] w-[57px] flex flex-col space-y-2 items-center justify-center `}>
+       
+
+        <Image src={iconPath} width={24} height={24}  alt="Icon"  />
        
         <span className={`text-xs text-nowrap group-hover:text-black ${isSelected ? "text-black"  : "text-mainGray"} `}>{iconName}</span>
         
