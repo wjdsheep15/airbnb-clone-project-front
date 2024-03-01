@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem'
 import styles from './styles.module.css'
 import SignUpButton from './signUp'
 import Image from 'next/image'
+import CloseIcon from '/public/svgIcons/closeIcon.svg'
 
 // 셀렉트 박스 값과 CSS
 const options = [
@@ -21,7 +22,7 @@ export default function BasicModal() {
   const [open, setOpen] = useState(false)
 
   const closeModalHandler = () => {
-    setOpen(!open)
+    setOpen(false)
   }
   const handleOpen = () => setOpen(true)
 
@@ -57,13 +58,7 @@ export default function BasicModal() {
                 className='border-none text-black -mt-5 -mb-0 -ml-10'
                 onClick={closeModalHandler}
               >
-                <Image
-                  src='/svgIcons/closeIcon.svg'
-                  alt='My closeIcon SVG'
-                  width={20}
-                  height={20}
-                  className='block h-4 w-4 overflow-visible -ml-10 -mt-9'
-                />
+                <CloseIcon />
               </Button>
               <Typography className='text-xl font-semibold -mt-10 ml-[180px]'>
                 로그인 또는 회원가입
