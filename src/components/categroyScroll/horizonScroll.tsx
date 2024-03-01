@@ -1,8 +1,9 @@
 "use client";
 import ScrollCardView from "@/components/categroyScroll/scrollCardView";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import LeftButtonIcon from "/public/images/LeftButtonIcon.svg";
 import RightButtonIcon from "/public/images/RightButtonIcon.svg";
+import { DataGet } from "@/components/categroyScroll/dataGet";
 
 const list = [
   {
@@ -316,6 +317,12 @@ export default function HorizonScroll() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, SetScrollPosition] = useState(0);
   const [selectedIconId, setSelectedIconId] = useState(0);
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    DataGet().then((result) => setData(result));
+    console.log(data);
+  }, []);
 
   const listmap = list.map((listIndex) => (
     <ScrollCardView
