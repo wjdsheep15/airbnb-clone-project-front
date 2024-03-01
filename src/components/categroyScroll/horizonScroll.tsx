@@ -321,7 +321,6 @@ export default function HorizonScroll() {
 
   useEffect(() => {
     DataGet().then((result) => setData(result));
-    console.log(data);
   }, []);
 
   const listmap = list.map((listIndex) => (
