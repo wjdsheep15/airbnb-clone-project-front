@@ -1,8 +1,6 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable @next/next/no-img-element */
 'use client'
 
-import * as React from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -10,6 +8,8 @@ import Modal from '@mui/material/Modal'
 import TextField from '@mui/material/TextField'
 import MenuItem from '@mui/material/MenuItem'
 import styles from './styles.module.css'
+import SignUpButton from './signUp'
+import Image from 'next/image'
 
 // 셀렉트 박스 값과 CSS
 const options = [
@@ -18,9 +18,9 @@ const options = [
 ]
 
 export default function BasicModal() {
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
 
-  const openModalHandler = () => {
+  const closeModalHandler = () => {
     setOpen(!open)
   }
   const handleOpen = () => setOpen(true)
@@ -45,7 +45,7 @@ export default function BasicModal() {
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
-        onClose={openModalHandler}
+        onClose={closeModalHandler}
         aria-labelledby='modal-modal-title'
         aria-describedby='modal-modal-description'
       >
@@ -55,18 +55,15 @@ export default function BasicModal() {
             <div className='flex border-b-2'>
               <Button
                 className='border-none text-black -mt-5 -mb-0 -ml-10'
-                onClick={openModalHandler}
+                onClick={closeModalHandler}
               >
-                <svg
-                  className='block h-4 w-4 stroke-current stroke-2 overflow-visible -ml-10 -mt-9'
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 20 20'
-                  aria-hidden='true'
-                  role='presentation'
-                  focusable='false'
-                >
-                  <path d='m6 6 20 20M26 6 6 26'></path>
-                </svg>
+                <Image
+                  src='/svgIcons/closeIcon.svg'
+                  alt='My closeIcon SVG'
+                  width={20}
+                  height={20}
+                  className='block h-4 w-4 overflow-visible -ml-10 -mt-9'
+                />
               </Button>
               <Typography className='text-xl font-semibold -mt-10 ml-[180px]'>
                 로그인 또는 회원가입
@@ -104,18 +101,23 @@ export default function BasicModal() {
             부과됩니다.
           </Typography>
           <Typography className='underline text-black font-bold'>개인정보 처리방침</Typography>
-          <Button className='text-white bg-pink-700 mt-5 border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'>
-            계속
-          </Button>
+
+          <SignUpButton />
 
           <Typography className={styles.hrSect}>또는</Typography>
           <Button className='text-black -mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'>
-            <img
-              src='https://developers.kakao.com/static/images/pc/product/homeicon/kakaoLogin.png'
-              alt='metamask'
-              className='absolute left-[25px] w-[70px]'
+            <Image
+              src='/images/kakaoLogin.png'
+              alt='KakaoLogin'
+              width={80}
+              height={80}
+              className='-ml-40 mr-20'
             />
             카카오로 로그인하기
+          </Button>
+
+          <Button className='text-black mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'>
+            이메일로 로그인하기
           </Button>
         </Box>
       </Modal>
