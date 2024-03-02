@@ -1,5 +1,7 @@
 import { getToken } from '@/components/kakaoLogin/getToken'
 import { useEffect } from 'react'
+import Button from '@mui/material/Button'
+import Image from 'next/image'
 
 const KAKAO_API_KEY = process.env.NEXT_PUBLIC_API_KEY
 const client_id = KAKAO_API_KEY || ''
@@ -40,13 +42,20 @@ const KakaoLogin = () => {
   }
 
   return (
-    <button
+    <Button
       type='button'
-      className='font-bold rounded-lg text-sm px-3 py-1.5 text-center me-2 mb-2 mt-5 border border-gray-800 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 '
+      className='text-black -mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'
       onClick={handleLoginClick}
     >
-      로그인
-    </button>
+      <Image
+        src='/images/kakaoLogin.png'
+        alt='KakaoLogin'
+        width={80}
+        height={80}
+        className='-ml-40 mr-20'
+      />
+      카카오로 로그인하기
+    </Button>
   )
 }
 export default KakaoLogin
