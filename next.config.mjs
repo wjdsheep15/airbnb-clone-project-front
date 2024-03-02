@@ -1,7 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
+
+    return config
+  },
   images: {
-    domains: ['a0.muscache.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'a0.muscache.com',
+        pathname: '**',
+      },
+    ],
   },
 }
 
