@@ -9,4 +9,3 @@ export default function UserProfilePage() {
     </div>
   )
 }
-//md:left-[200px]

@@ -62,7 +62,7 @@ export default function HorizonScroll(iconList: Props) {
       </div>
       {/* 스크롤 */}
       <div
-        className='overflow-x-auto h-full scroll-smooth overflow-y-hidden overflow-x-hidden grid flex items-center space-x-8 grid-rows-1 grid-flow-col scroll-pr-10'
+        className='overflow-x-auto h-full scroll-smooth overflow-y-hidden overflow-x-hidden grid flex items-center gap-x-8 grid-rows-1 grid-flow-col scroll-pr-10'
         ref={scrollRef}
       >
         {listmap}
