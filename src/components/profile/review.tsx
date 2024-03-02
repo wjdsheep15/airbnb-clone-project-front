@@ -28,7 +28,7 @@ export default function review({ name }: { name: string }) {
       <hr />
       <a
         href='#'
-        className='relative font-semibold underline text-gray-900 dark:text-white decoration-black bottom-[-30px]'
+        className='font-bold font-black rounded-lg text-sm px-3 py-1.5 text-center me-2 mb-2 mt-5 border border-gray-800 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300'
       >
         내가 작성한 후기
       </a>

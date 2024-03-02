@@ -34,6 +34,13 @@ const KakaoLogin = () => {
     response_type,
   })
 
-  return <a href={`https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`}>로그인</a>
+  return (
+    <button
+      type='button'
+      className='font-bold rounded-lg text-sm px-3 py-1.5 text-center me-2 mb-2 mt-5 border border-gray-800 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 '
+    >
+      <a href={`https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`}>로그인</a>
+    </button>
+  )
 }
 export default KakaoLogin
