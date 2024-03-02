@@ -34,12 +34,18 @@ const KakaoLogin = () => {
     response_type,
   })
 
+  const handleLoginClick = () => {
+    const authCodeUrl = `https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`
+    window.open(authCodeUrl, '_blank', 'width=500,height=600,left=500,top=50')
+  }
+
   return (
     <button
       type='button'
       className='font-bold rounded-lg text-sm px-3 py-1.5 text-center me-2 mb-2 mt-5 border border-gray-800 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-300 '
+      onClick={handleLoginClick}
     >
-      <a href={`https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`}>로그인</a>
+      로그인
     </button>
   )
 }
