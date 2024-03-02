@@ -6,7 +6,6 @@ export default async function ScrollPage() {
   const inner = await result.json()
   const categroyIconData = inner.data
 
-  console.log('category 값입니다-> ' + categroyIconData)
   return (
     <div className='flex flex-row items-center justify-center space-x-10 pt-3 w-10/12 h-24'>
       <div className='flex w-full h-20 grow'>
