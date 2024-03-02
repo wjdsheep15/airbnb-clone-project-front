@@ -1,4 +1,5 @@
 import RoomAlbum from '@/components/rooms/room-album'
+import RoomHost from '@/components/rooms/room-host'
 import RoomIntroduction from '@/components/rooms/room-introduction'
 import RoomTitle from '@/components/rooms/room-title'
 import Screen from '@/components/rooms/screen'
@@ -33,6 +34,9 @@ export default async function RoomDetailPage({ params: { id } }: IdParams) {
               guestCapacity={roomData.guestCapacity}
               roomDetail={roomData.roomDetail}
             />
+          </Screen>
+          <Screen>
+            <RoomHost host={roomData.host} />
           </Screen>
         </div>
       </main>
