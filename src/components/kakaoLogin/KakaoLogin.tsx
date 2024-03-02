@@ -27,6 +27,7 @@ const KakaoLogin = () => {
       await getToken()
 
     localStorage.setItem('access_token', access_token)
+    window.close()
   }
 
   //authParam은 카카오에 인가코드 요청할 떄 필요한 파라미터 값임
