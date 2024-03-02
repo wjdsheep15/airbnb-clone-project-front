@@ -26,7 +26,7 @@ export default function NavigationBar() {
 
           {/* 네비케이션 부분 */}
           <div className='h-20 w-[400px] flex-none flex items-center absolute right-0 '>
-            <div className='inline-flexv w-full h-full flex flex-row  items-center'>
+            <div className='inline-flexv w-full h-full flex flex-row justify-end items-center'>
               <RightPartNavibar />
             </div>
           </div>

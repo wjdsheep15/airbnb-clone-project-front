@@ -5,18 +5,18 @@ import LeftButtonIcon from '/public/images/LeftButtonIcon.svg'
 import RightButtonIcon from '/public/images/RightButtonIcon.svg'
 
 interface Props {
-  iconList: {
+  categoryList: {
     id: number
     image: string
     name: string
   }[]
 }
-export default function HorizonScroll(iconList: Props) {
+export default function HorizonScroll({ categoryList }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [scrollPosition, SetScrollPosition] = useState(0)
   const [selectedIconId, setSelectedIconId] = useState(0)
 
-  const listmap = iconList.iconList.map((listIndex) => (
+  const listmap = categoryList.map((listIndex) => (
     <ScrollCardView
       key={listIndex.id}
       iconId={listIndex.id}
@@ -26,7 +26,6 @@ export default function HorizonScroll(iconList: Props) {
       onSelectIcon={setSelectedIconId}
     />
   ))
-
   const scroll = (scrollOffset: number) => {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft += scrollOffset
