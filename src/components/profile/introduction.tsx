@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 
 export default function introduction({ name }: { name: string }) {
   return (
@@ -16,17 +16,9 @@ export default function introduction({ name }: { name: string }) {
       <br />
       <div className="flex items-center">
         <Image
-          src="/images/profile1.png"
-          className="mr-1"
-          alt="프로필1"
-          width={25}
-          height={25}
-        />
-        <span className="text-center mr-20">거주지: Icheon-si, 한국</span>
-        <Image
-          src="/images/profile2.png"
-          alt="프로필2"
-          className="ml-20 mr-2"
+          src='/images/profile2.png'
+          alt='프로필2'
+          className='ml-20 mr-2'
           width={25}
           height={25}
         />
