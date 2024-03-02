@@ -36,6 +36,16 @@
       },
       "guestPreference": false,
       "guestCapacity": 3,
+      "advantages": [
+        {
+          "name": "마음껏 물놀이를 즐기세요",
+          "image": "/svgIcons/roomAdvantageSvgs/water.svg"
+        },
+        {
+          "name": "경험이 풍부한 호스트",
+          "image": "/svgIcons/roomAdvantageSvgs/expertHost.svg"
+        }
+      ],
       "comforts": ["주방", "무선 와이파이", "업무 전용 공간", "공용 수영장"],
       "checkIn": "오후 3:00 ~ 오후 10:00",
       "checkOut": "오전 11시 전까지"
@@ -76,6 +86,20 @@
       },
       "guestPreference": true,
       "guestCapacity": 12,
+      "advantages": [
+        {
+          "name": "업무 전용 공간",
+          "image": "/svgIcons/roomAdvantageSvgs/workingSpace.svg"
+        },
+        {
+          "name": "셀프 체크인",
+          "image": "/svgIcons/roomAdvantageSvgs/selfCheckIn.svg"
+        },
+        {
+          "name": "슈퍼 호스트",
+          "image": "/svgIcons/roomAdvantageSvgs/superHost.svg"
+        }
+      ],
       "comforts": ["산 전망", "무선 인터넷", "주방", "반려동물 입실 가능", "건조기"],
       "checkIn": "오후 3시 이후",
       "checkOut": "오전 11시 전까지"
@@ -110,6 +134,12 @@
       },
       "guestPreference": false,
       "guestCapacity": 4,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking"
+        }
+      ],
       "comforts": [
         "건물 내 무료주차",
         "무선 인터넷",
