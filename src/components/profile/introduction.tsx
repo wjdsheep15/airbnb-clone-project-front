@@ -16,6 +16,7 @@ export default function introduction({ name }: { name: string }) {
       <div className='flex items-center'>
         <Image src='/images/profile1.png' className='mr-1' alt='프로필1' width={25} height={25} />
         <span className='text-center mr-20'>거주지: Icheon-si, 한국</span>
+
         <Image
           src='/images/profile2.png'
           alt='프로필2'

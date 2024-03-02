@@ -1,8 +1,9 @@
 'use client'
-import SearchButton from '@/components/navigation/searchButton'
+import SearchButton from '@/components/navigation/navibarButtons/searchButton'
 
 export default function RoomSearchNavigation() {
   const buttonsizeboolen = false
+  const searchButtonHover = false
   return (
     <div className={`flex flex-row h-12 w-84 items-center`}>
       {/* 버튼 세개 */}
@@ -19,7 +20,7 @@ export default function RoomSearchNavigation() {
           <span className='text-sm text-gray-500'>게스트 추가</span>
         </button>
         <div className='w-8 h-8 flex items-center ml-3 mr-2'>
-          <SearchButton buttonsizeboolen={buttonsizeboolen} />
+          <SearchButton buttonsizeboolen={buttonsizeboolen} searchButtonHover={searchButtonHover} />
         </div>
       </div>
     </div>

@@ -1,8 +1,8 @@
-"use client";
-import KakaoLogin from "@/components/kakaoLogin/KakaoLogin";
+'use client'
+import KakaoLogin from '@/components/kakaoLogin/KakaoLogin'
 
 const KakaoLoginPage = () => {
-  return <KakaoLogin />;
-};
+  return <KakaoLogin />
+}
 
-export default KakaoLogin;
+export default KakaoLogin
