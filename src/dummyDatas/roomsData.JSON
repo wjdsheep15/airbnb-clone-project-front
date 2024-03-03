@@ -22,6 +22,8 @@
       "host": {
         "name": "Tripeleven",
         "profileImageUrl": "https://a0.muscache.com/im/pictures/user/ad6e3832-6352-4927-9eae-f5da8c33347b.jpg?im_w=240",
+        "career": "2년",
+        "isSuperHost": false,
         "isAuth": true,
         "responseRate": 15,
         "responseTime": "normal"
@@ -34,6 +36,16 @@
       },
       "guestPreference": false,
       "guestCapacity": 3,
+      "advantages": [
+        {
+          "name": "마음껏 물놀이를 즐기세요",
+          "image": "/svgIcons/roomAdvantageSvgs/water.svg"
+        },
+        {
+          "name": "경험이 풍부한 호스트",
+          "image": "/svgIcons/roomAdvantageSvgs/expertHost.svg"
+        }
+      ],
       "comforts": ["주방", "무선 와이파이", "업무 전용 공간", "공용 수영장"],
       "checkIn": "오후 3:00 ~ 오후 10:00",
       "checkOut": "오전 11시 전까지"
@@ -60,6 +72,8 @@
       "host": {
         "name": "은철",
         "profileImageUrl": "https://a0.muscache.com/im/pictures/user/8309f1fc-f8ad-4c7f-858a-491fa4c16251.jpg?im_w=240",
+        "career": "7년",
+        "isSuperHost": true,
         "isAuth": true,
         "responseRate": 15,
         "responseTime": "normal"
@@ -72,6 +86,20 @@
       },
       "guestPreference": true,
       "guestCapacity": 12,
+      "advantages": [
+        {
+          "name": "업무 전용 공간",
+          "image": "/svgIcons/roomAdvantageSvgs/workingSpace.svg"
+        },
+        {
+          "name": "셀프 체크인",
+          "image": "/svgIcons/roomAdvantageSvgs/selfCheckIn.svg"
+        },
+        {
+          "name": "슈퍼 호스트",
+          "image": "/svgIcons/roomAdvantageSvgs/superHost.svg"
+        }
+      ],
       "comforts": ["산 전망", "무선 인터넷", "주방", "반려동물 입실 가능", "건조기"],
       "checkIn": "오후 3시 이후",
       "checkOut": "오전 11시 전까지"
@@ -92,6 +120,8 @@
       "host": {
         "name": "Ddnayo",
         "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
+        "career": "8개월",
+        "isSuperHost": true,
         "isAuth": true,
         "responseRate": null,
         "responseTime": null
@@ -104,6 +134,12 @@
       },
       "guestPreference": false,
       "guestCapacity": 4,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking"
+        }
+      ],
       "comforts": [
         "건물 내 무료주차",
         "무선 인터넷",
