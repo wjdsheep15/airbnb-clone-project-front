@@ -7,9 +7,9 @@ export default async function ScrollPage() {
   const categroyIconData = inner.data
 
   return (
-    <div className='flex flex-row items-center justify-center space-x-10 pt-3 w-10/12 h-24'>
+    <div className='flex flex-row items-center justify-center space-x-4 pb-3 pt-5 w-10/12 h-24'>
       <div className='flex w-full h-20 grow'>
-        <HorizonScroll List={categroyIconData} />
+        <HorizonScroll categoryList={categroyIconData} />
       </div>
       <div className='flex grow-0'>
         <FitterButton />
