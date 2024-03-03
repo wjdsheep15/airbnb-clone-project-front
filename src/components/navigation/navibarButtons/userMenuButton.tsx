@@ -16,7 +16,7 @@ export default function BasicMenu() {
   }
 
   return (
-    <div className='w-full h-full flex items-center justify-center'>
+    <div>
       <Button
         id='basic-button'
         aria-controls={open ? 'basic-menu' : undefined}
