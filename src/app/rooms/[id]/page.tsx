@@ -1,3 +1,4 @@
+import RoomAdvantage from '@/components/rooms/room-advantage'
 import RoomAlbum from '@/components/rooms/room-album'
 import RoomHost from '@/components/rooms/room-host'
 import RoomIntroduction from '@/components/rooms/room-introduction'
@@ -10,9 +11,11 @@ interface IdParams {
 
 export default async function RoomDetailPage({ params: { id } }: IdParams) {
   const result = await fetch(`http://localhost:3000/api/room/${id}`)
+  console.log(result);
   const inner = await result.json()
-
+  console.log(inner)
   const roomData = inner.data
+  console.log(roomData)
 
   if (!roomData) {
     return <div>존재하지 않는 방입니다.</div>
@@ -37,6 +40,9 @@ export default async function RoomDetailPage({ params: { id } }: IdParams) {
           </Screen>
           <Screen>
             <RoomHost host={roomData.host} />
+          </Screen>
+          <Screen>
+            <RoomAdvantage advantages={roomData.advantages} />
           </Screen>
         </div>
       </main>
