@@ -34,7 +34,7 @@ export default function RoomIntroduction({
               <div className='flex flex-row pt-2'>
                 <span>⭐</span>
                 <span className='text-gray-900 dark:text-white text-base font-semibold underline'>
-                  아직 데이터를 받지 못했습니다.
+                  리뷰 관련 데이터
                 </span>
               </div>
             </div>
