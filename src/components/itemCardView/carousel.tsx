@@ -43,7 +43,7 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
               alt={''}
               width={287.8}
               height={270.41}
-              className='z-0 rounded-lg'
+              className='rounded-lg'
             />
           )
         })}
@@ -64,18 +64,19 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
         <LeftButtonIcon className='group-hover:text-black text-transparent' />
       </button>
       <button
-        className={`absolute top-1/2 right-3 p-2 rounded-full bg-transparent group-hover:bg-transparent-70 ${current === slides.length - 1 ? 'hidden' : 'bg-transparent-70'}`}
+        className={`absolute top-1/2 right-3 p-2 rounded-full bg-transparent group-hover:bg-transparent-70 ${current === slides.length - 1 ? 'hidden' : ''}`}
         onClick={nextSlide}
       >
         <RightButtonIcon className='group-hover:text-black text-transparent' />
       </button>
 
-      <div className='absolute bottom-0 py-1 flex justify-center gap-1 w-full'>
-        {slides.map((s, i) => {
+      <div className='absolute bottom-0 py-1 flex justify-center items-center gap-1 w-full'>
+        {slides.slice(Math.max(0, current - 2), current + 3).map((s, i) => {
+          const index = i + Math.max(0, current - 2)
           return (
             <div
-              key={'circle' + i}
-              className={`rounded-full w-1 h-1  ${i == current ? 'bg-white' : 'bg-transparent-70'}`}
+              key={'circle' + index}
+              className={`rounded-full ${index === current ? 'w-1.5 h-1.5' : 'w-1 h-1'} ${index === current ? 'bg-white' : 'bg-transparent-70'}`}
             ></div>
           )
         })}
