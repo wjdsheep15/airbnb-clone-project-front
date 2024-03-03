@@ -52,7 +52,7 @@ const RangeSlider: React.FC<RangeSliderProps> = ({
           />
         </div>
         <div className='ml-2 font-semibold text-lg'> - </div>
-        <div className=' '>
+        <div>
           <span className='p-2 font-semibold'> Max</span>
           <input
             onChange={handleMax}

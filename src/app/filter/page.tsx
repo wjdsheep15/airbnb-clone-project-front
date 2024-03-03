@@ -325,7 +325,7 @@ export default function SignUpButton() {
             </Typography>
             <div className='flex space-x-4 mt-8'>
               <button
-                className={`border border-slate-400 bg-white transition-transform duration-400 hover:border-black active:scale-90 rounded-lg w-[230px] h-[130px]
+                className={`border border-slate-400 transition-transform duration-400 hover:border-black active:scale-90 rounded-lg w-[230px] h-[130px]
                   ${active === 'houseButton' ? ' bg-slate-100 border border-black' : ''}`}
                 onClick={() => {
                   handleClick('houseButton')
