@@ -5,12 +5,12 @@ import LogoIcon from '/public/images/naviBarIcon/logo.svg'
 
 export default function NavigationBar() {
   return (
-    <div className='flex w-full h-40 justify-center border border-gray-100'>
-      <div className='flex w-11/12 h-20'>
-        <div className='flex w-full h-20 fixed top-0 justify-center items-center relative'>
+    <div className='flex w-full h-40 justify-center border border-gray-100 '>
+      <div className='flex w-[91.16%] h-20'>
+        <div className='flex w-full h-20 justify-center items-center relative'>
           {/* div 3객 묶는 구역 */}
           {/* 로그 부분 */}
-          <div className='flex w-40 h-20 ml-1 items-center absolute left-1'>
+          <div className='flex w-40 h-20 ml-1 items-center absolute left-0'>
             <Link className='w-[102px] h-[32px]' href='/'>
               <LogoIcon />
             </Link>
@@ -25,8 +25,8 @@ export default function NavigationBar() {
           </div>
 
           {/* 네비케이션 부분 */}
-          <div className='h-20 w-[400px] flex-none flex items-center justify-center absolute right-0'>
-            <div className='inline-flexv w-full h-full flex flex-row justify-center items-center'>
+          <div className='h-20 w-[400px] flex-none flex items-center absolute right-0 '>
+            <div className='inline-flexv w-full h-full flex flex-row justify-end items-center'>
               <RightPartNavibar />
             </div>
           </div>
