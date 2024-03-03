@@ -11,7 +11,6 @@ interface IdParams {
 export default async function RoomDetailPage({ params: { id } }: IdParams) {
   const result = await fetch(`http://localhost:3000/api/room/${id}`)
   const inner = await result.json()
-
   const roomData = inner.data
 
   if (!roomData) {
