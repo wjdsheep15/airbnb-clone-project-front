@@ -31,7 +31,9 @@ export default function ItemCardView({
         </span>
         <span className='col-span-8 text-sm text-mainGray'>{host}</span>
         <span className='col-span-8 text-sm text-mainGray'>3월 30일 ~ 4월 10일</span>
-        <span className='col-span-8 text-sm pt-2'>₩{price} /박</span>
+        <span className='col-span-8 text-sm pt-2 font-medium'>
+          ₩{price} <span className='text-sm font-extralight'>/박</span>
+        </span>
       </Link>
     </div>
   )

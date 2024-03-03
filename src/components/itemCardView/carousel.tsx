@@ -30,7 +30,7 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
     <div className='overflow-hidden w-full h-full relative group'>
       <Link
         href={`/rooms/${id}`}
-        className={`flex flex-row transition ease-out duration-40 w-full z-50 h-full`}
+        className={`flex flex-row transition ease-out duration-40 w-full h-full`}
         style={{
           transform: `translateX(-${current * 100}%)`,
         }}
