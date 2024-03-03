@@ -13,6 +13,8 @@ const list = [
     ],
     name: '안락함을 주는 우디한 객실과 대형 야외수영장은 덤 !_모닝스파펜션_08_세이지',
     introduction: 'Buk-myeon, Gapyeong-gun, 한국의 펜션',
+    address: 'Buk-myeon, Gapyeong-gun',
+    nation: '한국',
     description: [
       '가평의 푸르른 자연과 함께하는 공간',
       '안락함을 주는 우디한 객실과',
@@ -52,6 +54,8 @@ const list = [
     ],
     name: "앉아만 있어도 힐링되는 용담한옥에서 쉬었다가세요! '여주 용담한옥'",
     introduction: 'Sanbuk-myeon, Yeoju-gun, 한국의 통나무집 전체',
+    address: 'Sanbuk-myeon, Yeoju-gun',
+    nation: '한국',
     description: [
       '가평의 푸르른 자연과 함께하는 공간',
       '안락함을 주는 우디한 객실과',
@@ -91,7 +95,8 @@ export default function ItemCardViewGrid() {
         host={itemIndex.host.name}
         guestPreference={itemIndex.guestPreference}
         price={itemIndex.price}
-        introduction={itemIndex.introduction}
+        address={itemIndex.address}
+        nation={itemIndex.nation}
       />
     )
   })

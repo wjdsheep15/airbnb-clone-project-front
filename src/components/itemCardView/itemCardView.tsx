@@ -8,7 +8,8 @@ interface Props {
   host: String
   guestPreference: boolean
   price: String
-  introduction: String
+  address: String
+  nation: String
 }
 
 export default function ItemCardView({
@@ -17,7 +18,8 @@ export default function ItemCardView({
   host,
   guestPreference,
   price,
-  introduction,
+  address,
+  nation,
 }: Props) {
   return (
     <div className='w-[287.8px] h-[373.41px] flex flex-col items-center justify-center space-y-2'>
@@ -25,7 +27,10 @@ export default function ItemCardView({
         <Carousel key={id} slides={slides} id={id} guestPreference={guestPreference} />
       </div>
       <Link className='grid grid-cols-8 ' href={`/rooms/${id}`}>
-        <span className='col-span-7 text-sm font-semibold'> {introduction} </span>
+        <span className='col-span-7 text-sm font-semibold'>
+          {' '}
+          {nation} {address}{' '}
+        </span>
         <span className='col-span-1 flex flex-row items-center'>
           <StarIcon /> <span className='text-sm ml-1'>5.0</span>
         </span>
