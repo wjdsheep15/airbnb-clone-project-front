@@ -34,9 +34,9 @@ export default function HorizonScroll({ List }: Props) {
       if (scrollRef.current.scrollLeft + scrollOffset < 200) {
         SetScrollPosition(0)
         scrollRef.current.scrollLeft = 0
-      } else if (scrollRef.current.scrollLeft + scrollOffset > 3500) {
+      } else if (scrollRef.current.scrollLeft + scrollOffset > 3900) {
         SetScrollPosition(1)
-        scrollRef.current.scrollLeft += scrollOffset
+        scrollRef.current.scrollLeft = scrollRef.current.scrollWidth - 1000
       } else {
         SetScrollPosition(2)
       }
