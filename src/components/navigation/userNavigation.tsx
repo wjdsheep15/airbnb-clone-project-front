@@ -4,7 +4,7 @@ import RightPartNavibar from '@/components/navigation/navibarComponents/rightPar
 
 export default function NavigationBar() {
   return (
-    <div className='flex w-full h-20 justify-center border border-gray-100'>
+    <div className='flex w-full h-20 justify-center border border-gray-100 sticky top-0 bg-white'>
       <div className='flex w-10/12 h-20 '>
         <div className='flex w-full h-20 fixed top-0 justify-center items-center relative'>
           {/* div 3객 묶는 구역 */}
@@ -21,7 +21,7 @@ export default function NavigationBar() {
 
           {/* 네비케이션 부분 */}
           <div className='h-20 w-[400px] flex-none flex items-center justify-center absolute right-0'>
-            <div className='inline-flexv w-full h-full flex flex-row justify-center items-center'>
+            <div className='inline-flexv w-full h-full flex flex-row justify-end items-center'>
               <RightPartNavibar />
             </div>
           </div>
