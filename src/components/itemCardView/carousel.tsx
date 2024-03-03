@@ -49,7 +49,6 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
         })}
       </Link>
 
-      {/* <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[91%] w-[91%]  z-50 text-black'> */}
       <span
         className={`bg-white rounded-full text-sm px-3 py-1 absolute top-3 left-3 ${guestPreference ? '' : 'hidden'}`}
       >
@@ -70,7 +69,6 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
       >
         <RightButtonIcon className='group-hover:text-black text-transparent' />
       </button>
-      {/* </div> */}
 
       <div className='absolute bottom-0 py-1 flex justify-center gap-1 w-full'>
         {slides.map((s, i) => {
