@@ -26,12 +26,12 @@ export default function BasicModal() {
   }
   const handleOpen = () => setOpen(true)
 
-  const [selectedOption, setSelectedOption] = React.useState('한국 (+82)') // 셀렉트 박스
+  const [selectedOption, setSelectedOption] = useState('한국 (+82)') // 셀렉트 박스
   const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
     setSelectedOption(event.target.value)
   }
 
-  const [value, setValue] = React.useState('')
+  const [value, setValue] = useState('')
 
   const handleNumber = (event: { target: { value: any } }) => {
     const inputValue = event.target.value

@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
 
-export default function BasicModal() {
+export default function LanganguaeModal() {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
 
