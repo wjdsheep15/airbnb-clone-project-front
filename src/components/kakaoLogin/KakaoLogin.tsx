@@ -57,7 +57,7 @@ export default function KakaoLogin({ KakaoLocation }: KakaoLoginProps) {
           카카오로 로그인하기
         </Button>
       ) : (
-        <p>다른 내용이 나타나는 경우</p>
+        <p onClick={handleLoginClick}>로그인 </p>
       )}
     </div>
   )
