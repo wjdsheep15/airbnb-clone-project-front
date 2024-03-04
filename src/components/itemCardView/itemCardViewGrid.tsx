@@ -61,5 +61,11 @@ export default function ItemCardViewGrid({ roomsData }: Props) {
     />
   ))
 
-  return <div className='w-11/12 h-full grid gap-x-[24px] z-0 gap-y-10 grid-cols-5'>{itemsMap}</div>
+  return (
+    <div className='w-11/12 h-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 auto-cols-max gap-x-1 sm:gap-x-2 md:gap-x-3 lg:gap-x-4 xl:gap-x-5 gap-y-1 sm:gap-y-2 md:gap-y-3 lg:gap-y-4 xl:gap-y-5 z-0'>
+      {itemsMap}
+      {itemsMap}
+      {itemsMap}
+    </div>
+  )
 }
