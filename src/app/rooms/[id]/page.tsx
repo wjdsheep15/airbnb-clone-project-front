@@ -1,3 +1,4 @@
+import NavigationBar from '@/components/navigation/roomsNavigation'
 import ReservationScreen from '@/components/rooms/reservation-screen'
 import RoomAlbum from '@/components/rooms/room-album'
 import RoomDescription from '@/components/rooms/room-description'
@@ -22,6 +23,12 @@ export default async function RoomDetailPage({ params: { id } }: IdParams) {
 
   return (
     <>
+      <div>
+        <Screen>
+          <NavigationBar />
+        </Screen>
+      </div>
+      <hr/>
       <main>
         <div className='flex flex-col'>
           <Screen>
