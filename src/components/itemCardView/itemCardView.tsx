@@ -27,9 +27,9 @@ export default function ItemCardView({
         <Carousel key={id} slides={slides} id={id} guestPreference={guestPreference} />
       </div>
       <Link className='grid grid-cols-8 ' href={`/rooms/${id}`}>
-        <span className='col-span-7 text-sm font-semibold'>
+        <span className='col-span-7 text-sm font-semibold line-clamp-1'>
           {' '}
-          {nation} {address}{' '}
+          {nation} {address}
         </span>
         <span className='col-span-1 flex flex-row items-center'>
           <StarIcon /> <span className='text-sm ml-1'>5.0</span>
