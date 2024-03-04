@@ -6,6 +6,7 @@ import UserIcon from '/public/images/naviBarIcon/UserIcon.svg'
 import * as React from 'react'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
+import KakaoLogin from '@/components/kakaoLogin/KakaoLogin'
 
 export default function UserMenuButton() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
@@ -50,12 +51,18 @@ export default function UserMenuButton() {
           },
         }}
       >
+        {/**회원 가입 */}
         <MenuItem onClick={handleClose}>회원 가입</MenuItem>
-        <MenuItem onClick={handleClose}>로그인</MenuItem>
+        {/**로그인 */}
+        <MenuItem onClick={handleClose}>
+          <KakaoLogin KakaoLocation='로그인' />
+        </MenuItem>
         <hr />
+        {/*당신의 공간을 에어비앤비 하세요*/}
         <MenuItem className='pt-3' onClick={handleClose}>
           당신의 공간을 에어비앤비 하세요
         </MenuItem>
+        {/*도움말 센터 */}
         <MenuItem onClick={handleClose}>도움말 센터</MenuItem>
       </Menu>
     </div>
