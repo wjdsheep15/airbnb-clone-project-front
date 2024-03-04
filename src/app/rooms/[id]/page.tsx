@@ -45,6 +45,9 @@ export default async function RoomDetailPage({ params: { id } }: IdParams) {
           <Screen>
             <RoomAdvantage advantages={roomData.advantages} />
           </Screen>
+          <Screen>
+            <RoomDescription />
+          </Screen>
         </div>
       </main>
     </>
