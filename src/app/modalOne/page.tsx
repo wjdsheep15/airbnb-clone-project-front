@@ -11,6 +11,7 @@ import styles from './styles.module.css'
 import SignUpButton from './signUp'
 import Image from 'next/image'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
+import KakaoLogin from '@/components/kakaoLogin/KakaoLogin'
 
 // 셀렉트 박스 값과 CSS
 const options = [
@@ -108,7 +109,7 @@ export default function BasicModal() {
               height={80}
               className='-ml-40 mr-20'
             />
-            카카오로 로그인하기
+            <KakaoLogin KakaoLocation='카카오 로그인' /> {/**카카오 로그인하기 */}
           </Button>
 
           <Button className='text-black mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'>
