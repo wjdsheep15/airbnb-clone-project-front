@@ -8,7 +8,15 @@ const client_id = KAKAO_API_KEY || ''
 const redirect_uri = 'http://localhost:3000/kakaoLogin'
 const response_type = 'code'
 
-const KakaoLogin = () => {
+interface KakaoLoginProps {
+  KakaoLocation: string
+}
+
+// function KakaoLocation({ KakaoLocation }: KakaoLoginProps) {
+//   return <div></div>
+// }
+
+export default function KakaoLogin({ KakaoLocation }: KakaoLoginProps) {
   useEffect(() => {
     const search = new URLSearchParams(window.location.search) //인가 코드 요청시 redirect로 받는 값 http://localhost:3000/login?code= 인가 코드 (매번 바뀌는 값임)
     const code = search.get('code') // code부분인 인가 코드 추츨
@@ -43,20 +51,14 @@ const KakaoLogin = () => {
   }
 
   return (
-    <Button
-      type='button'
-      className='text-black -mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'
-      onClick={handleLoginClick}
-    >
-      <Image
-        src='/images/kakaoLogin.png'
-        alt='KakaoLogin'
-        width={80}
-        height={80}
-        className='-ml-40 mr-20'
-      />
-      카카오로 로그인하기
-    </Button>
+    <div>
+      {KakaoLocation === '카카오 로그인' ? (
+        <Button className='text-black text-2xl font-bold' onClick={handleLoginClick}>
+          카카오로 로그인하기
+        </Button>
+      ) : (
+        <p onClick={handleLoginClick}>로그인 </p>
+      )}
+    </div>
   )
 }
-export default KakaoLogin
