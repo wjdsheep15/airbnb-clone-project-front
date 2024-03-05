@@ -15,7 +15,7 @@ import Modal from '@mui/material/Modal'
 import TextField from '@mui/material/TextField'
 
 import styles from '@/components/navigation/navibarButtons/styles.module.css'
-import SignUpButton from '@/components/navigation/navibarButtons/signUp'
+import SignUpButton from '@/components/navigation/modal/signUp'
 import Image from 'next/image'
 
 // 셀렉트 박스 값과 CSS
