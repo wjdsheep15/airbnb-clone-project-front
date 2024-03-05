@@ -14,8 +14,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import InputAdornment from '@mui/material/InputAdornment'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import ViewMore1 from './viewMore1'
-import ViewMore2 from './viewMore2'
+import ViewMore1 from '@/components/navigation/navibarButtons/viewMore1'
+import ViewMore2 from '@/components/navigation/navibarButtons/viewMore2'
 
 export default function SignUpButton() {
   const [checked, setChecked] = useState(false)
@@ -63,7 +63,7 @@ export default function SignUpButton() {
     <>
       <Button
         onClick={handleOpen}
-        className='text-white bg-pink-700 hover:bg-pink-700 mt-5 transition-transform duration-400 active:scale-90 border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'
+        className='text-white bg-mainColor hover:bg-pink-700 mt-5 transition-transform duration-400 active:scale-90 border-solid border-black rounded-lg text-base font-bold w-full h-[48px]'
       >
         계속
       </Button>
