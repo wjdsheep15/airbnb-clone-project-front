@@ -90,7 +90,14 @@ export default function UserMenuButton() {
         }}
       >
         {/**회원 가입 */}
-        <MenuItem onClick={handleClose}>회원 가입</MenuItem>
+        <MenuItem
+          onClick={() => {
+            handleClose()
+            handleOpen()
+          }}
+        >
+          회원 가입
+        </MenuItem>
         {/**로그인 */}
         <MenuItem
           onClick={() => {
