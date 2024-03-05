@@ -51,9 +51,9 @@ export default function KakaoLogin({ KakaoLocation }: KakaoLoginProps) {
   }
 
   return (
-    <div className={`${KakaoLocation === '카카오 로그인' ? 'w-5' : 'w-full'}`}>
+    <div className={`${KakaoLocation === '카카오 로그인' ? 'w-auto' : 'w-full'}`}>
       {KakaoLocation === '카카오 로그인' ? (
-        <Button className='text-black text-2xl font-bold w-full' onClick={handleLoginClick}>
+        <Button className='text-black text-sm font-bold w-full' onClick={handleLoginClick}>
           카카오로 로그인하기
         </Button>
       ) : (
