@@ -14,8 +14,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import InputAdornment from '@mui/material/InputAdornment'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import ViewMore1 from './viewMore1'
-import ViewMore2 from './viewMore2'
+import ViewMore1 from '@/components/navigation/modal/viewMore1'
+import ViewMore2 from '@/components/navigation/modal/viewMore2'
 
 export default function SignUpButton() {
   const [checked, setChecked] = useState(false)
@@ -63,7 +63,7 @@ export default function SignUpButton() {
     <>
       <Button
         onClick={handleOpen}
-        className='text-white bg-pink-700 hover:bg-pink-700 mt-5 transition-transform duration-400 active:scale-90 border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'
+        className='text-white bg-mainColor hover:bg-pink-700 mt-5 transition-transform duration-400 active:scale-90 border-solid border-black rounded-lg text-base font-bold w-full h-[48px]'
       >
         계속
       </Button>
@@ -74,23 +74,21 @@ export default function SignUpButton() {
            bg-white border-2 border-black shadow-lg p-16 w-[745px] h-[820px]'
         >
           <div className='relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] rounded-lg p-8'>
-            <div className='divide-y-2 divide-gray-400 w-[800px] -ml-16 -mt-8'>
-              <div>
-                <header>
-                  <Button onClick={handleClose}>
-                    <Image
-                      src='/svgIcons/leftAngle.svg'
-                      alt='My leftAngle SVG'
-                      width={20}
-                      height={20}
-                      className='ml-20 -mt-20'
-                    />
-                  </Button>
-                  <div className='text-xl font-semibold -mt-16 ml-80'>회원 가입 완료하기</div>
-                </header>
-              </div>
-              <div className='mt-4 ml-16'></div>
+            <div className='divide-y-2 divide-gray-400 flex justify-center h-full items-center w-[800px]'>
+              <header className='flex flex-row items-center h-full mb-10 ml-7 relative w-full'>
+                <Button onClick={handleClose}>
+                  <Image
+                    src='/svgIcons/leftAngle.svg'
+                    alt='My leftAngle SVG'
+                    width={20}
+                    height={20}
+                    className='absolute left-0'
+                  />
+                </Button>
+                <div className='text-xl font-semibold absolute left-1/3'>회원 가입 완료하기</div>
+              </header>
             </div>
+            <hr className='text-mainGray' />
             <div className='max-h-[600px] overflow-y-auto overflow-x-hidden'>
               <TextField
                 className='mt-10 ml-8 w-[650px]'
@@ -142,8 +140,8 @@ export default function SignUpButton() {
                     }
                   />
                 </div>
-                <div className='w-[800px] mt-8 -ml-8'></div>
               </div>
+              <hr className='mt-8' />
 
               {/* 체크 박스 */}
               <div>
@@ -164,12 +162,13 @@ export default function SignUpButton() {
                     </>
                   }
                   labelPlacement='start'
-                  className='w-[680px] mt-4 ml-8'
+                  className='w-[670px] mt-4 ml-7 justify-between'
                 />
 
                 {/* 추가 모달 */}
-
-                <ViewMore1 />
+                <div className='ml-5'>
+                  <ViewMore1 />
+                </div>
               </div>
 
               {/* 체크 박스 */}
@@ -187,15 +186,17 @@ export default function SignUpButton() {
                     </>
                   }
                   labelPlacement='start'
-                  className='w-[680px] mt-4 ml-2'
+                  className='w-[670px] mt-4 ml-7 justify-between'
                 />
 
                 {/* 추가 모달 */}
-                <ViewMore2 />
+                <div className='ml-5'>
+                  <ViewMore2 />
+                </div>
               </div>
-              <div className='mt-4 border-t border-gray-400'></div>
+              <hr />
 
-              <Typography className='mt-8 ml-8'>
+              <Typography className='mt-8 ml-5'>
                 동의 및 계속하기를 선택하여 에어비앤비 서비스 약관, 결제 서비스 약관, 위치기반서비스
                 이용약관, 차별 금지 정책, 개인정보 처리방침에 동의합니다.
               </Typography>
@@ -204,7 +205,7 @@ export default function SignUpButton() {
                 onClick={handleOpen}
                 className='text-white bg-pink-700 hover:bg-pink-700 mt-5 ml-8 
                 transition-transform duration-400 active:scale-90 border-solid border-black 
-                rounded-lg text-2xl font-bold w-[620px] h-[60px]'
+                rounded-lg text-2xl font-bold w-[670px] h-[60px]'
               >
                 동의 및 계속하기
               </Button>

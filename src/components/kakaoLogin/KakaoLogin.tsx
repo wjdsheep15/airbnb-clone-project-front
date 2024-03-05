@@ -47,13 +47,13 @@ export default function KakaoLogin({ KakaoLocation }: KakaoLoginProps) {
 
   const handleLoginClick = () => {
     const authCodeUrl = `https://kauth.kakao.com/oauth/authorize?${authParam.toString()}`
-    window.open(authCodeUrl, '_blank', 'width=500,height=600,left=500,top=50')
+    window.open(authCodeUrl, '_blank', 'popup=1, width=500,height=600,left=500,top=50')
   }
 
   return (
-    <div>
+    <div className={`${KakaoLocation === '카카오 로그인' ? 'w-auto' : 'w-full'}`}>
       {KakaoLocation === '카카오 로그인' ? (
-        <Button className='text-black text-2xl font-bold' onClick={handleLoginClick}>
+        <Button className='text-black text-sm font-bold w-full' onClick={handleLoginClick}>
           카카오로 로그인하기
         </Button>
       ) : (

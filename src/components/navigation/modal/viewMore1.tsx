@@ -18,7 +18,7 @@ const Transition = React.forwardRef(function Transition(
   return <Slide direction='up' ref={ref} {...props} />
 })
 
-export default function ViewMore2() {
+export default function ViewMore1() {
   const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
@@ -30,10 +30,7 @@ export default function ViewMore2() {
 
   return (
     <>
-      <Button
-        className='ml-8 mt-4 font-bold underline decoration-2 text-black'
-        onClick={handleOpen}
-      >
+      <Button className='mt-4 font-bold underline decoration-2 text-black' onClick={handleOpen}>
         더보기
       </Button>
 
