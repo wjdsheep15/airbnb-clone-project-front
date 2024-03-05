@@ -1,6 +1,6 @@
 import HeaderComponent from '@/app/(home)/header'
 import ItemCardPage from '@/components/itemCardView/itemCardPage'
-import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
+import Calender from '@/components/navigation/navibarButtons/calender'
 
 export default async function HomePage() {
   return (
@@ -8,7 +8,7 @@ export default async function HomePage() {
       <main className='flex flex-col items-center justify-center w-full h-full'>
         <HeaderComponent />
         <ItemCardPage />
-        <GestNumber />
+        <Calender />
       </main>
     </>
   )
