@@ -1,9 +1,6 @@
 import NavigationBar from '@/components/navigation/roomsNavigation'
 import ReservationScreen from '@/components/rooms/reservation-screen'
 import RoomAlbum from '@/components/rooms/room-album'
-import RoomDescription from '@/components/rooms/room-description'
-import RoomHost from '@/components/rooms/room-host'
-import RoomIntroduction from '@/components/rooms/room-introduction'
 import RoomTitle from '@/components/rooms/room-title'
 import Screen from '@/components/rooms/screen'
 

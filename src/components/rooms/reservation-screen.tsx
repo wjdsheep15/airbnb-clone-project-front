@@ -1,3 +1,4 @@
+import ReservationCard from '@/components/rooms/reservation-card'
 import RoomAdvantage from '@/components/rooms/room-advantage'
 import RoomAlbum from '@/components/rooms/room-album'
 import RoomDescription from '@/components/rooms/room-description'
@@ -50,9 +51,9 @@ export default function ReservationScreen({ roomData }: { roomData: Room }) {
   return (
     <>
       <div className='md:h-[340px] lg:h-[450px] md:w-[800px] lg:w-[1250px]'>
-        <div className='flex flex-start px-20'>
-          <div className='relative w-2/3'>
-            <div>
+        <div className='flex px-20'>
+          <div className='relative flex w-3/5'>
+            <div className='w-full'>
               <RoomIntroduction
                 introduction={roomData.introduction}
                 guestCapacity={roomData.guestCapacity}
@@ -67,7 +68,11 @@ export default function ReservationScreen({ roomData }: { roomData: Room }) {
               <hr />
             </div>
           </div>
-          <div className='relative w-1/3'>{/* 스티키 예약 카드 */}</div>
+          <div className='flex w-2/5 sticky top-0'>
+            <div className='ml-auto mr-0'>
+              <ReservationCard price={roomData.price} />
+            </div>
+          </div>
         </div>
       </div>
     </>
