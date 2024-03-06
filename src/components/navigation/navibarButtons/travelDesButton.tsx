@@ -44,7 +44,7 @@ export default function travelDesButton({ isTravelDesOpen, TravelDes }: Props) {
             boxShadow: '0px 3px 5px 2px rgba(0, 0, 0, 0.1)',
           },
           '.MuiMenuItem-root': {
-            minHeight: '350px',
+            minHeight: '500px',
             minWidth: '470px',
           },
         }}
@@ -127,7 +127,8 @@ export default function travelDesButton({ isTravelDesOpen, TravelDes }: Props) {
                   {/* 첫번째 행 버튼 */}
                   <button
                     type='button'
-                    className='rounded-3xl text-sm px-8 py-3 text-center mt-4 border hover:border-black'
+                    className='rounded-3xl text-sm  text-center mt-4 border hover:border-black'
+                    style={{ width: '90px', height: '40px' }}
                   >
                     서울
                   </button>
@@ -135,8 +136,32 @@ export default function travelDesButton({ isTravelDesOpen, TravelDes }: Props) {
                   <RegionButton Region='속초' />
                   <RegionButton Region='강릉' />
                 </div>
-                <div className='flex'>{/* 두번째 행 버튼 */}</div>
-                <div className='flex'>{/* 세번째 행 버튼 */}</div>
+                <div className='flex'>
+                  {/* 두번째 행 버튼 */}
+                  <button
+                    type='button'
+                    className='rounded-3xl text-sm text-center mt-4 border hover:border-black'
+                    style={{ width: '90px', height: '40px' }}
+                  >
+                    전주
+                  </button>
+                  <RegionButton Region='대구' />
+                  <RegionButton Region='경주' />
+                  <RegionButton Region='강릉' />
+                </div>
+                <div className='flex'>
+                  {/* 세번째 행 버튼 */}
+                  <button
+                    type='button'
+                    className='rounded-3xl text-sm text-center mt-4 border hover:border-black'
+                    style={{ width: '90px', height: '40px' }}
+                  >
+                    서귀포
+                  </button>
+                  <RegionButton Region='대전' />
+                  <RegionButton Region='제주도' />
+                  <RegionButton Region='인천' />
+                </div>
               </div>
             </section>
           </div>
