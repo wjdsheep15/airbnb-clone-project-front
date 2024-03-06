@@ -2,6 +2,8 @@
 import OnSearchButton from '@/components/navigation/navibarButtons/onSearchButton'
 import SearchButton from '@/components/navigation/navibarButtons/searchButton'
 import { useEffect, useRef, useState } from 'react'
+import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
+import CloseIcon from '/public/svgIcons/CloseIcon.svg'
 
 export default function HomeNavigation() {
   const buttonsizeboolen = true
@@ -10,11 +12,24 @@ export default function HomeNavigation() {
   const [topActivityMenu, setTopActivityMenu] = useState(true)
   const ref = useRef<any>(null)
   const [inputValue, setInputValue] = useState('')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [gestNumber, setGestNumber] = useState(0)
+  const [childNumber, setChildNumber] = useState(0)
+  const [petNumber, setPetNumber] = useState(0)
+  const [babyNumber, setbabyNumber] = useState(0)
+  let gestSum = gestNumber + childNumber
+  const handleNumber = () => {
+    setGestNumber(0)
+    setChildNumber(0)
+    setPetNumber(0)
+    setbabyNumber(0)
+  }
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         setActiveButton(0)
+        setIsMenuOpen(false)
       }
     }
 
@@ -146,26 +161,61 @@ export default function HomeNavigation() {
           </span>
 
           <div className='flex flex-row h-full w-64 items-center rounded-full pt-3 pb-3 relative'>
+            {/* 첫 번째 버튼 그룹 - 여행자 메뉴 */}
             <button
-              className={`flex-grow pt-3 pb-3 pl-3 flex rounded-full group ${
+              className={`flex-grow pt-1 pb-1 pl-3 flex rounded-full group ${
                 activeButton === 4
                   ? 'bg-white border border-gray-300 shadow'
                   : 'hover:bg-navigatorTwoLayoutColor'
               }`}
-              onClick={() => setActiveButton(4)}
+              onClick={() => {
+                setActiveButton(4)
+                setIsMenuOpen(!isMenuOpen)
+              }}
+              id='menu-button'
             >
               <span
-                className={`flex flex-col  ${
+                className={`flex ml-1 flex-col mb-1 w-[70%] h-full grid grid-cols-4 grid-rows-2  ${
                   activeButton === 4
                     ? 'group-hover:bg-white'
                     : 'group-hover:bg-navigatorTwoLayoutColor'
                 }`}
               >
-                <span className={`text-xs pr-[30px]`}>여행자</span>
-                <span className='text-sm mt-1 text-gray-400'>게스트 추가</span>
+                <span className={`text-xs flex pt-3 justify-start col-span-3`}>여행자</span>
+                <div
+                  className={`rounded-full mr-2 row-span-2 flex items-center  ${activeButton === 0 ? 'hidden' : ''}`}
+                  onClick={handleNumber}
+                >
+                  <CloseIcon
+                    className={`flex items-center rounded-full  ${gestSum === 0 ? 'text-transparent hover:none' : 'hover:bg-navigatorOneLayoutColor'}`}
+                  />
+                </div>
+
+                <span
+                  className={`text-sm mt-1 w-full line-clamp-1 text-nowrap  flex justify-start col-span-3 ${gestSum === 0 ? 'text-gray-400' : 'text-black'}`}
+                >
+                  게스트 {gestSum === 0 ? '추가' : gestSum + ','} {gestSum === 16 ? ' 이상' : ''}
+                  {babyNumber === 0 ? '' : ' 유아 ' + babyNumber + '명'}
+                  {petNumber === 0 ? '' : ', 반려동물 ' + petNumber + '마리'}
+                </span>
               </span>
             </button>
-            <div className='absolute right-3'>
+
+            {/* 게스트 버튼 끝 */}
+            <div ref={ref}>
+              <GestNumber
+                isMenuOpen={isMenuOpen}
+                gestNumber={gestNumber}
+                setGestNumber={setGestNumber}
+                petNumber={petNumber}
+                setPetNumber={setPetNumber}
+                babyNumber={babyNumber}
+                setbabyNumber={setbabyNumber}
+                childNumber={childNumber}
+                setChildNumber={setChildNumber}
+              />
+            </div>
+            <div className='absolute right-3 '>
               <div
                 className={`${activeButton === 0 ? '' : 'hidden'}`}
                 onMouseEnter={() => {
