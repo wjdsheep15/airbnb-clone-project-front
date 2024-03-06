@@ -4,16 +4,16 @@ export default async function RoomTitle({ roomName }: { roomName: string }) {
       <div>
         <div className='pt-6'>
           <section>
-            <div className='px-20 h-30 flex justify-between space-x-16'>
+            <div className='px-20 h-30 flex justify-between md:w-[800px] lg:w-[1250px]'>
               {/* 숙소명 */}
-              <div className='flex justify-start'>
+              <div className='flex ml-0 mr-auto'>
                 <span className='text-gray-900 dark:text-white text-2xl font-semibold'>
                   {roomName}
                 </span>
               </div>
 
               {/* 우측 버튼 그룹 */}
-              <div className='flex justify-end font-base font-sans'>
+              <div className='flex ml-auto mr-0 font-base font-sans'>
                 <div className='mr-5 flex'>
                   <span>
                     <svg
