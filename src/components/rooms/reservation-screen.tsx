@@ -51,7 +51,7 @@ export default function ReservationScreen({ roomData }: { roomData: Room }) {
   return (
     <>
       <div className='md:h-[340px] lg:h-[450px] md:w-[800px] lg:w-[1250px]'>
-        <div className='flex px-20'>
+        <div className='relative flex px-20'>
           <div className='relative flex w-3/5'>
             <div className='w-full'>
               <RoomIntroduction
@@ -68,7 +68,7 @@ export default function ReservationScreen({ roomData }: { roomData: Room }) {
               <hr />
             </div>
           </div>
-          <div className='flex w-2/5 sticky top-0'>
+          <div className='flex w-2/5'>
             <div className='ml-auto mr-0'>
               <ReservationCard price={roomData.price} />
             </div>
