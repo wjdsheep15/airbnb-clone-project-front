@@ -2,6 +2,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
+import RegionButton from '@/components/navigation/navibarButtons/travelDesRegioin'
 interface Props {
   isTravelDesOpen: boolean
   TravelDes: string
@@ -57,9 +58,9 @@ export default function travelDesButton({ isTravelDesOpen, TravelDes }: Props) {
             },
           }}
         >
-          <div className='flex-col'>
-            <div>
-              {/*지역으로 검색하기 + 지도 사진 */}
+          <div className='relative flex-col top-[30px]'>
+            {/*지역으로 검색하기 + 지도 사진 */}
+            <section>
               <div className='relative bottom-[60px] right-[-20px] font-bold'>
                 지역으로 검색하기
               </div>
@@ -117,7 +118,27 @@ export default function travelDesButton({ isTravelDesOpen, TravelDes }: Props) {
                   </figure>
                 </div>
               </div>
-            </div>
+            </section>
+            {/*한국 + 지역버튼 */}
+            <section>
+              <div className='relative  right-[-20px] font-bold'>한국</div>
+              <div className='flex-col'>
+                <div className='flex'>
+                  {/* 첫번째 행 버튼 */}
+                  <button
+                    type='button'
+                    className='rounded-3xl text-sm px-8 py-3 text-center mt-4 border hover:border-black'
+                  >
+                    서울
+                  </button>
+                  <RegionButton Region='부산' />
+                  <RegionButton Region='속초' />
+                  <RegionButton Region='강릉' />
+                </div>
+                <div className='flex'>{/* 두번째 행 버튼 */}</div>
+                <div className='flex'>{/* 세번째 행 버튼 */}</div>
+              </div>
+            </section>
           </div>
         </MenuItem>
       </Menu>
