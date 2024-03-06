@@ -12,11 +12,11 @@ interface IdParams {
 
 export default async function RoomDetailPage({ params: { id } }: IdParams) {
   const result = await fetch(`http://localhost:3000/api/room/${id}`)
-  console.log(result);
+  console.log('result ' + result)
   const inner = await result.json()
-  console.log(inner)
+  console.log('inner date' + inner)
   const roomData = inner.data
-  console.log(roomData)
+  console.log('roomDta :' + roomData)
 
   if (!roomData) {
     return <div>존재하지 않는 방입니다.</div>

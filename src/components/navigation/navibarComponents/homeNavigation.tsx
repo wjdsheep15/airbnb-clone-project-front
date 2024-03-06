@@ -4,6 +4,7 @@ import SearchButton from '@/components/navigation/navibarButtons/searchButton'
 import { useEffect, useRef, useState } from 'react'
 import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/CloseIcon.svg'
+import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
 
 export default function HomeNavigation() {
   const buttonsizeboolen = true
@@ -17,6 +18,8 @@ export default function HomeNavigation() {
   const [childNumber, setChildNumber] = useState(0)
   const [petNumber, setPetNumber] = useState(0)
   const [babyNumber, setbabyNumber] = useState(0)
+  const [firstDate, setFirstDate] = useState(0)
+  const [calenderOpen, setCalenderOpen] = useState(false)
   let gestSum = gestNumber + childNumber
   const handleNumber = () => {
     setGestNumber(0)
@@ -30,6 +33,7 @@ export default function HomeNavigation() {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         setActiveButton(0)
         setIsMenuOpen(false)
+        setCalenderOpen(false)
       }
     }
 
@@ -113,7 +117,10 @@ export default function HomeNavigation() {
                   ? 'bg-white border border-gray-300 shadow'
                   : 'hover:bg-navigatorTwoLayoutColor'
               }`}
-              onClick={() => setActiveButton(2)}
+              onClick={() => {
+                setActiveButton(2)
+                setCalenderOpen(true)
+              }}
             >
               <span className='text-xs'>체크인</span>
               <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
@@ -131,7 +138,10 @@ export default function HomeNavigation() {
                   ? 'bg-white border border-gray-300 shadow'
                   : 'hover:bg-navigatorTwoLayoutColor'
               }`}
-              onClick={() => setActiveButton(3)}
+              onClick={() => {
+                setActiveButton(3)
+                setCalenderOpen(true)
+              }}
             >
               <span className='text-xs'>체크아웃</span>
               <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
@@ -146,12 +156,21 @@ export default function HomeNavigation() {
                   ? 'bg-white border border-gray-300 shadow'
                   : 'hover:bg-navigatorTwoLayoutColor'
               }`}
-              onClick={() => setActiveButton(3)}
+              onClick={() => {
+                setActiveButton(3)
+              }}
             >
               <span className='text-xs'>날짜</span>
               <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
             </button>
           </div>
+          {/* 날짜 선택 메뉴*/}
+
+          <div ref={ref}>
+            <CalenderMenu calenderOpen={calenderOpen} />
+          </div>
+          {/* 날짜 선택 끝 */}
+
           <span
             className={`text-lg ${
               activeButton === 3 || activeButton === 4 ? 'text-gray-200' : 'text-gray-300'

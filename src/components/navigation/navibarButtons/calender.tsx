@@ -1,26 +1,38 @@
 'use client'
-import * as React from 'react'
-import dayjs, { Dayjs } from 'dayjs'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { StaticDateRangePicker } from '@mui/x-date-pickers-pro/StaticDateRangePicker'
-import { PickersShortcutsItem } from '@mui/x-date-pickers/PickersShortcuts'
-import { DateRange } from '@mui/x-date-pickers-pro'
+import React, { useState } from 'react'
+import { addDays, format } from 'date-fns'
+import { DayPicker, DateRange } from 'react-day-picker'
+import 'react-day-picker/dist/style.css'
 
-const shortcutsItems: PickersShortcutsItem<DateRange<Dayjs>>[] = []
+const pastMonth = new Date()
+export default function Calender() {
+  const defaultSelected: DateRange = {
+    from: pastMonth,
+    to: addDays(pastMonth, 4),
+  }
+  const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
 
-export default function BasicRangeShortcuts() {
+  let footer = <p>Please pick the first day.</p>
+  if (range?.from) {
+    if (!range.to) {
+      footer = <p>{format(range.from, 'PPP')}</p>
+    } else if (range.to) {
+      footer = (
+        <p>
+          {format(range.from, 'PPP')}–{format(range.to, 'PPP')}
+        </p>
+      )
+    }
+  }
+
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <StaticDateRangePicker
-        slotProps={{
-          shortcuts: {
-            items: shortcutsItems,
-          },
-          actionBar: { actions: [] },
-        }}
-        calendars={3}
-      />
-    </LocalizationProvider>
+    <DayPicker
+      className='HorizontalDayPicker'
+      mode='range'
+      selected={range}
+      onSelect={setRange}
+      numberOfMonths={2}
+      footer={footer}
+    />
   )
 }
