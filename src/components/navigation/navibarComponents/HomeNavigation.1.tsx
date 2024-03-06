@@ -4,6 +4,7 @@ import SearchButton from '@/components/navigation/navibarButtons/searchButton'
 import { useEffect, useRef, useState } from 'react'
 import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/CloseIcon.svg'
+import TravelDesButton from '../navibarButtons/travelDesButton.1'
 
 export default function HomeNavigation() {
   const buttonsizeboolen = true
@@ -13,6 +14,7 @@ export default function HomeNavigation() {
   const ref = useRef<any>(null)
   const [inputValue, setInputValue] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isTravelDesOpen, setIsTravelDesOpen] = useState('여행지 검색')
   const [gestNumber, setGestNumber] = useState(0)
   const [childNumber, setChildNumber] = useState(0)
   const [petNumber, setPetNumber] = useState(0)
@@ -43,9 +45,7 @@ export default function HomeNavigation() {
       <div className='flex flex-row h-20 justify-center items-center' role='group'>
         <button
           type='button'
-          className={`px-4 h-8 p-3 text-gray-900 flex items-center rounded-full ${
-            topActivityMenu ? 'hover:bg-inherit' : 'hover:bg-gray-100'
-          }`}
+          className={`px-4 h-8 p-3 text-gray-900 flex items-center rounded-full ${topActivityMenu ? 'hover:bg-inherit' : 'hover:bg-gray-100'}`}
           onClick={() => setTopActivityMenu(true)}
         >
           <span className={`${topActivityMenu ? 'text-black' : 'text-gray-400'}`}>숙소</span>
@@ -53,9 +53,7 @@ export default function HomeNavigation() {
 
         <button
           type='button'
-          className={`px-4 h-8 text-gray-900 rounded-full  ${
-            topActivityMenu ? 'hover:bg-gray-100' : 'hover:bg-inherit'
-          }`}
+          className={`px-4 h-8 text-gray-900 rounded-full  ${topActivityMenu ? 'hover:bg-gray-100' : 'hover:bg-inherit'}`}
           onClick={() => setTopActivityMenu(false)}
         >
           <span className={`${topActivityMenu ? 'text-gray-400' : 'text-black'}`}>체험</span>
@@ -68,9 +66,7 @@ export default function HomeNavigation() {
       {/* 두번쨰 버튼층 */}
       <div className={`flex flex-row h-[79px] justify-center items-center pb-3`}>
         <div
-          className={`border border-gray-300 rounded-full shadow-lg flex h-full items-center  ${
-            activeButton ? 'bg-navigatorOneLayoutColor' : ''
-          }`}
+          className={`border border-gray-300 rounded-full shadow-lg flex h-full items-center  ${activeButton ? 'bg-navigatorOneLayoutColor' : ''}`}
           ref={ref}
         >
           <button
@@ -81,16 +77,17 @@ export default function HomeNavigation() {
             }`}
             onClick={() => setActiveButton(1)}
           >
-            <span className='text-xs ml-4'>여행지</span>
+            <span className='text-xs ml-4'>
+              {' '}
+              <TravelDesButton setIsTravelDesOpen={setIsTravelDesOpen} TravelDes='여행지' />{' '}
+            </span>
             {/* <span className="text-sm mt-1 ml-4 text-gray-400">여행지 검색</span> */}
             <input
-              placeholder='여행지 검색'
+              placeholder={isTravelDesOpen}
               type='text'
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              className={`text-sm mt-1 ml-4 w-52 bg-inherit group-focus:active focus:outline-none text-gray-400 ${
-                activeButton === 1 ? 'active' : ''
-              }`}
+              className={`text-sm mt-1 ml-4 w-52 bg-inherit group-focus:active focus:outline-none text-gray-400 ${activeButton === 1 ? 'active' : ''}`}
             />
           </button>
           <span
@@ -119,9 +116,7 @@ export default function HomeNavigation() {
               <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
             </button>
             <span
-              className={`text-lg ${
-                activeButton === 2 || activeButton === 3 ? 'text-gray-200' : 'text-gray-300 '
-              }`}
+              className={`text-lg ${activeButton === 2 || activeButton === 3 ? 'text-gray-200' : 'text-gray-300 '}`}
             >
               |
             </span>
@@ -153,9 +148,7 @@ export default function HomeNavigation() {
             </button>
           </div>
           <span
-            className={`text-lg ${
-              activeButton === 3 || activeButton === 4 ? 'text-gray-200' : 'text-gray-300'
-            }`}
+            className={`text-lg ${activeButton === 3 || activeButton === 4 ? 'text-gray-200' : 'text-gray-300'}`}
           >
             |
           </span>

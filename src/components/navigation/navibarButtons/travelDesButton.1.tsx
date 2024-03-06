@@ -3,10 +3,7 @@ import Image from 'next/image'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import RegionButton from '@/components/navigation/navibarButtons/travelDesRegioin'
-interface Props {
-  setIsTravelDesOpen: (newValue: string) => string
-  TravelDes: string
-}
+import { Props } from './travelDesButton'
 
 export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
@@ -133,11 +130,10 @@ export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props
                     type='button'
                     className='rounded-3xl text-sm  text-center mt-4 border hover:border-black'
                     style={{ width: '90px', height: '40px' }}
-                    onClick={handleButtonClick}
                   >
                     서울
                   </button>
-                  <RegionButton Region='부산' />
+                  <RegionButton Region='부산' onClick={handleButtonClick} />
                   <RegionButton Region='속초' />
                   <RegionButton Region='강릉' />
                 </div>

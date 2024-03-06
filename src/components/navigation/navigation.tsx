@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import HomeNavigation from '@/components/navigation/navibarComponents/homeNavigation'
+import HomeNavigation from './navibarComponents/HomeNavigation.1'
 import RightPartNavibar from '@/components/navigation/navibarComponents/rightPartNavibar'
 import LogoIcon from '/public/images/naviBarIcon/logo.svg'
 
