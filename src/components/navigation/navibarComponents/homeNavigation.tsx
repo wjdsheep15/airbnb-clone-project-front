@@ -4,6 +4,7 @@ import SearchButton from '@/components/navigation/navibarButtons/searchButton'
 import { useEffect, useRef, useState } from 'react'
 import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/CloseIcon.svg'
+import TravelDesButton from '@/components/navigation/navibarButtons/travelDesButton'
 
 export default function HomeNavigation() {
   const buttonsizeboolen = true
@@ -13,6 +14,7 @@ export default function HomeNavigation() {
   const ref = useRef<any>(null)
   const [inputValue, setInputValue] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isTravelDesOpen, seIisTravelDesOpen] = useState(false)
   const [gestNumber, setGestNumber] = useState(0)
   const [childNumber, setChildNumber] = useState(0)
   const [petNumber, setPetNumber] = useState(0)
@@ -81,7 +83,10 @@ export default function HomeNavigation() {
             }`}
             onClick={() => setActiveButton(1)}
           >
-            <span className='text-xs ml-4'>여행지</span>
+            <span className='text-xs ml-4'>
+              {' '}
+              <TravelDesButton isTravelDesOpen={isTravelDesOpen} TravelDes='여행지' />{' '}
+            </span>
             {/* <span className="text-sm mt-1 ml-4 text-gray-400">여행지 검색</span> */}
             <input
               placeholder='여행지 검색'
