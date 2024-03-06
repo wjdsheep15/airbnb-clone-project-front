@@ -83,7 +83,7 @@ export default function travelDesButton({ isTravelDesOpen, TravelDes }: Props) {
                   <figure className='max-w-lg '>
                     <Image
                       className='h-auto max-w-full rounded-2xl border border-gray hover:border-black'
-                      src='/images/travelDesImg/ElasticSearch.jpg'
+                      src='/images/travelDesImg/Europe.jpg'
                       alt='image description'
                       width={90}
                       height={90}
@@ -96,7 +96,7 @@ export default function travelDesButton({ isTravelDesOpen, TravelDes }: Props) {
                   <figure className='max-w-lg '>
                     <Image
                       className='h-auto max-w-full rounded-2xl border border-gray hover:border-black'
-                      src='/images/travelDesImg/ElasticSearch.jpg'
+                      src='/images/travelDesImg/Japan.jpg'
                       alt='image description'
                       width={90}
                       height={90}
@@ -109,7 +109,7 @@ export default function travelDesButton({ isTravelDesOpen, TravelDes }: Props) {
                   <figure className='max-w-lg '>
                     <Image
                       className='h-auto max-w-full rounded-2xl border border-gray hover:border-black'
-                      src='/images/travelDesImg/ElasticSearch.jpg'
+                      src='/images/travelDesImg/EastSouthAsia.jpg'
                       alt='image description'
                       width={90}
                       height={90}
