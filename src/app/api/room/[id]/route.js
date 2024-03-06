@@ -7,9 +7,8 @@ import roomsData from '../../../../dummyDatas/roomsData.json'
  * @returns
  */
 export async function GET({ params }) {
-  const id = params.id;
-  console.log("id: ", id)
-  const room = roomsData.Room.find((room) => room.id === (id))
+  const id = params.id
+  const room = roomsData.Room.find((room) => room.id === parseInt(id))
 
   if (!room) {
     return new Response('Not Found', { status: 404 })

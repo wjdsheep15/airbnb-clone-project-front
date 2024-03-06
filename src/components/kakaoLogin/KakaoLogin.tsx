@@ -57,7 +57,9 @@ export default function KakaoLogin({ KakaoLocation }: KakaoLoginProps) {
           카카오로 로그인하기
         </Button>
       ) : (
-        <p onClick={handleLoginClick}>로그인 </p>
+        <p className='w-full' onClick={handleLoginClick}>
+          로그인{' '}
+        </p>
       )}
     </div>
   )
