@@ -6,7 +6,9 @@ import Plus from '/public/images/naviBarIcon/plus.svg'
 import PetModal from '@/components/navigation/modal/petModal'
 
 interface Props {
+  activeButton: number
   isMenuOpen: boolean
+  setIsMenuOpen: (newValue: boolean) => void
   gestNumber: number
   setGestNumber: (newValue: number) => void
   petNumber: number
@@ -18,7 +20,9 @@ interface Props {
 }
 
 export default function GestNumber({
+  activeButton,
   isMenuOpen,
+  setIsMenuOpen,
   gestNumber,
   setGestNumber,
   petNumber,
@@ -32,13 +36,16 @@ export default function GestNumber({
   const closeModalHandler = () => {
     setPetModalOpen(!petModelOpen)
   }
+  useEffect(() => {
+    if ((childNumber > 0 || babyNumber > 0 || petNumber > 0) && gestNumber === 0) {
+      setGestNumber(gestNumber + 1)
+    }
 
-  if ((childNumber > 0 || babyNumber > 0 || petNumber > 0) && gestNumber === 0) {
-    setGestNumber(gestNumber + 1)
-  }
-
+    if (activeButton != 4) {
+      setIsMenuOpen(false)
+    }
+  }, [activeButton])
   let gestNumberSum = childNumber + gestNumber
-
   return (
     <>
       {isMenuOpen && (

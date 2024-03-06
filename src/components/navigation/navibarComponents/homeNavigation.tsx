@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from 'react'
 import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/CloseIcon.svg'
 import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
+import { DateRange } from 'react-day-picker'
+import { format } from 'date-fns'
 
 export default function HomeNavigation() {
   const buttonsizeboolen = true
@@ -18,9 +20,19 @@ export default function HomeNavigation() {
   const [childNumber, setChildNumber] = useState(0)
   const [petNumber, setPetNumber] = useState(0)
   const [babyNumber, setbabyNumber] = useState(0)
-  const [firstDate, setFirstDate] = useState(0)
+
   const [calenderOpen, setCalenderOpen] = useState(false)
+  const defaultSelected: DateRange = {
+    from: undefined,
+    to: undefined,
+  }
+  const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
+
   let gestSum = gestNumber + childNumber
+
+  const handleCalender = () => {
+    setRange(defaultSelected)
+  }
   const handleNumber = () => {
     setGestNumber(0)
     setChildNumber(0)
@@ -86,7 +98,6 @@ export default function HomeNavigation() {
             onClick={() => setActiveButton(1)}
           >
             <span className='text-xs ml-4'>여행지</span>
-            {/* <span className="text-sm mt-1 ml-4 text-gray-400">여행지 검색</span> */}
             <input
               placeholder='여행지 검색'
               type='text'
@@ -122,8 +133,21 @@ export default function HomeNavigation() {
                 setCalenderOpen(true)
               }}
             >
-              <span className='text-xs'>체크인</span>
-              <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
+              {/* 체크인 */}
+              <div className='w-full h-full grid grid-cols-3 grid-rows-2'>
+                <span className='text-xs flex justify-start col-span-2'>체크인</span>
+                <div
+                  className={`rounded-full row-span-2 flex items-center  ${activeButton === 2 ? '' : 'hidden'}`}
+                  onClick={handleCalender}
+                >
+                  <CloseIcon className={`flex items-center rounded-full  `} />
+                </div>
+                <span
+                  className={`text-sm  col-span-2 flex justify-start ${range?.from ? 'text-black' : 'text-gray-400'} `}
+                >
+                  {range?.from ? format(range.from, 'MMM dd') : '날짜 추가'}
+                </span>
+              </div>
             </button>
             <span
               className={`text-lg ${
@@ -143,8 +167,21 @@ export default function HomeNavigation() {
                 setCalenderOpen(true)
               }}
             >
-              <span className='text-xs'>체크아웃</span>
-              <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
+              {/* 체크 아웃 */}
+              <div className='w-full h-full grid grid-cols-3 grid-rows-2'>
+                <span className='text-xs flex justify-start col-span-2'>체크아웃</span>
+                <div
+                  className={`rounded-full row-span-2 flex items-center  ${activeButton === 3 ? '' : 'hidden'}`}
+                  onClick={handleCalender}
+                >
+                  <CloseIcon className={`flex items-center rounded-full  `} />
+                </div>
+                <span
+                  className={`text-sm col-span-2 flex justify-start ${range?.to ? 'text-black' : 'text-gray-400'} `}
+                >
+                  {range?.to ? format(range.to, 'MMM dd') : '날짜 추가'}
+                </span>
+              </div>
             </button>
           </div>
           <div
@@ -167,7 +204,13 @@ export default function HomeNavigation() {
           {/* 날짜 선택 메뉴*/}
 
           <div ref={ref}>
-            <CalenderMenu calenderOpen={calenderOpen} />
+            <CalenderMenu
+              range={range}
+              setRange={setRange}
+              activeButton={activeButton}
+              calenderOpen={calenderOpen}
+              setCalenderOpen={setCalenderOpen}
+            />
           </div>
           {/* 날짜 선택 끝 */}
 
@@ -193,6 +236,7 @@ export default function HomeNavigation() {
               }}
               id='menu-button'
             >
+              {/* gestNumber grid */}
               <span
                 className={`flex ml-1 flex-col mb-1 w-[70%] h-full grid grid-cols-4 grid-rows-2  ${
                   activeButton === 4
@@ -223,7 +267,9 @@ export default function HomeNavigation() {
             {/* 게스트 버튼 끝 */}
             <div ref={ref}>
               <GestNumber
+                activeButton={activeButton}
                 isMenuOpen={isMenuOpen}
+                setIsMenuOpen={setIsMenuOpen}
                 gestNumber={gestNumber}
                 setGestNumber={setGestNumber}
                 petNumber={petNumber}

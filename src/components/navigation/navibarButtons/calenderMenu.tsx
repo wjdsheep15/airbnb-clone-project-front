@@ -2,50 +2,71 @@
 
 import PlusMinus from '/public/images/plusMinus.svg'
 import Calender from '@/components/navigation/navibarButtons/calender'
-import { useState } from 'react'
+import { useState, Dispatch, SetStateAction, useEffect } from 'react'
 
 interface Props {
+  range: any
+  setRange: any
   calenderOpen: boolean
+  setCalenderOpen: (newValue: boolean) => void
+  activeButton: number
 }
-export default function CalenderMenu({ calenderOpen }: Props) {
-  const [menuButton, setMenuButton] = useState(0)
+export default function CalenderMenu({
+  calenderOpen,
+  setCalenderOpen,
+  activeButton,
+  range,
+  setRange,
+}: Props) {
+  const [menuButton, setMenuButton] = useState(1)
+  useEffect(() => {
+    if (activeButton === 1 || activeButton === 4) {
+      setCalenderOpen(false)
+    }
+  }, [activeButton])
   return (
     <>
       {calenderOpen && (
         <div
-          className={`flex items-center justify-center absolute top-[200px] right-0 z-10 mt-2 w-[845px] h-[555px] origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+          className={`flex items-center justify-center absolute top-[200px] right-0 z-10  w-[740px] h-[555px] origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
           role='menu'
           aria-orientation='vertical'
           aria-labelledby='menu-button'
           tabIndex={-1}
         >
-          <div className='w-[784px] h-[441px] p-8 gap-y-10 flex flex-col items-center justify-center'>
+          <div className='relative w-[740px] h-[441px] flex flex-col flex-between items-center justify-center'>
             <div
-              className={` flex flex-row w-[311px] h-[44px] items-center px-2 justify-between grid-cols-3 gap-x-3 rounded-full bg-navigatorOneLayoutColor `}
+              className={`absolute top-0  flex flex-row w-[311px] py-1 h-[44px] items-center px-2 justify-between grid-cols-3 gap-x-3 rounded-full bg-navigatorOneLayoutColor `}
             >
               <button
-                className='px-2 py-1 rounded-full border border-MainGray focus:bg-white'
+                className={`px-3 py-1 rounded-full border ${menuButton === 1 ? ' border-MainGray bg-white' : 'border-navigatorOneLayoutColor'}  `}
                 onClick={() => setMenuButton(1)}
               >
                 날짜 지정
               </button>
               <button
-                className='px-3 py-1 rounded-full border border-MainGray focus:bg-white'
+                className={`px-3 py-1 rounded-full border ${menuButton === 2 ? ' border-MainGray bg-white' : 'border-navigatorOneLayoutColor'}  `}
                 onClick={() => setMenuButton(2)}
               >
                 월 단위
               </button>
               <button
-                className='px-3 py-1 rounded-full border border-MainGray focus:bg-white'
+                className={`px-3 py-1 rounded-full border ${menuButton === 3 ? ' border-MainGray bg-white' : 'border-navigatorOneLayoutColor'} `}
                 onClick={() => setMenuButton(3)}
               >
                 유연한 일정
               </button>
             </div>
-            <div className='w-[1564px] h-[393px] flex items-center justify-center'>
-              <Calender />
+
+            {/* 중간 */}
+            <div className='absolute top-3 w-full h-full flex items-center justify-center'>
+              <div className={` ${menuButton === 1 ? '' : 'hidden'}`}>
+                <Calender range={range} setRange={setRange} />
+              </div>
             </div>
-            <div className='w-[801px] h-[48px] flex flex-row gap-x-5 justify-start pl-8 items-center'>
+
+            {/* 끝 */}
+            <div className='absolute bottom-0 left-9 w-[740px] h-[48px] flex flex-row gap-x-5 justify-start pl-8 items-center'>
               <button className='h-[32px] text-wrap text-xs border border-mainGray rounded-full flex itmes-center p-2'>
                 정확한 날짜
               </button>
