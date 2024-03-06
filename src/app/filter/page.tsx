@@ -28,6 +28,48 @@ export default function SignUpButton() {
     setActive(button)
   }
 
+  // 편의 시설 더 보기
+  const [moreButtonConvenience, setMoreButtonConvenience] = useState('더 표시')
+  const [foldingConvenience, setFoldingConvenience] = useState(false)
+
+  // 접근성 편의 더 보기
+  const [moreButtonAccessibility, setMoreButtonAccessibility] = useState('더 표시')
+  const [foldingAccessibility, setFoldingAccessibility] = useState(false)
+
+  // 언어 더 보기
+  const [moreButtonLanguage, setMoreButtonLanguage] = useState('더 표시')
+  const [foldingLanguage, setFoldingLanguage] = useState(false)
+
+  const useFoldingConvenience = () => {
+    if (moreButtonConvenience === '더 보기') {
+      setMoreButtonConvenience('숨기기')
+      setFoldingConvenience(true)
+    } else {
+      setMoreButtonConvenience('더 보기')
+      setFoldingConvenience(false)
+    }
+  }
+
+  const useFoldingAccessibility = () => {
+    if (moreButtonAccessibility === '더 보기') {
+      setMoreButtonAccessibility('숨기기')
+      setFoldingAccessibility(true)
+    } else {
+      setMoreButtonAccessibility('더 보기')
+      setFoldingAccessibility(false)
+    }
+  }
+
+  const useFoldingLanguage = () => {
+    if (moreButtonLanguage === '더 보기') {
+      setMoreButtonLanguage('숨기기')
+      setFoldingLanguage(true)
+    } else {
+      setMoreButtonLanguage('더 보기')
+      setFoldingLanguage(false)
+    }
+  }
+
   return (
     <>
       <button onClick={handleOpen}>Open filter modal</button>
@@ -217,7 +259,6 @@ export default function SignUpButton() {
             </div>
             <p className='mt-8 mb-8 text-xl'>침실</p>
             <p className='mt-12 mb-12 text-xl'>욕실</p>
-
             <div className='divide-y-2 divide-gray-400'>
               <div className='flex space-x-4'>
                 <button
@@ -319,7 +360,6 @@ export default function SignUpButton() {
 
               <div className='mt-12 mb-12'></div>
             </div>
-
             <Typography variant='h4' className='font-semibold'>
               건물 유형
             </Typography>
@@ -385,10 +425,609 @@ export default function SignUpButton() {
               <div className='mt-12 mb-12'></div>
             </div>
 
+            {/* 편의 시설 */}
             <Typography variant='h4' className='font-semibold'>
               편의 시설
             </Typography>
+            <p className='font-semibold mt-8 text-xl'>필수</p>
+            <div className='grid grid-rows-3 gap-4'>
+              <div className='flex gap-80'>
+                <div>
+                  <input type='checkbox' id='Internet' className='mt-4  accent-black w-8 h-8' />
+                  <label htmlFor='Internet' className='text-xl relative left-4 -top-2'>
+                    무선 인터넷
+                  </label>
+                </div>
+                <div className='relative right-11'>
+                  <input type='checkbox' id='kitchen' className='mt-4  accent-black w-8 h-8' />
+                  <label htmlFor='kitchen' className='text-xl relative left-4 -top-2'>
+                    주방
+                  </label>
+                </div>
+              </div>
+
+              <div className='flex gap-80'>
+                <div>
+                  <input
+                    type='checkbox'
+                    id='washing_machine'
+                    className='mt-4  accent-black w-8 h-8'
+                  />
+                  <label htmlFor='washing_machine' className='text-xl relative left-4 -top-2'>
+                    세탁기
+                  </label>
+                </div>
+                <div>
+                  <input type='checkbox' id='dryer' className='mt-4  accent-black w-8 h-8' />
+                  <label htmlFor='dryer' className='text-xl relative left-4 -top-2'>
+                    건조기
+                  </label>
+                </div>
+              </div>
+              <div className='flex gap-80'>
+                <div>
+                  <input
+                    type='checkbox'
+                    id='air-conditioner'
+                    className='mt-4  accent-black w-8 h-8'
+                  />
+                  <label htmlFor='air-conditioner' className='text-xl relative left-4 -top-2'>
+                    에어컨
+                  </label>
+                </div>
+                <div>
+                  <input type='checkbox' id='heater' className='mt-4  accent-black w-8 h-8' />
+                  <label htmlFor='heater' className='text-xl relative left-4 -top-2'>
+                    난방
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            {/* 편의 시설 접기 펼치기 */}
+            <div>
+              {foldingConvenience ? (
+                <>
+                  <div className='grid grid-rows-3'>
+                    <div className='flex gap-64 mt-4'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='work_space'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='work_space' className='text-xl relative left-4 -top-2'>
+                          업무 전용 공간
+                        </label>
+                      </div>
+                      <div className='-ml-2'>
+                        <input type='checkbox' id='tv' className='mt-4  accent-black w-8 h-8' />
+                        <label htmlFor='tv' className='text-xl relative left-4 -top-2'>
+                          TV
+                        </label>
+                      </div>
+                    </div>
+                    <div className='flex gap-64 mt-4'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='hairdryer'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='hairdryer' className='text-xl relative left-4 -top-2'>
+                          헤어드라이어
+                        </label>
+                      </div>
+                      <div className='ml-1'>
+                        <input type='checkbox' id='iron' className='mt-4  accent-black w-8 h-8' />
+                        <label htmlFor='iron' className='text-xl relative left-4 -top-2'>
+                          다리미
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className='font-semibold mt-8 text-xl'>특징</p>
+                  <div className='grid grid-rows-3'>
+                    <div className='flex gap-80'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='swimplace'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='swimplace' className='text-xl relative left-4 -top-2'>
+                          수영장
+                        </label>
+                      </div>
+                      <div>
+                        <input type='checkbox' id='jakuju' className='mt-4  accent-black w-8 h-8' />
+                        <label htmlFor='jakuju' className='text-xl relative left-4 -top-2'>
+                          자쿠지 욕조
+                        </label>
+                      </div>
+                    </div>
+                    <div className='flex gap-56'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='freepark'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='freepark' className='text-xl relative left-4 -top-2'>
+                          무료 주차 공간
+                        </label>
+                      </div>
+                      <div className='ml-6'>
+                        <input
+                          type='checkbox'
+                          id='electriccharge'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='electriccharge' className='text-xl relative left-4 -top-2'>
+                          전기차 충전시설
+                        </label>
+                      </div>
+                    </div>
+                    <div className='flex gap-72'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='babybed'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='babybed' className='text-xl relative left-4 -top-2'>
+                          아기 침대
+                        </label>
+                      </div>
+                      <div className='ml-2'>
+                        <input
+                          type='checkbox'
+                          id='kingSize'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='kingSize' className='text-xl relative left-4 -top-2'>
+                          킹사이즈 침대
+                        </label>
+                      </div>
+                    </div>
+                    <div className='flex gap-80'>
+                      <div>
+                        <input type='checkbox' id='gym' className='mt-4  accent-black w-8 h-8' />
+                        <label htmlFor='gym' className='text-xl relative left-4 -top-2'>
+                          헬스장
+                        </label>
+                      </div>
+                      <div>
+                        <input type='checkbox' id='grill' className='mt-4  accent-black w-8 h-8' />
+                        <label htmlFor='grill' className='text-xl relative left-4 -top-2'>
+                          바비큐 그릴
+                        </label>
+                      </div>
+                    </div>
+                    <div className='flex gap-72'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='breakfast'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='breakfast' className='text-xl relative left-4 -top-2'>
+                          아침식사
+                        </label>
+                      </div>
+                      <div className='ml-3'>
+                        <input
+                          type='checkbox'
+                          id='innerFireplace'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='innerFireplace' className='text-xl relative left-4 -top-2'>
+                          실내 벽난로
+                        </label>
+                      </div>
+                    </div>
+
+                    <p className='font-semibold mt-8 text-xl'>위치</p>
+                    <div className='grid grid-rows-3'>
+                      <div className='flex gap-80'>
+                        <div>
+                          <input
+                            type='checkbox'
+                            id='nearBeach'
+                            className='mt-4  accent-black w-8 h-8'
+                          />
+                          <label htmlFor='nearBeach' className='text-xl relative left-4 -top-2'>
+                            해변에 인접
+                          </label>
+                        </div>
+                        <div>
+                          <input
+                            type='checkbox'
+                            id='nearWater'
+                            className='mt-4  accent-black w-8 h-8'
+                          />
+                          <label htmlFor='nearWater' className='text-xl relative left-4 -top-2'>
+                            수변에 인접
+                          </label>
+                        </div>
+                      </div>
+                      <div className='flex gap-80'>
+                        <div>
+                          <input
+                            type='checkbox'
+                            id='commingWthSki'
+                            className='mt-4  accent-black w-8 h-8'
+                          />
+                          <label htmlFor='commingWthSki' className='text-xl relative left-4 -top-2'>
+                            스키 타고 출입
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <p className='font-semibold mt-8 text-xl'>안전</p>
+                    <div className='flex gap-80'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='fireAlarm'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='fireAlarm' className='text-xl relative left-4 -top-2'>
+                          화재경보기
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='carbonAlarm'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='carbonAlarm' className='text-xl relative left-4 -top-2'>
+                          일산화탄소 경보기
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : null}
+              <button className='text-xl font-semibold underline' onClick={useFoldingConvenience}>
+                {moreButtonConvenience}
+              </button>
+            </div>
+
+            {/* 예약 옵션 */}
+            <div className='divide-y-2 divide-gray-400'>
+              <div></div>
+              <div className='mt-12 mb-12'></div>
+            </div>
+
+            <Typography variant='h4' className='font-semibold'>
+              예약 옵션
+            </Typography>
+
+            <p>즉시 예약</p>
+            <div className='flex'>
+              <p>호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소</p>
+              <label className='inline-flex items-center cursor-pointer'>
+                <input type='checkbox' className='sr-only peer' />
+                <div className="relative w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-black"></div>
+              </label>
+            </div>
+
+            <p>셀프 체크인</p>
+            <div className='flex'>
+              <p>숙소에 도착한 후 복잡한 절차 없이 쉽게 입실할 수 있습니다.</p>
+              <label className='inline-flex items-center cursor-pointer'>
+                <input type='checkbox' className='sr-only peer' />
+                <div className="relative w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-black"></div>
+              </label>
+            </div>
+
+            <p>반려동물 동반 가능</p>
+            <div className='flex'>
+              <p>보조동물을 동반하시나요?</p>
+              <label className='inline-flex items-center cursor-pointer'>
+                <input type='checkbox' className='sr-only peer' />
+                <div className="relative w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-black"></div>
+              </label>
+            </div>
+
+            <div className='divide-y-2 divide-gray-400'>
+              <div></div>
+              <div className='mt-12 mb-12'></div>
+            </div>
+
+            {/* 접근성 편의 */}
+            <Typography variant='h4' className='font-semibold'>
+              접근성 편의
+            </Typography>
+
+            <p className='font-semibold mt-8 text-xl'>게스트 출입구 및 주차장</p>
+            <div className='grid grid-rows-3 gap-4'>
+              <div className='flex gap-52'>
+                <div>
+                  <input
+                    type='checkbox'
+                    id='withoutStairThresholdEntrance'
+                    className='mt-4  accent-black w-8 h-8'
+                  />
+                  <label
+                    htmlFor='withoutStairThresholdEntrance'
+                    className='text-xl relative left-4 -top-2'
+                  >
+                    게스트 출입구에 계단이나 문턱 없음
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type='checkbox'
+                    id='eightyoneEntrance'
+                    className='mt-4  accent-black w-8 h-8'
+                  />
+                  <label htmlFor='eightyoneEntrance' className='text-xl relative left-4 -top-2'>
+                    너비 81cm 이상의 게스트 출입구
+                  </label>
+                </div>
+              </div>
+
+              <div className='flex gap-72'>
+                <div>
+                  <input
+                    type='checkbox'
+                    id='withBathchairPark'
+                    className='mt-4  accent-black w-8 h-8'
+                  />
+                  <label htmlFor='withBathchairPark' className='text-xl relative left-4 -top-2'>
+                    휠체어 접근 가능 주차 공간
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type='checkbox'
+                    id='withoutStairEntrance'
+                    className='mt-4  accent-black w-8 h-8'
+                  />
+                  <label htmlFor='withoutStairEntrance' className='text-xl relative left-4 -top-2'>
+                    게스트 출입구까지 계단 없음
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            {/* 접기 펼치기 */}
+            <div className='relative -top-12'>
+              {foldingAccessibility ? (
+                <>
+                  <div className='grid grid-rows-3'>
+                    <p className='font-semibold mt-8 text-xl'>침실</p>
+                    <div className='flex gap-80'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='withoutStairBedroom'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label
+                          htmlFor='withoutStairBedroom'
+                          className='text-xl relative left-4 -top-2'
+                        >
+                          계단이나 문턱 없는 침실
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='eightyoneBedroomEntrance'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label
+                          htmlFor='eightyoneBedroomEntrance'
+                          className='text-xl relative left-4 -top-2'
+                        >
+                          너비 81cm 이상의 침실 출입구
+                        </label>
+                      </div>
+                    </div>
+
+                    <p className='font-semibold mt-8 text-xl'>욕실</p>
+                    <div className='flex gap-80'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='withoutStairBathroom'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label
+                          htmlFor='withoutStairBathroom'
+                          className='text-xl relative left-4 -top-2'
+                        >
+                          계단이나 문턱 없는 욕실
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='eightyoneBathroomEntrance'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label
+                          htmlFor='eightyoneBathroomEntrance'
+                          className='text-xl relative left-4 -top-2'
+                        >
+                          너비 81cm 이상의 욕실 출입구
+                        </label>
+                      </div>
+                    </div>
+                    <div className='flex space-x-96'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='bathroomFixedHandle'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label
+                          htmlFor='bathroomFixedHandle'
+                          className='text-xl relative left-4 -top-2'
+                        >
+                          샤워실 고정 손잡이
+                        </label>
+                      </div>
+                      <div className='relative -left-5'>
+                        <input
+                          type='checkbox'
+                          id='toiletFixedHandle'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label
+                          htmlFor='toiletFixedHandle'
+                          className='text-xl relative left-4 -top-2'
+                        >
+                          변기 옆 고정 손잡이
+                        </label>
+                      </div>
+                    </div>
+                    <div className='flex gap-80'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='withoutStairThresoldBathroom'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label
+                          htmlFor='withoutStairThresoldBathroom'
+                          className='text-xl relative left-4 -top-2'
+                        >
+                          계단이나 문턱 없는 샤워실
+                        </label>
+                      </div>
+                      <div className='relative -left-5'>
+                        <input
+                          type='checkbox'
+                          id='showerChair'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='showerChair' className='text-xl relative left-4 -top-2'>
+                          샤워/목욕 의자
+                        </label>
+                      </div>
+                    </div>
+
+                    <p className='font-semibold mt-8 text-xl'>장애인용 보조 장치</p>
+                    <div>
+                      <input type='checkbox' id='lift' className='mt-4  accent-black w-8 h-8' />
+                      <label htmlFor='lift' className='text-xl relative left-4 -top-2'>
+                        천장형 또는 이동식 리프트
+                      </label>
+                    </div>
+                  </div>
+                </>
+              ) : null}
+              <button
+                className='text-xl font-semibold underline mt-4'
+                onClick={useFoldingAccessibility}
+              >
+                {moreButtonAccessibility}
+              </button>
+            </div>
+
+            <div className='divide-y-2 divide-gray-400'>
+              <div></div>
+              <div className='mt-12 mb-12'></div>
+            </div>
+
+            <Typography variant='h4' className='font-semibold'>
+              호스트 언어
+            </Typography>
+            <div className='grid grid-rows-3 gap-4'>
+              <div className='flex gap-96'>
+                <div>
+                  <input type='checkbox' id='english' className='mt-4  accent-black w-8 h-8' />
+                  <label htmlFor='english' className='text-xl relative left-4 -top-2'>
+                    영어
+                  </label>
+                </div>
+                <div>
+                  <input type='checkbox' id='french' className='mt-4  accent-black w-8 h-8' />
+                  <label htmlFor='french' className='text-xl relative left-5 -top-2'>
+                    프랑스어
+                  </label>
+                </div>
+              </div>
+
+              <div className='flex gap-80'>
+                <div>
+                  <input type='checkbox' id='german' className='mt-4  accent-black w-8 h-8' />
+                  <label htmlFor='german' className='text-xl relative left-4 -top-2'>
+                    독일어
+                  </label>
+                </div>
+                <div>
+                  <input
+                    type='checkbox'
+                    id='japanese'
+                    className='mt-4 relative left-11  accent-black w-8 h-8'
+                  />
+                  <label htmlFor='japanese' className='text-xl relative left-16 -top-2'>
+                    일본어
+                  </label>
+                </div>
+              </div>
+            </div>
+            {/* 접기 펼치기 */}
+            <div className='relative -top-12'>
+              {foldingLanguage ? (
+                <>
+                  <div className='grid grid-rows-3'>
+                    <div className='flex gap-80'>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='Italian'
+                          className='mt-4  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='Italian' className='text-xl relative left-4 -top-2'>
+                          이탈리아어
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='rusian'
+                          className='mt-4 relative left-1 -top-1 accent-black w-8 h-8'
+                        />
+                        <label htmlFor='rusian' className='text-xl relative left-5 -top-3'>
+                          러시아어
+                        </label>
+                      </div>
+                    </div>
+                    <div className='flex gap-80'>
+                      <div>
+                        <input type='checkbox' id='spain' className='mt-6  accent-black w-8 h-8' />
+                        <label htmlFor='spain' className='text-xl relative left-4 -top-2'>
+                          스페인어
+                        </label>
+                      </div>
+                      <div>
+                        <input
+                          type='checkbox'
+                          id='chinese'
+                          className='mt-4 relative left-6  accent-black w-8 h-8'
+                        />
+                        <label htmlFor='chinese' className='text-xl relative left-10 -top-2'>
+                          중국어
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : null}
+              <button className='text-xl font-semibold underline' onClick={useFoldingLanguage}>
+                {moreButtonLanguage}
+              </button>
+            </div>
           </div>
+          <button> 전체 해제</button>
         </Box>
       </Modal>
     </>
