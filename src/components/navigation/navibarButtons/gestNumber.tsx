@@ -4,49 +4,35 @@ import { useEffect, useState } from 'react'
 import Minus from '/public/images/naviBarIcon/minus.svg'
 import Plus from '/public/images/naviBarIcon/plus.svg'
 import PetModal from '@/components/navigation/modal/petModal'
+import { Person, PersonType } from '@/components/navigation/navibarComponents/homeNavigation'
 
 interface Props {
   activeButton: number
   isMenuOpen: boolean
   setIsMenuOpen: (newValue: boolean) => void
-  gestNumber: number
-  setGestNumber: (newValue: number) => void
-  petNumber: number
-  setPetNumber: (newValue: number) => void
-  babyNumber: number
-  setbabyNumber: (newValue: number) => void
-  childNumber: number
-  setChildNumber: (newValue: number) => void
+
+  person: Person
+  setPerson: (person: PersonType) => { plus: () => void; minus: () => void }
 }
 
 export default function GestNumber({
   activeButton,
   isMenuOpen,
   setIsMenuOpen,
-  gestNumber,
-  setGestNumber,
-  petNumber,
-  setPetNumber,
-  babyNumber,
-  setbabyNumber,
-  childNumber,
-  setChildNumber,
+  person,
+  setPerson,
 }: Props) {
   const [petModelOpen, setPetModalOpen] = useState(false)
   const closeModalHandler = () => {
     setPetModalOpen(!petModelOpen)
   }
 
-  let gestNumberSum = 0
+  let gestNumberSum = person.adult + person.child
   useEffect(() => {
     if (activeButton != 4) {
       setIsMenuOpen(false)
     }
-    if ((childNumber > 0 || babyNumber > 0 || petNumber > 0) && gestNumber === 0) {
-      setGestNumber(gestNumber + 1)
-    }
-    gestNumber = childNumber + gestNumber
-  }, [gestNumber, babyNumber, childNumber, petNumber, activeButton])
+  }, [activeButton])
 
   return (
     <>
@@ -72,22 +58,22 @@ export default function GestNumber({
               </span>
               <div className='flex flex-row items-center gap-x-2'>
                 <button
-                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${gestNumber === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
+                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${person.adult === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
                   onClick={() => {
-                    if (gestNumber !== 0) setGestNumber(gestNumber - 1)
+                    if (person.adult !== 0) setPerson('adult').minus()
                   }}
-                  disabled={gestNumber === 0}
+                  disabled={person.adult === 0}
                 >
                   <Minus />
                 </button>
 
                 <span className='w-[25px] flex justify-center'>
-                  {gestNumber === 16 ? '16+' : gestNumber}
+                  {person.adult === 16 ? '16+' : person.adult}
                 </span>
                 <button
-                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${gestNumber === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
+                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${person.adult === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
                   onClick={() => {
-                    if (gestNumberSum !== 16) setGestNumber(gestNumber + 1)
+                    if (gestNumberSum !== 16) setPerson('adult').plus()
                   }}
                   disabled={gestNumberSum === 16}
                 >
@@ -104,22 +90,22 @@ export default function GestNumber({
               </span>
               <div className='flex flex-row items-center gap-x-2'>
                 <button
-                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${childNumber === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
+                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${person.child === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
                   onClick={() => {
-                    if (childNumber !== 0) setChildNumber(childNumber - 1)
+                    if (person.child !== 0) setPerson('child').minus()
                   }}
-                  disabled={childNumber === 0}
+                  disabled={person.child === 0}
                 >
                   <Minus />
                 </button>
 
                 <span className='w-[25px] flex justify-center'>
-                  {childNumber === 15 ? '15' : childNumber}
+                  {person.child === 15 ? '15' : person.child}
                 </span>
                 <button
-                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${childNumber === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
+                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${person.child === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
                   onClick={() => {
-                    if (gestNumberSum !== 16) setChildNumber(childNumber + 1)
+                    if (gestNumberSum !== 16) setPerson('child').plus()
                   }}
                   disabled={gestNumberSum === 16}
                 >
@@ -136,24 +122,24 @@ export default function GestNumber({
               </span>
               <div className='flex flex-row items-center gap-x-2'>
                 <button
-                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${babyNumber === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
+                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${person.baby === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
                   onClick={() => {
-                    if (babyNumber !== 0) setbabyNumber(babyNumber - 1)
+                    if (person.baby !== 0) setPerson('baby').minus()
                   }}
-                  disabled={babyNumber === 0}
+                  disabled={person.baby === 0}
                 >
                   <Minus />
                 </button>
 
                 <span className='w-[25px] flex justify-center'>
-                  {babyNumber === 5 ? '5' : babyNumber}
+                  {person.baby === 5 ? '5' : person.baby}
                 </span>
                 <button
-                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${babyNumber === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
+                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${person.baby === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
                   onClick={() => {
-                    if (babyNumber !== 5) setbabyNumber(babyNumber + 1)
+                    if (person.baby !== 5) setPerson('baby').plus()
                   }}
-                  disabled={babyNumber === 5}
+                  disabled={person.baby === 5}
                 >
                   <Plus />
                 </button>
@@ -176,22 +162,22 @@ export default function GestNumber({
               </span>
               <div className='flex flex-row items-center gap-x-2'>
                 <button
-                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${petNumber === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
+                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${person.pet === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
                   onClick={() => {
-                    if (petNumber !== 0) setPetNumber(petNumber - 1)
+                    if (person.pet !== 0) setPerson('pet').minus()
                   }}
-                  disabled={petNumber === 0}
+                  disabled={person.pet === 0}
                 >
                   <Minus />
                 </button>
 
-                <span className='w-[25px] flex justify-center '>{petNumber}</span>
+                <span className='w-[25px] flex justify-center '>{person.pet}</span>
                 <button
-                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${petNumber === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
+                  className={`rounded-full  border p-2 hover:border-black hover:text-black  ${person.pet === 0 ? 'border-gray-200  text-gray-200' : 'border-mainGray  text-mainGray '}`}
                   onClick={() => {
-                    if (petNumber !== 5) setPetNumber(petNumber + 1)
+                    if (person.pet !== 5) setPerson('pet').plus()
                   }}
-                  disabled={petNumber === 5}
+                  disabled={person.pet === 5}
                 >
                   <Plus />
                 </button>
