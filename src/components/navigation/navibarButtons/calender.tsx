@@ -2,6 +2,7 @@
 import React, { useState, Dispatch, SetStateAction, useEffect } from 'react'
 import { DayPicker, DateRange } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
+import { ko } from 'date-fns/locale'
 
 interface Props {
   range: any
@@ -47,6 +48,7 @@ export default function CalenderPicker({ range, setRange }: Props) {
       <style>{css}</style>
       <DayPicker
         mode='range'
+        locale={ko}
         selected={range}
         onSelect={setRange}
         numberOfMonths={2}

@@ -7,6 +7,7 @@ import CloseIcon from '/public/svgIcons/CloseIcon.svg'
 import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
 import { DateRange } from 'react-day-picker'
 import { format } from 'date-fns'
+import { ko } from 'date-fns/locale/ko'
 
 export default function HomeNavigation() {
   const buttonsizeboolen = true
@@ -145,7 +146,7 @@ export default function HomeNavigation() {
                 <span
                   className={`text-sm  col-span-2 flex justify-start ${range?.from ? 'text-black' : 'text-gray-400'} `}
                 >
-                  {range?.from ? format(range.from, 'MMM dd') : '날짜 추가'}
+                  {range?.from ? format(range.from, 'MMM dd', { locale: ko }) + '일' : '날짜 추가'}
                 </span>
               </div>
             </button>
@@ -179,7 +180,7 @@ export default function HomeNavigation() {
                 <span
                   className={`text-sm col-span-2 flex justify-start ${range?.to ? 'text-black' : 'text-gray-400'} `}
                 >
-                  {range?.to ? format(range.to, 'MMM dd') : '날짜 추가'}
+                  {range?.to ? format(range.to, 'MMM dd', { locale: ko }) + '일' : '날짜 추가'}
                 </span>
               </div>
             </button>
@@ -257,8 +258,9 @@ export default function HomeNavigation() {
                 <span
                   className={`text-sm mt-1 w-full line-clamp-1 text-nowrap  flex justify-start col-span-3 ${gestSum === 0 ? 'text-gray-400' : 'text-black'}`}
                 >
-                  게스트 {gestSum === 0 ? '추가' : gestSum + ','} {gestSum === 16 ? ' 이상' : ''}
-                  {babyNumber === 0 ? '' : ' 유아 ' + babyNumber + '명'}
+                  게스트 {gestSum === 0 ? '추가' : gestSum}
+                  {gestSum === 16 ? ' 이상' : ''}
+                  {babyNumber === 0 ? '' : ', 유아 ' + babyNumber + '명'}
                   {petNumber === 0 ? '' : ', 반려동물 ' + petNumber + '마리'}
                 </span>
               </span>

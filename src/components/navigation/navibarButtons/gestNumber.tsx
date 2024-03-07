@@ -36,16 +36,18 @@ export default function GestNumber({
   const closeModalHandler = () => {
     setPetModalOpen(!petModelOpen)
   }
-  useEffect(() => {
-    if ((childNumber > 0 || babyNumber > 0 || petNumber > 0) && gestNumber === 0) {
-      setGestNumber(gestNumber + 1)
-    }
 
+  let gestNumberSum = 0
+  useEffect(() => {
     if (activeButton != 4) {
       setIsMenuOpen(false)
     }
-  }, [activeButton])
-  let gestNumberSum = childNumber + gestNumber
+    if ((childNumber > 0 || babyNumber > 0 || petNumber > 0) && gestNumber === 0) {
+      setGestNumber(gestNumber + 1)
+    }
+    gestNumber = childNumber + gestNumber
+  }, [gestNumber, babyNumber, childNumber, petNumber, activeButton])
+
   return (
     <>
       {isMenuOpen && (
