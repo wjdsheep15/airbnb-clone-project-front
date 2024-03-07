@@ -163,8 +163,8 @@ export default function HomeNavigation() {
               activeButton === 1 ||
               activeButton === 2 ||
               (topActivityMenu === false && activeButton === 3)
-                ? 'text-gray-200'
-                : 'text-gray-300 '
+                ? 'text-navigatorOneLayoutColor'
+                : 'text-navigatorOneLayoutColor '
             }`}
           >
             |
