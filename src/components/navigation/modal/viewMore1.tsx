@@ -30,12 +30,65 @@ export default function ViewMore1() {
   }
 
   const scrollToTopRef = useRef<HTMLDivElement>(null)
+  // const [showButton, setShowButton] = useState(false)
 
   const scrollToTop = () => {
+    console.log('맨 위로 버튼 클릭함.')
     if (scrollToTopRef.current) {
       scrollToTopRef.current.scrollTop = 0
     }
   }
+
+  // useEffect(() => {
+  //   const showButtonClick = () => {
+  //     if (window.scrollY > 100) {
+  //       setShowButton(true)
+  //     } else {
+  //       setShowButton(false)
+  //     }
+  //   }
+  //   window.addEventListener('scroll', showButtonClick)
+  //   return () => {
+  //     window.removeEventListener('scroll', showButtonClick)
+  //   }
+  // }, [])
+
+  const [ScrollY, setScrollY] = useState(0)
+  const [BtnStatus, setBtnStatus] = useState(false) // 버튼 상태
+
+  const handleFollow = () => {
+    setScrollY(window.scrollY)
+    if (ScrollY > 800) {
+      // 100 이상이면 버튼이 보이게
+      setBtnStatus(true)
+    } else {
+      // 100 이하면 버튼이 사라지게
+      setBtnStatus(false)
+    }
+  }
+  useEffect(() => {
+    console.log('ScrollY is ', ScrollY) // ScrollY가 변화할때마다 값을 콘솔에 출력
+  }, [ScrollY])
+
+  const handleTop = () => {
+    // 클릭하면 스크롤이 위로 올라가는 함수
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+    setScrollY(0) // ScrollY 의 값을 초기화
+    setBtnStatus(false) // BtnStatus의 값을 false로 바꿈 => 버튼 숨김
+  }
+
+  useEffect(() => {
+    const watch = () => {
+      window.addEventListener('scroll', handleFollow)
+    }
+    watch()
+    return () => {
+      window.removeEventListener('scroll', handleFollow)
+    }
+  })
 
   return (
     <>
@@ -125,6 +178,7 @@ export default function ViewMore1() {
               </li>
             </div>
           </div>
+
           <button
             onClick={scrollToTop}
             className='fixed bottom-12 left-72 flex items-center w-36 h-16 text-xl text-white bg-black rounded-xl'
@@ -133,6 +187,12 @@ export default function ViewMore1() {
               <Upper />
             </div>
             <span className='ml-2'>맨위로 이동</span>
+          </button>
+          <button
+            className={BtnStatus ? 'topBtn active' : 'topBtn'} // 버튼 노출 여부
+            onClick={handleTop} // 버튼 클릭시 함수 호출
+          >
+            TOP
           </button>
         </Box>
       </Modal>

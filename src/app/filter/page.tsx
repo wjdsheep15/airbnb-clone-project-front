@@ -5,8 +5,8 @@ import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
 import { Typography } from '@mui/material'
-import MultiRangeSlider from './multiRangeSlider/multiRangeSlider'
 import GuestPreferences from '/public/svgIcons/guestPreferences.svg'
+import MultiRangeBar from './multiRangeSlider/multiRangeSlider'
 import Image from 'next/image'
 
 export default function SignUpButton() {
@@ -22,10 +22,53 @@ export default function SignUpButton() {
 
   // 모든 유형, 방, 집 전체에 따라 다른 내용 출력
   const [modalContent, setModalContent] = useState('allTypes')
-  // 버튼 클릭 시 색깔주기
-  const [active, setActive] = useState('')
-  const handleClick = (button: React.SetStateAction<string>) => {
-    setActive(button)
+  // 버튼 클릭 시 색깔주기 (숙소 유형)
+  const [activeLodging, setActiveLodging] = useState('')
+  const handleLodgingClick = (button: React.SetStateAction<string>) => {
+    setActiveLodging(button)
+  }
+
+  // 사이드바
+  const fixedMaxPrice = 1000000
+  const fixedMinPrice = 10000
+  const [rangeMinValue, setRangeMinValue] = useState(fixedMinPrice)
+  const [rangeMaxValue, setRangeMaxValue] = useState(fixedMaxPrice)
+
+  // 버튼 선택하기
+  // 버튼 클릭 시 색깔주기 (침실 유형)
+  const [activeBedType, setActiveBedType] = useState('')
+  const handleBedTypeClick = (button: React.SetStateAction<string>) => {
+    setActiveBedType(button)
+  }
+  const [bedRoomSelected, setBedroomSelected] = useState(false)
+  const handleButtonBedroomClick = () => {
+    setBedroomSelected(!bedRoomSelected) // 선택 상태를 토글
+  }
+
+  // 버튼 클릭 시 색깔주기 (욕실 유형)
+  const [activeBathType, setActiveBathType] = useState('')
+  const handleBathTypeClick = (button: React.SetStateAction<string>) => {
+    setActiveBathType(button)
+  }
+  const [bathRoomSelected, setBathroomSelected] = useState(false)
+  const handleButtonBathroomClick = () => {
+    setBathroomSelected(!bathRoomSelected) // 선택 상태를 토글
+  }
+
+  // 최고 수준 숙소
+  const [selectedLodging, setSelectedLodging] = useState(false)
+  const handleButtonLodgingClick = () => {
+    setSelectedLodging(!selectedLodging) // 선택 상태를 토글
+  }
+
+  // 버튼 클릭 시 색깔주기 (건물 유형)
+  const [activeBuilding, setActiveBuilding] = useState('')
+  const handleBuidingType = (button: React.SetStateAction<string>) => {
+    setActiveBuilding(button)
+  }
+  const [selected, setSelected] = useState(false)
+  const handleButtonClick = () => {
+    setSelected(!selected) // 선택 상태를 토글
   }
 
   // 편의 시설 더 보기
@@ -118,31 +161,31 @@ export default function SignUpButton() {
             <div className='divide-y-2 divide-gray-400 '>
               <div className='flex shadow-sm mt-6 ml-8'>
                 <button
-                  className={`px-28 py-10 rounded-l-2xl hover:border-2 border-black
-                    ${active === 'allTypesButton' ? 'bg-black text-white font-bold text-xl' : ''}`}
+                  className={`px-28 py-10 rounded-l-2xl border border-slate-200 hover:border-black
+                    ${activeLodging === 'allTypesButton' ? 'bg-black text-white font-bold text-xl' : ''}`}
                   onClick={() => {
                     setModalContent('allTypes')
-                    handleClick('allTypesButton')
+                    handleLodgingClick('allTypesButton')
                   }}
                 >
                   <p className='w-[90px]'>모든 유형</p>
                 </button>
                 <button
-                  className={`px-28 py-10 hover:border-2 border-black
-                    ${active === 'roomsButton' ? 'bg-black text-white font-bold text-xl' : ''}`}
+                  className={`px-28 py-10 border border-slate-200 hover:border-black
+                    ${activeLodging === 'roomsButton' ? 'bg-black text-white font-bold text-xl' : ''}`}
                   onClick={() => {
                     setModalContent('rooms')
-                    handleClick('roomsButton')
+                    handleLodgingClick('roomsButton')
                   }}
                 >
                   <p className='w-[70px]'>방</p>
                 </button>
                 <button
-                  className={`px-28 py-10 rounded-r-2xl hover:border-2 border-black
-                    ${active === 'allHouseButton' ? 'bg-black text-white font-bold text-xl' : ''}`}
+                  className={`px-28 py-10 rounded-r-2xl border border-slate-200 hover:border-black
+                    ${activeLodging === 'allHouseButton' ? 'bg-black text-white font-bold text-xl' : ''}`}
                   onClick={() => {
                     setModalContent('allHouse')
-                    handleClick('allHouseButton')
+                    handleLodgingClick('allHouseButton')
                   }}
                 >
                   <p className='w-[70px]'>집 전체</p>
@@ -156,18 +199,19 @@ export default function SignUpButton() {
             </Typography>
             {/* 그래프 삽입 => 유형에 따라 다름 */}
             <p>1박 요금(수수료 및 세금 포함)</p>
+
             {/* 슬라이더 생성 */}
-            <div className='divide-y-2 divide-gray-400'>
-              <MultiRangeSlider
-                initialMin={13000}
-                initialMax={650000}
-                min={0}
-                max={6500000}
-                step={330}
-                priceCap={10000}
-              />
-              <div className='mt-12 mb-12'></div>
-            </div>
+            <div className='divide-y-2 divide-gray-400'></div>
+
+            <MultiRangeBar
+              fixedMinPrice={fixedMinPrice}
+              fixedMaxPrice={fixedMaxPrice}
+              setRangeMinValue={setRangeMinValue}
+              rangeMinValue={rangeMinValue}
+              setRangeMaxValue={setRangeMaxValue}
+              rangeMaxValue={rangeMaxValue}
+            />
+
             {/* 침실과 침대 */}
             <Typography variant='h4' className='font-semibold'>
               침실과 침대
@@ -176,36 +220,36 @@ export default function SignUpButton() {
             <div className='flex space-x-4'>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButton' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButton' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButton')
+                  handleBedTypeClick('bedroomButton')
                 }}
               >
                 상관없음
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButtonOne' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButtonOne' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButtonOne')
+                  handleBedTypeClick('bedroomButtonOne')
                 }}
               >
                 1
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButtonTwo' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButtonTwo' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButtonTwo')
+                  handleBedTypeClick('bedroomButtonTwo')
                 }}
               >
                 2
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButtonThree' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButtonThree' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButtonThree')
+                  handleBedTypeClick('bedroomButtonThree')
                 }}
               >
                 3
@@ -213,86 +257,91 @@ export default function SignUpButton() {
 
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButtonFour' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButtonFour' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButtonFour')
+                  handleBedTypeClick('bedroomButtonFour')
                 }}
               >
                 4
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButtonFive' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButtonFive' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButtonFive')
+                  handleBedTypeClick('bedroomButtonFive')
                 }}
               >
                 5
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButtonSix' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButtonSix' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButtonSix')
+                  handleBedTypeClick('bedroomButtonSix')
                 }}
               >
                 6
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButtonSeven' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButtonSeven' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButtonSeven')
+                  handleBedTypeClick('bedroomButtonSeven')
                 }}
               >
                 7
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bedroomButtonMore' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedType === 'bedroomButtonMore' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleClick('bedroomButtonMore')
+                  handleBedTypeClick('bedroomButtonMore')
                 }}
               >
                 8+
               </button>
             </div>
-            <p className='mt-8 mb-8 text-xl'>침실</p>
+            <p className='mt-8 mb-8 text-xl'>침대</p>
             <p className='mt-12 mb-12 text-xl'>욕실</p>
             <div className='divide-y-2 divide-gray-400'>
               <div className='flex space-x-4'>
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButton' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButton' ? 'bg-black text-white font-semibold text-xl' : ''}
+                      `}
                   onClick={() => {
-                    handleClick('bathroomButton')
+                    handleBathTypeClick('bathroomButton')
                   }}
                 >
-                  상관없음
+                  상관없
                 </button>
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButtonOne' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButtonOne' && bathRoomSelected ? 'bg-black text-white' : ''}
+                      `}
                   onClick={() => {
-                    handleClick('bathroomButtonOne')
+                    handleBathTypeClick('bathroomButtonOne')
+                    handleButtonBathroomClick()
                   }}
                 >
                   1
                 </button>
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButtonTwo' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButtonTwo' && bathRoomSelected ? 'bg-black text-white' : ''}`}
                   onClick={() => {
-                    handleClick('bathroomButtonTwo')
+                    handleBathTypeClick('bathroomButtonTwo')
+                    handleButtonBathroomClick()
                   }}
                 >
                   2
                 </button>
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButtonThree' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButtonThree' && bathRoomSelected ? 'bg-black text-white' : ''}`}
                   onClick={() => {
-                    handleClick('bathroomButtonThree')
+                    handleBathTypeClick('bathroomButtonThree')
+                    handleButtonBathroomClick()
                   }}
                 >
                   3
@@ -300,45 +349,50 @@ export default function SignUpButton() {
 
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButtonFour' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButtonFour' && bathRoomSelected ? 'bg-black text-white' : ''}`}
                   onClick={() => {
-                    handleClick('bathroomButtonFour')
+                    handleBathTypeClick('bathroomButtonFour')
+                    handleButtonBathroomClick()
                   }}
                 >
                   4
                 </button>
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButtonFive' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButtonFive' && bathRoomSelected ? 'bg-black text-white' : ''}`}
                   onClick={() => {
-                    handleClick('bathroomButtonFive')
+                    handleBathTypeClick('bathroomButtonFive')
+                    handleButtonBathroomClick()
                   }}
                 >
                   5
                 </button>
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButtonSix' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButtonSix' && bathRoomSelected ? 'bg-black text-white' : ''}`}
                   onClick={() => {
-                    handleClick('bathroomButtonSix')
+                    handleBathTypeClick('bathroomButtonSix')
+                    handleButtonBathroomClick()
                   }}
                 >
                   6
                 </button>
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButtonSeven' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButtonSeven' && bathRoomSelected ? 'bg-black text-white' : ''}`}
                   onClick={() => {
-                    handleClick('bathroomButtonSeven')
+                    handleBathTypeClick('bathroomButtonSeven')
+                    handleButtonBathroomClick()
                   }}
                 >
                   7
                 </button>
                 <button
                   className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${active === 'bathroomButtonMore' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBathType === 'bathroomButtonMore' && bathRoomSelected ? 'bg-black text-white' : ''}`}
                   onClick={() => {
-                    handleClick('bathroomButtonMore')
+                    handleBathTypeClick('bathroomButtonMore')
+                    handleButtonBathroomClick()
                   }}
                 >
                   8+
@@ -350,7 +404,13 @@ export default function SignUpButton() {
               최고 수준의 숙소
             </Typography>
             <div className='divide-y-2 divide-gray-400'>
-              <button className='border transition-transform duration-400 active:scale-90 border-solid border-black rounded-lg w-[330px] h-[160px] mt-8'>
+              <button
+                onClick={() => {
+                  handleButtonLodgingClick()
+                }}
+                className={`border transition-transform duration-400 active:scale-90 border-solid border-black rounded-lg w-[330px] h-[160px] mt-8
+                ${selectedLodging === true ? 'bg-slate-200' : ''}`}
+              >
                 <div className='relative left-6'>
                   <GuestPreferences />
                 </div>
@@ -366,9 +426,11 @@ export default function SignUpButton() {
             <div className='flex space-x-4 mt-8'>
               <button
                 className={`border border-slate-400 transition-transform duration-400 hover:border-black active:scale-90 rounded-lg w-[230px] h-[130px]
-                  ${active === 'houseButton' ? ' bg-slate-100 border border-black' : ''}`}
+                ${activeBuilding === 'houseButton' && selected === true ? 'bg-slate-200 border border-black' : 'bg-white'}
+                  `}
                 onClick={() => {
-                  handleClick('houseButton')
+                  handleBuidingType('houseButton')
+                  handleButtonClick()
                 }}
               >
                 <div className='relative left-4'>
@@ -378,11 +440,14 @@ export default function SignUpButton() {
                   </p>
                 </div>
               </button>
+
               <button
                 className={`border border-slate-400 transition-transform duration-400 hover:border-black active:scale-90 rounded-lg w-[230px] h-[130px]
-                  ${active === 'apartmentButton' ? 'bg-slate-100 border border-black' : ''}`}
+                ${activeBuilding === 'apartmentButton' && selected === true ? 'bg-slate-200 border border-black' : 'bg-white'}
+                  `}
                 onClick={() => {
-                  handleClick('apartmentButton')
+                  handleBuidingType('apartmentButton')
+                  handleButtonClick()
                 }}
               >
                 <div className='relative left-4'>
@@ -397,9 +462,11 @@ export default function SignUpButton() {
               </button>
               <button
                 className={`border border-slate-400 transition-transform duration-400 hover:border-black active:scale-90 rounded-lg w-[230px] h-[130px]
-                  ${active === 'outBuilding' ? 'bg-slate-100 border border-black' : ''}`}
+                ${activeBuilding === 'outBuilding' && selected === true ? 'bg-slate-200 border border-black' : 'bg-white'}
+                  `}
                 onClick={() => {
-                  handleClick('outBuilding')
+                  handleBuidingType('outBuilding')
+                  handleButtonClick()
                 }}
               >
                 <div className='relative left-4 -top-6'>
@@ -413,12 +480,12 @@ export default function SignUpButton() {
                 </div>
               </button>
 
-              <button className='border border-slate-400 transition-transform duration-400 active:scale-90 rounded-lg w-[230px] h-[130px]'>
+              {/* <button className='border border-slate-400 transition-transform duration-400 active:scale-90 rounded-lg w-[230px] h-[130px]'>
                 <div className='relative left-4 -top-6'>
                   <Image src='/images/buildingTypes/hotel.jpg' alt='hotel' width={35} height={35} />
                   <p className='relative left-4 text-left font-semibold text-lg'>호텔</p>
                 </div>
-              </button>
+              </button> */}
             </div>
             <div className='divide-y-2 divide-gray-400'>
               <div></div>

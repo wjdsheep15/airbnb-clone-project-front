@@ -1,91 +1,70 @@
-import { useState, useEffect, useRef, ChangeEvent } from 'react'
+import React, { useState } from 'react'
+// import styled from 'styled-components'
+import styled from '@emotion/styled'
 
-interface RangeSliderProps {
-  initialMin: number
-  initialMax: number
-  min: number
-  max: number
-  step: number
-  priceCap: number
-}
+export default function MultiRangeBar({
+  fixedMinPrice,
+  fixedMaxPrice,
+  setRangeMinValue,
+  rangeMinValue,
+  setRangeMaxValue,
+  rangeMaxValue,
+}: {
+  fixedMinPrice: number
+  fixedMaxPrice: number
+  setRangeMinValue: (value: number) => void
+  rangeMinValue: number
+  setRangeMaxValue: (value: number) => void
+  rangeMaxValue: number
+}) {
+  const priceGap = 10000
+  const [rangeMinPercent, setRangeMinPercent] = useState(0)
+  const [rangeMaxPercent, setRangeMaxPercent] = useState(0)
 
-const RangeSlider: React.FC<RangeSliderProps> = ({
-  initialMin,
-  initialMax,
-  min,
-  max,
-  step,
-  priceCap,
-}) => {
-  const progressRef = useRef<HTMLDivElement>(null)
-  const [minValue, setMinValue] = useState<number>(initialMin)
-  const [maxValue, setMaxValue] = useState<number>(initialMax)
-
-  const handleMin = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value, 10)
-    if (value < minValue || value > maxValue - priceCap) return
-    setMinValue(value)
+  const prcieRangeMinValueHandler = (e: { target: { value: string } }) => {
+    setRangeMinValue(parseInt(e.target.value))
   }
 
-  const handleMax = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value, 10)
-    if (value > maxValue || value < minValue + priceCap) return
-    setMaxValue(value)
+  const prcieRangeMaxValueHandler = (e: { target: { value: string } }) => {
+    setRangeMaxValue(parseInt(e.target.value))
   }
 
-  useEffect(() => {
-    if (progressRef.current) {
-      progressRef.current.style.left = `${(minValue / max) * step}%`
-      progressRef.current.style.right = `${step - (maxValue / max) * step}%`
+  const twoRangeHandler = () => {
+    if (rangeMaxValue - rangeMinValue < priceGap) {
+      setRangeMaxValue(rangeMinValue + priceGap)
+      setRangeMinValue(rangeMaxValue - priceGap)
+    } else {
+      setRangeMinPercent((rangeMinValue / fixedMaxPrice) * 100)
+      setRangeMaxPercent(100 - (rangeMaxValue / fixedMaxPrice) * 100)
     }
-  }, [minValue, maxValue, max, step])
+  }
 
   return (
-    <div className='flex flex-col w-96 bg-white shadow-xl rounded-lg px-6 py-4'>
-      <div className='flex justify-between items-center my-6 '>
-        <div className='rounded-md'>
-          <span className='p-2 font-semibold'> Min</span>
-          <input
-            onChange={handleMin}
-            value={minValue}
-            className='w-24 rounded-md border border-gray-400'
-          />
-        </div>
-        <div className='ml-2 font-semibold text-lg'> - </div>
-        <div>
-          <span className='p-2 font-semibold'> Max</span>
-          <input
-            onChange={handleMax}
-            value={maxValue}
-            className='w-24 rounded-md border border-gray-400'
-          />
-        </div>
-      </div>
-
-      <div className='mb-4'>
-        <div className='slider relative h-1 rounded-md bg-gray-300'>
-          <div className='progress absolute h-1 bg-green-300 rounded ' ref={progressRef}></div>
-        </div>
-
-        <div className='range-input relative  '>
-          <input
-            onChange={handleMin}
+    <div className='mt-16'>
+      <div className='mb-20'>
+        <div className='relative h-4 w-650 rounded-lg bg-gray-300'></div>
+        <div className='relative'>
+          <FilterPriceRangeMin
             type='range'
-            min={min}
-            step={step}
-            max={max}
-            value={minValue}
-            className='range-min absolute w-full  -top-1  h-1   bg-transparent  appearance-none pointer-events-none'
+            min={fixedMinPrice}
+            max={fixedMaxPrice - priceGap}
+            step='1000'
+            value={rangeMinValue}
+            onChange={(e) => {
+              prcieRangeMinValueHandler(e)
+              twoRangeHandler()
+            }}
           />
-
-          <input
-            onChange={handleMax}
+          <FilterPriceRangeMax
             type='range'
-            min={min}
-            step={step}
-            max={max}
-            value={maxValue}
-            className='range-max absolute w-full  -top-1 h-1  bg-transparent appearance-none  pointer-events-none'
+            min={fixedMinPrice + priceGap}
+            max={fixedMaxPrice}
+            step='1000'
+            value={rangeMaxValue}
+            onChange={(e) => {
+              prcieRangeMaxValueHandler(e)
+              twoRangeHandler()
+            }}
           />
         </div>
       </div>
@@ -93,4 +72,35 @@ const RangeSlider: React.FC<RangeSliderProps> = ({
   )
 }
 
-export default RangeSlider
+const FilterPriceRangeMin = styled.input`
+  position: absolute;
+  top: -9px;
+  right: -2px;
+  height: 7px;
+  width: 100%;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+
+  &::-webkit-slider-thumb {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid #b0b0b0;
+    background-color: white;
+    pointer-events: auto;
+    -webkit-appearance: none;
+  }
+
+  &::-moz-range-thumb {
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: #b0b0b0;
+    pointer-events: auto;
+    -moz-appearance: none;
+  }
+`
+
+const FilterPriceRangeMax = styled(FilterPriceRangeMin)``
