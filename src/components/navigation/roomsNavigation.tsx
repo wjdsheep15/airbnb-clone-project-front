@@ -3,7 +3,7 @@ import Link from 'next/link'
 import LogoIcon from '/public/images/naviBarIcon/logo.svg'
 import RoomSearchNavigation from '@/components/navigation/navibarComponents/roomSearchNavigation'
 import { useEffect, useRef, useState } from 'react'
-import HomeNavigation from './navibarComponents/HomeNavigation.1'
+import HomeNavigation from './navibarComponents/homeNavigation'
 import RightPartNavibar from '@/components/navigation/navibarComponents/rightPartNavibar'
 
 export default function NavigationBar() {

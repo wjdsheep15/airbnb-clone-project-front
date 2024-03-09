@@ -3,7 +3,7 @@ import Identification from '@/components/profile/identification'
 import Introduction from '@/components/profile/introduction'
 import IsAuthinfo from '@/components/profile/isAuthinfo'
 import Review from '@/components/profile/review'
-
+//유저 버튼에 추가하기
 interface IdParams {
   params: { id: number }
 }

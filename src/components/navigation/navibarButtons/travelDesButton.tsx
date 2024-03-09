@@ -3,8 +3,9 @@ import Image from 'next/image'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import RegionButton from '@/components/navigation/navibarButtons/travelDesRegioin'
+
 interface Props {
-  setIsTravelDesOpen: (newValue: string) => string
+  setIsTravelDesOpen: (newValue: string) => void
   TravelDes: string
 }
 
@@ -18,10 +19,9 @@ export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props
     setAnchorEl(null)
   }
 
-  const handleButtonClick = () => {
-    setIsTravelDesOpen('변경') //
+  const handleButtonClick = (region: string) => {
+    setIsTravelDesOpen(region)
   }
-
   return (
     <div>
       <span
@@ -133,7 +133,7 @@ export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props
                     type='button'
                     className='rounded-3xl text-sm  text-center mt-4 border hover:border-black'
                     style={{ width: '90px', height: '40px' }}
-                    onClick={handleButtonClick}
+                    onClick={() => handleButtonClick('서울')}
                   >
                     서울
                   </button>
@@ -147,6 +147,7 @@ export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props
                     type='button'
                     className='rounded-3xl text-sm text-center mt-4 border hover:border-black'
                     style={{ width: '90px', height: '40px' }}
+                    onClick={() => handleButtonClick('전주')}
                   >
                     전주
                   </button>
@@ -160,9 +161,11 @@ export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props
                     type='button'
                     className='rounded-3xl text-sm text-center mt-4 border hover:border-black'
                     style={{ width: '90px', height: '40px' }}
+                    onClick={() => handleButtonClick('서귀포')}
                   >
                     서귀포
                   </button>
+
                   <RegionButton Region='대전' />
                   <RegionButton Region='제주도' />
                   <RegionButton Region='인천' />
