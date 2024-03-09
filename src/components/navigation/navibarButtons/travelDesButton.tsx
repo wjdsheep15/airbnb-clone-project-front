@@ -137,9 +137,9 @@ export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props
                   >
                     서울
                   </button>
-                  <RegionButton Region='부산' />
-                  <RegionButton Region='속초' />
-                  <RegionButton Region='강릉' />
+                  <RegionButton Region='부산' onClick={handleButtonClick} />
+                  <RegionButton Region='속초' onClick={handleButtonClick} />
+                  <RegionButton Region='강릉' onClick={handleButtonClick} />
                 </div>
                 <div className='flex'>
                   {/* 두번째 행 버튼 */}
@@ -151,9 +151,9 @@ export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props
                   >
                     전주
                   </button>
-                  <RegionButton Region='대구' />
-                  <RegionButton Region='경주' />
-                  <RegionButton Region='강릉' />
+                  <RegionButton Region='대구' onClick={handleButtonClick} />
+                  <RegionButton Region='경주' onClick={handleButtonClick} />
+                  <RegionButton Region='강릉' onClick={handleButtonClick} />
                 </div>
                 <div className='flex'>
                   {/* 세번째 행 버튼 */}
@@ -166,9 +166,9 @@ export default function travelDesButton({ setIsTravelDesOpen, TravelDes }: Props
                     서귀포
                   </button>
 
-                  <RegionButton Region='대전' />
-                  <RegionButton Region='제주도' />
-                  <RegionButton Region='인천' />
+                  <RegionButton Region='대전' onClick={handleButtonClick} />
+                  <RegionButton Region='제주도' onClick={handleButtonClick} />
+                  <RegionButton Region='인천' onClick={handleButtonClick} />
                 </div>
               </div>
             </section>
