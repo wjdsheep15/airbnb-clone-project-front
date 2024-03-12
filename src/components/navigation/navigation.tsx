@@ -5,7 +5,7 @@ import LogoIcon from '/public/images/naviBarIcon/logo.svg'
 
 export default function NavigationBar() {
   return (
-    <div className='flex w-full h-40 justify-center border border-gray-100 '>
+    <div className='flex w-full h-40 justify-center'>
       <div className='flex w-[91.16%] h-20'>
         <div className='flex w-full h-20 justify-center items-center relative'>
           {/* div 3객 묶는 구역 */}

@@ -40,10 +40,7 @@ export default function HomeNavigation() {
   const ref = useRef<any>(null)
   const [inputValue, setInputValue] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [gestNumber, setGestNumber] = useState(0)
-  const [childNumber, setChildNumber] = useState(0)
-  const [petNumber, setPetNumber] = useState(0)
-  const [babyNumber, setbabyNumber] = useState(0)
+
   // 1st refactoring
   const [child, increaseChild, decreaseChild] = useCounter(0)
   const [adult, increaseAdult, decreaseAdult] = useCounter(0)
@@ -78,8 +75,6 @@ export default function HomeNavigation() {
     to: undefined,
   }
   const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
-
-  let gestSum = gestNumber + childNumber
 
   const handleCalender = () => {
     setRange(defaultSelected)
@@ -322,10 +317,8 @@ export default function HomeNavigation() {
                 isMenuOpen={isMenuOpen}
                 setPerson={personSetter}
                 person={person}
-                activeButton={0}
-                setIsMenuOpen={function (newValue: boolean): void {
-                  // throw new Error('Function not implemented.')
-                }}
+                activeButton={activeButton}
+                setIsMenuOpen={setIsMenuOpen}
               />
             </div>
             <div className='absolute right-3 '>

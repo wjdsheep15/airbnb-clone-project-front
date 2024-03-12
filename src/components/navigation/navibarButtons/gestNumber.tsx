@@ -28,6 +28,7 @@ export default function GestNumber({
   }
 
   let gestNumberSum = person.adult + person.child
+
   useEffect(() => {
     if (activeButton != 4) {
       setIsMenuOpen(false)

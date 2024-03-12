@@ -7,8 +7,8 @@ export default async function ScrollPage() {
   const categroyIconData = inner.data
 
   return (
-    <div className='flex flex-row items-center justify-center space-x-4 pb-3 pt-5 w-10/12 h-24'>
-      <div className='flex w-full h-20 grow'>
+    <div className='flex flex-row items-center justify-center space-x-4 pb-3 pt-5 w-[91.16%] h-24'>
+      <div className='flex w-[91.16%] h-20 grow'>
         <HorizonScroll categoryList={categroyIconData} />
       </div>
       <div className='flex grow-0'>
