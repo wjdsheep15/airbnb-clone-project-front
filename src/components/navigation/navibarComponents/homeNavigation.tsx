@@ -100,7 +100,7 @@ export default function HomeNavigation() {
     }
   }, [])
   return (
-    <div className='flex flex-col h-40 mt-4 mr-3'>
+    <div className='flex flex-col h-40'>
       <div className='flex flex-row h-20 justify-center items-center' role='group'>
         <button
           type='button'
