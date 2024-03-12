@@ -25,7 +25,7 @@ export default async function RoomDetailPage({ params: { id } }: IdParams) {
           <NavigationBar />
         </Screen>
       </div>
-      <hr/>
+      <hr />
       <main>
         <div className='flex flex-col'>
           <Screen>
