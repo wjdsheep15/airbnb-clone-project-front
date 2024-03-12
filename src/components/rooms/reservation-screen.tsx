@@ -1,6 +1,7 @@
 import ReservationCard from '@/components/rooms/reservation-card'
 import RoomAdvantage from '@/components/rooms/room-advantage'
 import RoomAlbum from '@/components/rooms/room-album'
+import RoomComport from '@/components/rooms/room-comfort'
 import RoomDescription from '@/components/rooms/room-description'
 import RoomHost from '@/components/rooms/room-host'
 import RoomIntroduction from '@/components/rooms/room-introduction'
@@ -28,6 +29,11 @@ interface Advantage {
   image: string
 }
 
+interface Comfort {
+  name: string
+  image: string
+}
+
 interface Room {
   id: number
   images: string[]
@@ -42,7 +48,7 @@ interface Room {
   guestPreference: boolean
   guestCapacity: number
   advantages: Advantage[]
-  comforts: string[]
+  comforts: Comfort[]
   checkIn: string
   checkOut: string
 }
@@ -65,6 +71,8 @@ export default function ReservationScreen({ roomData }: { roomData: Room }) {
               <RoomAdvantage advantages={roomData.advantages} />
               <hr />
               <RoomDescription />
+              <hr />
+              <RoomComport comforts={roomData.comforts}/>
               <hr />
             </div>
           </div>

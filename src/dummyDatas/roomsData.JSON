@@ -48,7 +48,24 @@
           "image": "/svgIcons/roomAdvantageSvgs/expertHost.svg"
         }
       ],
-      "comforts": ["주방", "무선 와이파이", "업무 전용 공간", "공용 수영장"],
+      "comforts": [
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "무선 와이파이",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "업무 전용 공간",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "공용 수영장",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        }
+      ],
       "checkIn": "오후 3:00 ~ 오후 10:00",
       "checkOut": "오전 11시 전까지"
     },
@@ -104,7 +121,36 @@
           "image": "/svgIcons/roomAdvantageSvgs/superHost.svg"
         }
       ],
-      "comforts": ["산 전망", "무선 인터넷", "주방", "반려동물 입실 가능", "건조기"],
+      "comforts": [
+        {
+          "name":"건물 내 무료주차",
+          "image":"/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name":"산 전망",
+          "image":"/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name":"무선 인터넷",
+          "image":"/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name":"주방",
+          "image":"/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name":"반려동물 입실 가능",
+          "image":"/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name":"건조기",
+          "image":"/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name":"건물 내 무료주차",
+          "image":"/svgIcons/roomComforts/freeParking.svg"
+        }
+      ],
       "checkIn": "오후 3시 이후",
       "checkOut": "오전 11시 전까지"
     },
@@ -147,13 +193,34 @@
         }
       ],
       "comforts": [
-        "건물 내 무료주차",
-        "무선 인터넷",
-        "주방",
-        "에어컨",
-        "냉장고",
-        "전자레인지",
-        "TV"
+        {
+          "name":"건물 내 무료주차",
+          "image":"/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name":"무선 인터넷",
+          "image":"/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name":"주방",
+          "image":"/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name":"에어컨",
+          "image":"/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name":"냉장고",
+          "image":"/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name":"전자레인지",
+          "image":"/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name":"TV",
+          "image":"/svgIcons/roomComforts/tv.svg"
+        }
       ],
       "checkIn": "오후 3:00 ~ 오후 10:00",
       "checkOut": "오전 11시 전까지"

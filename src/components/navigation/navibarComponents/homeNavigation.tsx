@@ -4,11 +4,34 @@ import SearchButton from '@/components/navigation/navibarButtons/searchButton'
 import { useEffect, useRef, useState } from 'react'
 import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/CloseIcon.svg'
-import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
 import { DateRange } from 'react-day-picker'
 import { format } from 'date-fns'
-import { ko } from 'date-fns/locale/ko'
+import { ko } from 'date-fns/locale'
+import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
 
+function useCounter(initialValue: number) {
+  const [number, setNumber] = useState<number>(initialValue)
+
+  const increaseNumber = () => {
+    setNumber((prev: number) => prev + 1)
+  }
+
+  const decreaseNumber = () => {
+    setNumber((prev: number) => prev - 1)
+  }
+
+  return [number, increaseNumber, decreaseNumber]
+}
+
+export type PersonType = 'adult' | 'child' | 'baby' | 'pet'
+
+export interface Person {
+  adult: number
+  child: number
+  baby: number
+  pet: number
+}
+// named type ->
 export default function HomeNavigation() {
   const buttonsizeboolen = true
   const [searchButtonHover, setSearchButtonHover] = useState(false)
@@ -17,10 +40,34 @@ export default function HomeNavigation() {
   const ref = useRef<any>(null)
   const [inputValue, setInputValue] = useState('')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [gestNumber, setGestNumber] = useState(0)
-  const [childNumber, setChildNumber] = useState(0)
-  const [petNumber, setPetNumber] = useState(0)
-  const [babyNumber, setbabyNumber] = useState(0)
+
+  // 1st refactoring
+  const [child, increaseChild, decreaseChild] = useCounter(0)
+  const [adult, increaseAdult, decreaseAdult] = useCounter(0)
+  // 2nd refactoring
+  const [person, setPerson] = useState<Person>({
+    adult: 0,
+    child: 0,
+    baby: 0,
+    pet: 0,
+  })
+  const personSetter = (type: PersonType) => {
+    return {
+      plus: () => {
+        const newperson = { ...person }
+        if (type !== 'adult' && newperson.adult === 0) {
+          newperson.adult += 1
+        }
+        newperson[type] += 1
+        setPerson(newperson)
+      },
+      minus: () => {
+        const newperson = { ...person }
+        newperson[type] -= 1
+        setPerson(newperson)
+      },
+    }
+  }
 
   const [calenderOpen, setCalenderOpen] = useState(false)
   const defaultSelected: DateRange = {
@@ -29,16 +76,13 @@ export default function HomeNavigation() {
   }
   const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
 
-  let gestSum = gestNumber + childNumber
-
   const handleCalender = () => {
     setRange(defaultSelected)
   }
   const handleNumber = () => {
-    setGestNumber(0)
-    setChildNumber(0)
-    setPetNumber(0)
-    setbabyNumber(0)
+    const resetNumber = { adult: 0, child: 0, baby: 0, pet: 0 }
+
+    setPerson(resetNumber)
   }
 
   useEffect(() => {
@@ -56,7 +100,7 @@ export default function HomeNavigation() {
     }
   }, [])
   return (
-    <div className='flex flex-col h-40 mt-4 mr-3'>
+    <div className='flex flex-col h-40'>
       <div className='flex flex-row h-20 justify-center items-center' role='group'>
         <button
           type='button'
@@ -114,8 +158,8 @@ export default function HomeNavigation() {
               activeButton === 1 ||
               activeButton === 2 ||
               (topActivityMenu === false && activeButton === 3)
-                ? 'text-gray-200'
-                : 'text-gray-300 '
+                ? 'text-navigatorOneLayoutColor'
+                : 'text-navigatorOneLayoutColor '
             }`}
           >
             |
@@ -251,17 +295,18 @@ export default function HomeNavigation() {
                   onClick={handleNumber}
                 >
                   <CloseIcon
-                    className={`flex items-center rounded-full  ${gestSum === 0 ? 'text-transparent hover:none' : 'hover:bg-navigatorOneLayoutColor'}`}
+                    className={`flex items-center rounded-full  ${person.adult + person.child === 0 ? 'text-transparent hover:none' : 'hover:bg-navigatorOneLayoutColor'}`}
                   />
                 </div>
 
                 <span
-                  className={`text-sm mt-1 w-full line-clamp-1 text-nowrap  flex justify-start col-span-3 ${gestSum === 0 ? 'text-gray-400' : 'text-black'}`}
+                  className={`text-sm mt-1 w-[90%] flex justify-start col-span-3 line-clamp-1 ${person.adult + person.child === 0 ? 'text-gray-400' : 'text-black'}`}
+                  style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
                 >
-                  게스트 {gestSum === 0 ? '추가' : gestSum}
-                  {gestSum === 16 ? ' 이상' : ''}
-                  {babyNumber === 0 ? '' : ', 유아 ' + babyNumber + '명'}
-                  {petNumber === 0 ? '' : ', 반려동물 ' + petNumber + '마리'}
+                  게스트 {person.adult + person.child === 0 ? '추가' : person.adult + person.child}
+                  {person.adult + person.child === 16 ? ' 이상' : ''}
+                  {person.baby === 0 ? '' : ', 유아 ' + person.baby + '명'}
+                  {person.pet === 0 ? '' : ', 반려동물 ' + person.pet + '마리'}
                 </span>
               </span>
             </button>
@@ -269,17 +314,11 @@ export default function HomeNavigation() {
             {/* 게스트 버튼 끝 */}
             <div ref={ref}>
               <GestNumber
-                activeButton={activeButton}
                 isMenuOpen={isMenuOpen}
+                setPerson={personSetter}
+                person={person}
+                activeButton={activeButton}
                 setIsMenuOpen={setIsMenuOpen}
-                gestNumber={gestNumber}
-                setGestNumber={setGestNumber}
-                petNumber={petNumber}
-                setPetNumber={setPetNumber}
-                babyNumber={babyNumber}
-                setbabyNumber={setbabyNumber}
-                childNumber={childNumber}
-                setChildNumber={setChildNumber}
               />
             </div>
             <div className='absolute right-3 '>

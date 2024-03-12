@@ -5,7 +5,7 @@ import LogoIcon from '/public/images/naviBarIcon/logo.svg'
 
 export default function NavigationBar() {
   return (
-    <div className='flex w-full h-40 justify-center border border-gray-100 '>
+    <div className='flex w-full h-40 justify-center'>
       <div className='flex w-[91.16%] h-20'>
         <div className='flex w-full h-20 justify-center items-center relative'>
           {/* div 3객 묶는 구역 */}
@@ -18,8 +18,8 @@ export default function NavigationBar() {
 
           {/* 중간 검색 구역 */}
 
-          <div className='min-h-20 max-h-40 mb-4 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)'>
-            <div className=' flex flex-col min-h-20 max-h-40 p-8'>
+          <div className='flex grow top-0  absolute translate(-50%, -50%) sm:flex md:flex lg:flex xl:flex 2xl:flex'>
+            <div className='flex flex-col'>
               <HomeNavigation />
             </div>
           </div>
