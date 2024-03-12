@@ -12,6 +12,7 @@ interface Props {
 }
 
 export default function Carousel({ slides, id, guestPreference }: Props) {
+  const [heart, setHeart] = useState(false)
   let [current, setCurrent] = useState(0)
 
   let previousSlide = () => {
@@ -25,6 +26,10 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
   let nextSlide = () => {
     if (current === slides.length - 1) setCurrent(0)
     else setCurrent(current + 1)
+  }
+
+  const handleHeart = () => {
+    setHeart(!heart)
   }
   return (
     <div className='overflow-hidden w-full h-full relative group'>
@@ -54,8 +59,11 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
       >
         게스트 선호
       </span>
-      <button className='absolute top-3 right-3 stroke-white stroke-1 hover:-translate-all hover:scale-110'>
-        <Like />
+      <button
+        className='absolute top-3 right-3 stroke-white stroke-1 hover:-translate-all hover:scale-110'
+        onClick={handleHeart}
+      >
+        <Like className={`${heart ? 'fill-mainColor' : ''}`} />
       </button>
       <button
         className={`absolute top-1/2 left-3 p-2 rounded-full bg-transparent group-hover:bg-transparent-70 ${current === 0 ? 'hidden' : ''}`}

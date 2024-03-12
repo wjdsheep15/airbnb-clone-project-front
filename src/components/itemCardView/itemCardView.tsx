@@ -22,7 +22,7 @@ export default function ItemCardView({
   nation,
 }: Props) {
   return (
-    <div className=' max-w-[287.8px] flex-grow h-[373.41px] flex flex-col items-center justify-center space-y-2'>
+    <div className=' max-w-[287.8px] min-w-[200px] flex-grow h-[373.41px] flex flex-col items-center justify-center space-y-2'>
       <div className='w-full h-[270.41px] min-w-28 rounded-lg relative'>
         <Carousel key={id} slides={slides} id={id} guestPreference={guestPreference} />
       </div>

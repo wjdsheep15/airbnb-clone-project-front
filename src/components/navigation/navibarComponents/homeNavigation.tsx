@@ -300,7 +300,7 @@ export default function HomeNavigation() {
                 </div>
 
                 <span
-                  className={`text-sm mt-1 w-[90%] flex justify-start col-span-3 ${person.adult + person.child === 0 ? 'text-gray-400' : 'text-black'}`}
+                  className={`text-sm mt-1 w-[90%] flex justify-start col-span-3 line-clamp-1 ${person.adult + person.child === 0 ? 'text-gray-400' : 'text-black'}`}
                   style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
                 >
                   게스트 {person.adult + person.child === 0 ? '추가' : person.adult + person.child}
