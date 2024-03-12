@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 import TextField from '@mui/material/TextField'
 import MenuItem from '@mui/material/MenuItem'
-// import styles from './styles.module.css'
+import styles from './styles.module.css'
 // import SignUpButton from './signUp'
 import Image from 'next/image'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
@@ -98,7 +98,7 @@ export default function BasicModal() {
           </Typography>
           <Typography className='underline text-black font-bold'>개인정보 처리방침</Typography>
 
-          <SignUpButton />
+          {/* <SignUpButton /> */}
 
           <Typography className={styles.hrSect}>또는</Typography>
           <Button className='text-black -mt-5 border border-solid border-black rounded-lg text-2xl font-bold w-[620px] h-[60px]'>

@@ -40,6 +40,12 @@ export default function ViewMore1() {
   }
 
   // useEffect(() => {
+  //   if (scrollToTopRef?.current?.scrollTop === 0) {
+  //     console.log('위')
+  //   }
+  // }, [scrollToTopRef?.current?.scrollTop === 0])
+
+  // useEffect(() => {
   //   const showButtonClick = () => {
   //     if (window.scrollY > 100) {
   //       setShowButton(true)
@@ -82,11 +88,11 @@ export default function ViewMore1() {
 
   useEffect(() => {
     const watch = () => {
-      window.addEventListener('scroll', handleFollow)
+      scrollToTopRef?.current?.addEventListener('scroll', handleFollow)
     }
     watch()
     return () => {
-      window.removeEventListener('scroll', handleFollow)
+      scrollToTopRef?.current?.removeEventListener('scroll', handleFollow)
     }
   })
 
@@ -188,12 +194,12 @@ export default function ViewMore1() {
             </div>
             <span className='ml-2'>맨위로 이동</span>
           </button>
-          <button
+          {/* <button
             className={BtnStatus ? 'topBtn active' : 'topBtn'} // 버튼 노출 여부
             onClick={handleTop} // 버튼 클릭시 함수 호출
           >
             TOP
-          </button>
+          </button> */}
         </Box>
       </Modal>
     </>

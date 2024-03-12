@@ -29,20 +29,30 @@ export default function SignUpButton() {
   }
 
   // 사이드바
-  const fixedMaxPrice = 1000000
-  const fixedMinPrice = 10000
+  const fixedMaxPrice = 450000
+  const fixedMinPrice = 13000
   const [rangeMinValue, setRangeMinValue] = useState(fixedMinPrice)
   const [rangeMaxValue, setRangeMaxValue] = useState(fixedMaxPrice)
 
   // 버튼 선택하기
   // 버튼 클릭 시 색깔주기 (침실 유형)
-  const [activeBedType, setActiveBedType] = useState('')
-  const handleBedTypeClick = (button: React.SetStateAction<string>) => {
-    setActiveBedType(button)
+  const [activeBedroomType, setActiveBedroomType] = useState('')
+  const handleBedroomTypeClick = (button: React.SetStateAction<string>) => {
+    setActiveBedroomType(button)
   }
   const [bedRoomSelected, setBedroomSelected] = useState(false)
   const handleButtonBedroomClick = () => {
     setBedroomSelected(!bedRoomSelected) // 선택 상태를 토글
+  }
+
+  // 버튼 클릭 시 색깔주기 (침대 유형)
+  const [activeBedType, setActiveBedType] = useState('')
+  const handleBedTypeClick = (button: React.SetStateAction<string>) => {
+    setActiveBedType(button)
+  }
+  const [bedSelected, setBedSelected] = useState(false)
+  const handleButtonBedClick = () => {
+    setBedSelected(!bedSelected) // 선택 상태를 토글
   }
 
   // 버튼 클릭 시 색깔주기 (욕실 유형)
@@ -220,36 +230,40 @@ export default function SignUpButton() {
             <div className='flex space-x-4'>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButton' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButton' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButton')
+                  handleBedroomTypeClick('bedroomButton')
+                  handleButtonBedroomClick()
                 }}
               >
                 상관없음
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButtonOne' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButtonOne' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButtonOne')
+                  handleBedroomTypeClick('bedroomButtonOne')
+                  handleButtonBedroomClick()
                 }}
               >
                 1
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButtonTwo' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButtonTwo' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButtonTwo')
+                  handleBedroomTypeClick('bedroomButtonTwo')
+                  handleButtonBedroomClick()
                 }}
               >
                 2
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButtonThree' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButtonThree' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButtonThree')
+                  handleBedroomTypeClick('bedroomButtonThree')
+                  handleButtonBedroomClick()
                 }}
               >
                 3
@@ -257,51 +271,149 @@ export default function SignUpButton() {
 
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButtonFour' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButtonFour' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButtonFour')
+                  handleBedroomTypeClick('bedroomButtonFour')
+                  handleButtonBedroomClick()
                 }}
               >
                 4
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButtonFive' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButtonFive' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButtonFive')
+                  handleBedroomTypeClick('bedroomButtonFive')
+                  handleButtonBedroomClick()
                 }}
               >
                 5
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButtonSix' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButtonSix' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButtonSix')
+                  handleBedroomTypeClick('bedroomButtonSix')
+                  handleButtonBedroomClick()
                 }}
               >
                 6
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButtonSeven' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButtonSeven' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButtonSeven')
+                  handleBedroomTypeClick('bedroomButtonSeven')
+                  handleButtonBedroomClick()
                 }}
               >
                 7
               </button>
               <button
                 className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
-                      ${activeBedType === 'bedroomButtonMore' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                      ${activeBedroomType === 'bedroomButtonMore' ? 'bg-black text-white font-semibold text-xl' : ''}`}
                 onClick={() => {
-                  handleBedTypeClick('bedroomButtonMore')
+                  handleBedroomTypeClick('bedroomButtonMore')
+                  handleButtonBedroomClick()
                 }}
               >
                 8+
               </button>
             </div>
             <p className='mt-8 mb-8 text-xl'>침대</p>
+            <div className='flex space-x-4'>
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButton' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButton')
+                  handleButtonBedClick()
+                }}
+              >
+                상관없음
+              </button>
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButtonOne' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButtonOne')
+                  handleButtonBedClick()
+                }}
+              >
+                1
+              </button>
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButtonTwo' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButtonTwo')
+                  handleButtonBedClick()
+                }}
+              >
+                2
+              </button>
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButtonThree' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButtonThree')
+                  handleButtonBedClick()
+                }}
+              >
+                3
+              </button>
+
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButtonFour' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButtonFour')
+                  handleButtonBedClick()
+                }}
+              >
+                4
+              </button>
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButtonFive' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButtonFive')
+                  handleButtonBedClick()
+                }}
+              >
+                5
+              </button>
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButtonSix' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButtonSix')
+                  handleButtonBedClick()
+                }}
+              >
+                6
+              </button>
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButtonSeven' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButtonSeven')
+                  handleButtonBedClick()
+                }}
+              >
+                7
+              </button>
+              <button
+                className={`px-8 py-4 hover:border-black rounded-3xl border border-gray-200
+                      ${activeBedType === 'bedButtonMore' ? 'bg-black text-white font-semibold text-xl' : ''}`}
+                onClick={() => {
+                  handleBedTypeClick('bedButtonMore')
+                  handleButtonBedClick()
+                }}
+              >
+                8+
+              </button>
+            </div>
             <p className='mt-12 mb-12 text-xl'>욕실</p>
             <div className='divide-y-2 divide-gray-400'>
               <div className='flex space-x-4'>
@@ -311,6 +423,7 @@ export default function SignUpButton() {
                       `}
                   onClick={() => {
                     handleBathTypeClick('bathroomButton')
+                    handleButtonBathroomClick()
                   }}
                 >
                   상관없

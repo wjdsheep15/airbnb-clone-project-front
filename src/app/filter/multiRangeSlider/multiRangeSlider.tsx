@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-// import styled from 'styled-components'
-import styled from '@emotion/styled'
+import styles from './styles.module.css'
 
 export default function MultiRangeBar({
   fixedMinPrice,
@@ -17,15 +16,15 @@ export default function MultiRangeBar({
   setRangeMaxValue: (value: number) => void
   rangeMaxValue: number
 }) {
-  const priceGap = 10000
+  const priceGap = 1000 // priceGap : 최소값과 최대값의 최소 격차
   const [rangeMinPercent, setRangeMinPercent] = useState(0)
   const [rangeMaxPercent, setRangeMaxPercent] = useState(0)
 
-  const prcieRangeMinValueHandler = (e: { target: { value: string } }) => {
+  const priceRangeMinValueHandler = (e: { target: { value: string } }) => {
     setRangeMinValue(parseInt(e.target.value))
   }
 
-  const prcieRangeMaxValueHandler = (e: { target: { value: string } }) => {
+  const priceRangeMaxValueHandler = (e: { target: { value: string } }) => {
     setRangeMaxValue(parseInt(e.target.value))
   }
 
@@ -42,65 +41,62 @@ export default function MultiRangeBar({
   return (
     <div className='mt-16'>
       <div className='mb-20'>
-        <div className='relative h-4 w-650 rounded-lg bg-gray-300'></div>
+        <div className='h-4 w-650 rounded-lg bg-gray-300'></div>
         <div className='relative'>
-          <FilterPriceRangeMin
+          <input
+            className={styles.input}
             type='range'
             min={fixedMinPrice}
             max={fixedMaxPrice - priceGap}
             step='1000'
             value={rangeMinValue}
             onChange={(e) => {
-              prcieRangeMinValueHandler(e)
+              priceRangeMinValueHandler(e)
               twoRangeHandler()
             }}
           />
-          <FilterPriceRangeMax
+          <input
+            className={styles.input}
             type='range'
             min={fixedMinPrice + priceGap}
             max={fixedMaxPrice}
             step='1000'
             value={rangeMaxValue}
             onChange={(e) => {
-              prcieRangeMaxValueHandler(e)
+              priceRangeMaxValueHandler(e)
               twoRangeHandler()
             }}
           />
+
+          <div className='flex pt-4 pl-4 space-x-28'>
+            <div className='relative mt-4 rounded-md shadow-sm'>
+              <div className='pointer-events-none absolute items-center pl-3'>
+                <div className='text-slate-500 pt-2'>최저</div>
+                <span className='text-lg absolute left-4'>₩</span>
+              </div>
+              <input
+                type='text'
+                className=' w-full h-[70px] rounded-md border-0 pl-12 pt-5 ring-2 ring-gray-300 text-xl'
+                placeholder={rangeMinValue.toLocaleString()}
+              />
+            </div>
+
+            <div className='relative left-8 w-12 mb-8 border-b border-black'></div>
+
+            <div className='relative right-4 mt-4 rounded-md shadow-sm'>
+              <div className='pointer-events-none absolute items-center pl-3'>
+                <div className='text-slate-500 pt-2'>최고</div>
+                <span className='text-lg absolute left-4'>₩</span>
+              </div>
+              <input
+                type='text'
+                className=' w-full h-[70px] rounded-md border-0 pl-12 pt-5 ring-2 ring-gray-300 text-xl'
+                placeholder={rangeMaxValue.toLocaleString()} // 천 단위로
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   )
 }
-
-const FilterPriceRangeMin = styled.input`
-  position: absolute;
-  top: -9px;
-  right: -2px;
-  height: 7px;
-  width: 100%;
-  background: none;
-  pointer-events: none;
-  -webkit-appearance: none;
-
-  &::-webkit-slider-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: 2px solid #b0b0b0;
-    background-color: white;
-    pointer-events: auto;
-    -webkit-appearance: none;
-  }
-
-  &::-moz-range-thumb {
-    height: 30px;
-    width: 30px;
-    border: none;
-    border-radius: 50%;
-    background-color: #b0b0b0;
-    pointer-events: auto;
-    -moz-appearance: none;
-  }
-`
-
-const FilterPriceRangeMax = styled(FilterPriceRangeMin)``
