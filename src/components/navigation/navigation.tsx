@@ -18,7 +18,7 @@ export default function NavigationBar() {
 
           {/* 중간 검색 구역 */}
 
-          <div className='min-h-20 max-h-40 mb-4 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)'>
+          <div className='mb-4 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)'>
             <div className=' flex flex-col min-h-20 max-h-40 p-8'>
               <HomeNavigation />
             </div>

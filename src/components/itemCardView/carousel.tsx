@@ -12,10 +12,10 @@ interface Props {
 }
 
 export default function Carousel({ slides, id, guestPreference }: Props) {
+  const [current, setCurrent] = useState(0)
   const [heart, setHeart] = useState(false)
-  let [current, setCurrent] = useState(0)
 
-  let previousSlide = () => {
+  const previousSlide = () => {
     {
       console.log('버튼 클릭')
     }
@@ -23,11 +23,10 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
     else setCurrent(current - 1)
   }
 
-  let nextSlide = () => {
+  const nextSlide = () => {
     if (current === slides.length - 1) setCurrent(0)
     else setCurrent(current + 1)
   }
-
   const handleHeart = () => {
     setHeart(!heart)
   }
@@ -35,21 +34,14 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
     <div className='overflow-hidden w-full h-full relative group'>
       <Link
         href={`/rooms/${id}`}
-        className={`flex flex-row transition ease-out duration-40 w-full h-full`}
+        className='flex flex-row transition ease-out duration-40 w-full h-full'
         style={{
           transform: `translateX(-${current * 100}%)`,
         }}
       >
         {slides.map((path, index) => {
           return (
-            <img
-              key={index}
-              src={path}
-              alt={''}
-              width={287.8}
-              height={270.41}
-              className='rounded-lg'
-            />
+            <img key={index} src={path} alt='' className='w-full h-auto rounded-lg object-fill' />
           )
         })}
       </Link>
@@ -60,7 +52,7 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
         게스트 선호
       </span>
       <button
-        className='absolute top-3 right-3 stroke-white stroke-1 hover:-translate-all hover:scale-110'
+        className='absolute top-3 right-3  stroke-white stroke-1 hover:-translate-all hover:scale-110'
         onClick={handleHeart}
       >
         <Like className={`${heart ? 'fill-mainColor' : ''}`} />
