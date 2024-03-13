@@ -81,9 +81,13 @@ export default function HomeNavigation() {
     to: undefined,
   }
   const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
+  const [plusDate, setPlusDate] = useState('')
+  const [plusdateClick, setPlusDateClick] = useState(0)
 
   const handleCalender = () => {
     setRange(defaultSelected)
+    setPlusDate('')
+    setPlusDateClick(0)
   }
 
   const handleNumber = () => {
@@ -215,7 +219,9 @@ export default function HomeNavigation() {
                 <span
                   className={`text-sm  col-span-2 flex justify-start ${range?.from ? 'text-black' : 'text-gray-400'} `}
                 >
-                  {range?.from ? format(range.from, 'MMM dd', { locale: ko }) + '일' : '날짜 추가'}
+                  {range?.from
+                    ? format(range.from, 'MMM dd', { locale: ko }) + '일 ' + plusDate
+                    : '날짜 추가'}
                 </span>
               </div>
             </button>
@@ -249,13 +255,19 @@ export default function HomeNavigation() {
                 <span
                   className={`text-sm col-span-2 flex justify-start ${range?.to ? 'text-black' : 'text-gray-400'} `}
                 >
-                  {range?.to ? format(range.to, 'MMM dd', { locale: ko }) + '일' : '날짜 추가'}
+                  {range?.to
+                    ? format(range.to, 'MMM dd', { locale: ko }) + '일 ' + plusDate
+                    : '날짜 추가'}
                 </span>
               </div>
             </button>
           </div>
           <div
             className={`h-full w-72 flex flex-row items-center ${topActivityMenu ? 'hidden' : ''}`}
+            onClick={() => {
+              setCalenderOpen(true)
+              console.log(calenderOpen)
+            }}
           >
             <button
               className={`h-full w-full rounded-full flex flex-col pl-4 pt-3 pb-3 ${
@@ -267,8 +279,23 @@ export default function HomeNavigation() {
                 setActiveButton(3)
               }}
             >
-              <span className='text-xs'>날짜</span>
-              <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
+              <div className='w-full h-full grid grid-cols-3 grid-rows-2'>
+                <span className='text-xs flex justify-start col-span-2'>날짜</span>
+                <div
+                  className={`rounded-full flex items-center justify-end pr-3 row-span-2  ${activeButton === 3 ? '' : 'hidden'}`}
+                  onClick={handleCalender}
+                >
+                  <CloseIcon className={`flex items-center rounded-full  `} />
+                </div>
+                <span
+                  className={`text-sm col-span-2 flex justify-start ${range?.from ? 'text-black' : 'text-gray-400'}`}
+                >
+                  {range?.from ? format(range.from, 'MMM dd', { locale: ko }) + '일 ' : '날짜 추가'}{' '}
+                  {range?.to
+                    ? '- ' + format(range.to, 'MMM dd', { locale: ko }) + '일 ' + plusDate
+                    : ''}
+                </span>
+              </div>
             </button>
           </div>
           {/* 날짜 선택 메뉴*/}
@@ -280,6 +307,9 @@ export default function HomeNavigation() {
               activeButton={activeButton}
               calenderOpen={calenderOpen}
               setCalenderOpen={setCalenderOpen}
+              setPlusDate={setPlusDate}
+              setPlusDateClick={setPlusDateClick}
+              plusdateClick={plusdateClick}
             />
           </div>
           {/* 날짜 선택 끝 */}
