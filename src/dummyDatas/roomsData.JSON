@@ -123,32 +123,32 @@
       ],
       "comforts": [
         {
-          "name":"건물 내 무료주차",
-          "image":"/svgIcons/roomComforts/freeParking.svg"
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
         },
         {
-          "name":"산 전망",
-          "image":"/svgIcons/roomComforts/wifi.svg"
+          "name": "산 전망",
+          "image": "/svgIcons/roomComforts/wifi.svg"
         },
         {
-          "name":"무선 인터넷",
-          "image":"/svgIcons/roomComforts/wifi.svg"
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
         },
         {
-          "name":"주방",
-          "image":"/svgIcons/roomComforts/kitchen.svg"
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
         },
         {
-          "name":"반려동물 입실 가능",
-          "image":"/svgIcons/roomComforts/wifi.svg"
+          "name": "반려동물 입실 가능",
+          "image": "/svgIcons/roomComforts/wifi.svg"
         },
         {
-          "name":"건조기",
-          "image":"/svgIcons/roomComforts/kitchen.svg"
+          "name": "건조기",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
         },
         {
-          "name":"건물 내 무료주차",
-          "image":"/svgIcons/roomComforts/freeParking.svg"
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
         }
       ],
       "checkIn": "오후 3시 이후",
@@ -194,32 +194,490 @@
       ],
       "comforts": [
         {
-          "name":"건물 내 무료주차",
-          "image":"/svgIcons/roomComforts/freeParking.svg"
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
         },
         {
-          "name":"무선 인터넷",
-          "image":"/svgIcons/roomComforts/wifi.svg"
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
         },
         {
-          "name":"주방",
-          "image":"/svgIcons/roomComforts/kitchen.svg"
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
         },
         {
-          "name":"에어컨",
-          "image":"/svgIcons/roomComforts/wifi.svg"
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
         },
         {
-          "name":"냉장고",
-          "image":"/svgIcons/roomComforts/kitchen.svg"
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
         },
         {
-          "name":"전자레인지",
-          "image":"/svgIcons/roomComforts/kitchen.svg"
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
         },
         {
-          "name":"TV",
-          "image":"/svgIcons/roomComforts/tv.svg"
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 4,
+      "images": [
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-841707871546139828/original/1e607778-88cf-4768-96e8-dc528b6a28f5.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-841707871546139828/original/98be09a2-9209-40d0-a022-5ed4fa2c99fa.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-841707871546139828/original/9475a435-f98e-475b-8f4c-7dcbc2356051.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-841707871546139828/original/f7c45539-c8a3-466e-ae69-f6410029c955.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-841707871546139828/original/581b2f07-0bfa-4626-847a-314e5e2d3255.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-841707871546139828/original/9edcd3d7-d73f-4d51-8aab-f1e976195052.jpeg?im_w=720"
+      ],
+      "name": "홍천의 자연 속 편하게 휴식할 숙소의 글램핑203동(2단지)",
+      "introduction": "Seo-myeon,Hongcheon 한국의 글램핑",
+      "address": "Seo-myeon,Hongcheon",
+      "nation": "한국",
+      "description": ["편히 쉬다가세요, 아름다운 한국의 글램핑장 자연에서 함께 놀아요"],
+      "host": {
+        "name": "Ddnayo",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
+        "career": "8개월",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "130,800",
+      "roomDetail": {
+        "bedroomCount": 1,
+        "bedCount": 3,
+        "bathroomCount": 2
+      },
+      "guestPreference": false,
+      "guestCapacity": 4,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 5,
+      "images": [
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/647f0701-e268-4b49-b329-5407aa94268e.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/fd6f0788-330e-4fab-8aec-32d366a084b4.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/2e6d62f1-41d8-4587-864c-c7209c9d85e3.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/4e649792-4a27-40d1-a3c9-66d68800868e.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/b867381a-a400-4fed-b945-bea635edea16.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/58e871d5-b411-4600-ab05-a2a70880ff38.jpeg?im_w=720"
+      ],
+      "name": "감성힐링 체험이 있는 글램핑 숙소의 감성카바나A10",
+      "introduction": "Gunnae-myeon, Pocheon-si, 감성 카바나",
+      "address": "Gunnae-myeon, Pocheon-si",
+      "nation": "한국",
+      "description": [
+        "숙소 설명",
+        "관동대 정문 도보 1분 거리 깔끔하고 깨끗한 방",
+        "버스정류장, 택시정류장 도보 30초",
+        "버스타고 환승없이 강릉시내 10분 안목커피거리 20분 거리",
+        "대학가 주변이라 식당 및 카페 많음",
+        "전자레인지, 전기레인지, 세탁기, TV, 인터넷, 에어컨, 침대, 책상 완비",
+        "게스트 이용 가능 공간/시설",
+        "싱글침대와 싱글 토퍼 요, 침구 2개가 제공됩니다"
+      ],
+      "host": {
+        "name": "Ddnayo",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
+        "career": "8개월",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "90,100",
+      "roomDetail": {
+        "bedroomCount": 4,
+        "bedCount": 4,
+        "bathroomCount": 3
+      },
+      "guestPreference": false,
+      "guestCapacity": 5,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 6,
+      "images": [
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/647f0701-e268-4b49-b329-5407aa94268e.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/fd6f0788-330e-4fab-8aec-32d366a084b4.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/2e6d62f1-41d8-4587-864c-c7209c9d85e3.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/4e649792-4a27-40d1-a3c9-66d68800868e.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/b867381a-a400-4fed-b945-bea635edea16.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-50533494/original/58e871d5-b411-4600-ab05-a2a70880ff38.jpeg?im_w=720"
+      ],
+      "name": "곡성여관관/곡성/구례 경계에 위치한 감성독채숙소/감성캠핑",
+      "introduction": "Ogok-myeon, Gorseong, 곡성의 깨끗한 감성 독채 숙소",
+      "address": "Gunnae-myeon, Pocheon-si",
+      "nation": "한국",
+      "description": [
+        "[숙소 소개]",
+        "여러분들의 지친 일상에서 조금이라도 아름다운 휴식 공간을 마련해 드리고 싶었습니다.",
+        "객실에서 보이는 바다 전망은 여러분들의 쉼이 될 수 있는 공간이 되기를 바랍니다.",
+        "바다를 보며 마음을 내려놓고 커피를 마시며 생각을 쉴 수 있고",
+        "음악이 있어 공간이 더 아름다운 곳이 됩니다. 밤에는 야경도 나에게 휴식을 가져다 주는 그런 공간이 되기 위해 더 노력하고 노력합니다.",
+        "공간에 감성이 더해져 여러분들의 하루를 더 없이 소중하게 만들어주는 그런 곳으로 여러분을 초대합니다"
+      ],
+      "host": {
+        "name": "Ddnayo",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
+        "career": "8개월",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "285,294",
+      "roomDetail": {
+        "bedroomCount": 3,
+        "bedCount": 2,
+        "bathroomCount": 1
+      },
+      "guestPreference": false,
+      "guestCapacity": 4,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 7,
+      "images": [
+        "https://a0.muscache.com/im/pictures/f8e7b996-dd12-4f81-9669-e15c913413cf.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/32e943b3-2bd5-4164-9575-d0d3d8f397db.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/a79329e0-ad9d-472a-a70d-23e972c31713.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/758f0586-000e-4926-a8f5-14f54c40acfe.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/0fb075d6-ff71-459d-a94d-d495a37fe29e.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/7c231873-806b-4475-809b-a738a0af11b3.jpg?im_w=720"
+      ],
+      "name": "제주 함덕해수욕장 1분거리 1층 독채 넓은집",
+      "introduction": "조천읍, 제주시, 함덕의 아름답고 깨끗한 집",
+      "address": "조천읍, 제주시",
+      "nation": "한국",
+      "description": [
+        "제주 시내에 탑동 해안가 바로 앞에 위치해 있어서 공항과 5분거리로 접근성이 좋고 교통이 편리하며",
+        "걸어서 여기저기 여행 다니시기에 좋고 쇼핑하시기에도 좋아요.",
+        "바로 앞으로 걸어나가면 탑동 바다가 있고 바닷가 주변으로 산책로가 잘되어있어",
+        "여행객들과 제주도민들이 많이 다녀요. 주변에 걸어서 갈 수 있는 관광지는",
+        "용두암, 관덕정, 동문시장, 서문시장, 흑돼지거리, 탑동광장 등이 있구요",
+        "이마트와 나들가게 까페 그리고 맛집들도 많이 있어요"
+      ],
+      "host": {
+        "name": "Ddnayo",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
+        "career": "8개월",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "102,706",
+      "roomDetail": {
+        "bedroomCount": 3,
+        "bedCount": 2,
+        "bathroomCount": 1
+      },
+      "guestPreference": false,
+      "guestCapacity": 4,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 8,
+      "images": [
+        "https://a0.muscache.com/im/pictures/f8e7b996-dd12-4f81-9669-e15c913413cf.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/32e943b3-2bd5-4164-9575-d0d3d8f397db.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/a79329e0-ad9d-472a-a70d-23e972c31713.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/758f0586-000e-4926-a8f5-14f54c40acfe.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/0fb075d6-ff71-459d-a94d-d495a37fe29e.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/7c231873-806b-4475-809b-a738a0af11b3.jpg?im_w=720"
+      ],
+      "name": "맨도롱#1)3월예약중/연박할인/감성숙소/캠핑/불멍/동쪽여행/성산,우도/복층/빔/넷플릭스",
+      "introduction": "성산읍, 서귀포시, 감성 펜션",
+      "address": "성산읍, 서귀포시",
+      "nation": "한국",
+      "description": [
+        "버스정류장과도 인접하며!",
+        "근처에 큰 마트가 있습니다^^",
+        "근처 제주시 동문에 유명한 요가원이 있다고해요",
+        "요가원 다니시는 분들 환영합니다!"
+      ],
+      "host": {
+        "name": "Ddnayo",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
+        "career": "8개월",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "118,545",
+      "roomDetail": {
+        "bedroomCount": 2,
+        "bedCount": 2,
+        "bathroomCount": 4
+      },
+      "guestPreference": false,
+      "guestCapacity": 6,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 9,
+      "images": [
+        "https://a0.muscache.com/im/pictures/miso/Hosting-52712186/original/5335e919-cfb9-422b-9dd8-f385f32fe2d7.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-52712186/original/3abecc97-7407-4311-9ed2-5f2135b40903.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/2daaec86-b474-4d1f-88aa-42cb93000d70.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/329c99e7-fcc3-44dd-8b21-692156123925.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/9354aaa3-9a5c-43bd-b0c4-55769bad22f0.jpg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-52712186/original/8bd8b0d7-1d8e-4374-ad16-a96275803b77.jpeg?im_w=720"
+      ],
+      "name": "온수 노천탕이 있는 제주의 독채 펜션 MILK HOUSE 입니다~~",
+      "introduction": "한경면, 제주시, 제주시의 독채 펜션",
+      "address": "한경면, 제주시",
+      "nation": "한국",
+      "description": [
+        "숙소 인근에 삼화지구 아파트단지가 있어 롯데시네마",
+        "슈퍼/마트가 있고 도보로 24시간 편의점과 뚜레쥬르 베이커리를 갈수 있습니다.",
+        "숙소 인근 일몰로 유명한 삼양해수욕장이 있습니다."
+      ],
+      "host": {
+        "name": "Ddnayo",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
+        "career": "8개월",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "228,235",
+      "roomDetail": {
+        "bedroomCount": 2,
+        "bedCount": 2,
+        "bathroomCount": 4
+      },
+      "guestPreference": false,
+      "guestCapacity": 6,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
         }
       ],
       "checkIn": "오후 3:00 ~ 오후 10:00",
