@@ -33,7 +33,6 @@ export default function ViewMore1() {
   // const [showButton, setShowButton] = useState(false)
 
   const scrollToTop = () => {
-    console.log('맨 위로 버튼 클릭함.')
     if (scrollToTopRef.current) {
       scrollToTopRef.current.scrollTop = 0
     }
@@ -41,7 +40,6 @@ export default function ViewMore1() {
 
   // useEffect(() => {
   //   if (scrollToTopRef?.current?.scrollTop === 0) {
-  //     console.log('위')
   //   }
   // }, [scrollToTopRef?.current?.scrollTop === 0])
 

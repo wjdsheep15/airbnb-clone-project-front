@@ -134,7 +134,7 @@ export default function HomeNavigation() {
           ref={ref}
         >
           <button
-            className={`h-full w-[282px] rounded-full flex flex-col pl-4 pt-3 pb-3 group ${
+            className={`h-full w-[282px] rounded-full relative flex flex-col pl-4 pt-3 pb-3 group ${
               activeButton === 1
                 ? 'bg-white border border-gray-300 shadow'
                 : 'hover:bg-navigatorTwoLayoutColor'
@@ -161,6 +161,14 @@ export default function HomeNavigation() {
               isOpen={isOpen}
               setIsOpen={setIsOpen}
             />
+            <div
+              className={`rounded-full absolute  right-5 top-6 row-span-2 flex items-center  ${activeButton === 1 ? '' : 'hidden'}`}
+              onClick={() => {
+                setInputValue('')
+              }}
+            >
+              <CloseIcon className={`flex items-center rounded-full  `} />
+            </div>
           </button>
 
           <span
@@ -247,7 +255,6 @@ export default function HomeNavigation() {
             className={`h-full w-72 flex flex-row items-center ${topActivityMenu ? 'hidden' : ''}`}
             onClick={() => {
               setCalenderOpen(true)
-              console.log(calenderOpen)
             }}
           >
             <button
