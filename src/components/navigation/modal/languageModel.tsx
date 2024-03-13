@@ -2,15 +2,16 @@
 
 import React, { useState } from 'react'
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
 
-export default function LanganguaeModal() {
-  const [open, setOpen] = useState(false)
-  const handleOpen = () => setOpen(true)
+interface Props {
+  open: boolean
+  setOpen: (newValue: boolean) => void
+}
 
+export default function LanguageModel({ open, setOpen }: Props) {
   const [modalContent, setModalContent] = useState('language')
   const closeModalHandler = () => {
     setOpen(false)
@@ -22,12 +23,10 @@ export default function LanganguaeModal() {
   const handleClick = (button: React.SetStateAction<string>) => {
     setActive(button)
   }
-
   return (
     <div>
-      <Button onClick={handleOpen}>Open language modal</Button>
       <Modal open={open} onClose={closeModalHandler}>
-        <Box className='relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white border-2 border-black shadow-lg p-16 w-[1300px] h-[820px]'>
+        <Box className='relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white border border-gray-200 shadow-lg p-16 w-[1300px] h-[820px]'>
           <div>
             <div className='flex'>
               <button

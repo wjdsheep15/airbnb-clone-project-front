@@ -16,9 +16,6 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
   const [heart, setHeart] = useState(false)
 
   const previousSlide = () => {
-    {
-      console.log('버튼 클릭')
-    }
     if (current === 0) setCurrent(slides.length - 1)
     else setCurrent(current - 1)
   }

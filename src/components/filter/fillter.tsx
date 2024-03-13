@@ -8,8 +8,9 @@ import { Typography } from '@mui/material'
 import GuestPreferences from '/public/svgIcons/guestPreferences.svg'
 import MultiRangeBar from './multiRangeSlider/multiRangeSlider'
 import Image from 'next/image'
+import FitterIcon from '/public/images/fillter.svg'
 
-export default function SignUpButton() {
+export default function FillterModel() {
   const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
@@ -186,7 +187,14 @@ export default function SignUpButton() {
 
   return (
     <>
-      <button onClick={handleOpen}>Open filter modal</button>
+      <div
+        className='flex grow-0 items-center w-full h-full  gap-x-2 justify-center'
+        onClick={handleOpen}
+      >
+        {' '}
+        <FitterIcon />
+        <span className='text-xs'>필터</span>
+      </div>
       <Modal open={open} onClose={handleClose}>
         <Box
           className='relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl

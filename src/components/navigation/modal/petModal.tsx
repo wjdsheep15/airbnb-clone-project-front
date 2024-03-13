@@ -1,6 +1,6 @@
 import Modal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
-import CloseIcon from '/public/svgIcons/CloseIcon.svg'
+import CloseIcon from '/public/svgIcons/closeIcon.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 
