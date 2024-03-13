@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
@@ -59,6 +59,27 @@ export default function SignUpButton() {
     event.preventDefault()
   }
 
+  const [currentDate, setCurrentDate] = useState<string>('')
+
+  useEffect(() => {
+    const today = new Date()
+    const year = today.getFullYear()
+    let month = (today.getMonth() + 1).toString()
+    let day = today.getDate().toString()
+
+    // 월에서 한 자리 숫자라면 0을 추가
+    if (month.length === 1) {
+      month = '0' + month
+    }
+    if (day.length === 1) {
+      day = '0' + day
+    }
+
+    // yyyy-mm-dd 형식으로 날짜 설정
+    const formattedDate = `${year}-${month}-${day}`
+    setCurrentDate(formattedDate)
+  }, [])
+
   return (
     <>
       <Button
@@ -107,7 +128,14 @@ export default function SignUpButton() {
                 정부 발급 신분증에 표시된 이름과 일치하는지 확인하세요.
               </Typography>
 
-              <TextField className='ml-8 mt-8 w-[650px]' placeholder='생년월일'></TextField>
+              <input
+                type='date'
+                className='ml-8 mt-8 w-[650px] h-[60px] border border-slate-400 rounded-lg px-2 text-xl'
+                min='1900-01-01'
+                max={currentDate}
+                placeholder='연도-월-일'
+              />
+
               <Typography className='ml-8 w-[650px]'>
                 18세 이상의 성인만 회원으로 가입할 수 있습니다. 생일은 에어비앤비의 다른 회원에게
                 공개되지 않습니다.

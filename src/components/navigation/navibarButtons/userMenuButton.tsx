@@ -85,7 +85,7 @@ export default function UserMenuButton() {
         sx={{
           '.MuiPaper-root': {
             borderRadius: 3,
-            boxShadow: '0px 3px 5px 2px rgba(0, 0, 0, 0.1)', // 이 부분을 추가합니다.
+            boxShadow: '0px 3px 5px 2px rgb(0, 0, 0, 0.1)',
           },
         }}
       >
