@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function identification({ name }: { name: string }) {
   return (
-    <span className='relative block w-[342px] h-[240px] p-6 bg-white border border-gray-200 rounded-s-3xl  rounded-e-3xl shadow-xl drop-shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 right-[-10px] '>
+    <span className='relative block w-[342px] h-[240px] p-6 bg-white border border-gray-200 rounded-s-3xl rounded-e-3xl shadow-xl drop-shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 right-[-10px] '>
       <div className='relative flex bottom-[-20px]'>
         {/*flex  첫 번째 가로 칸 */}
         <div className='w-2/3 mr-2 flex flex-col  items-center justify-center'>

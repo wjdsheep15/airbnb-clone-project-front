@@ -6,22 +6,10 @@ import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/CloseIcon.svg'
 import { DateRange } from 'react-day-picker'
 import { format } from 'date-fns'
+
 import { ko } from 'date-fns/locale'
 import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
-
-function useCounter(initialValue: number) {
-  const [number, setNumber] = useState<number>(initialValue)
-
-  const increaseNumber = () => {
-    setNumber((prev: number) => prev + 1)
-  }
-
-  const decreaseNumber = () => {
-    setNumber((prev: number) => prev - 1)
-  }
-
-  return [number, increaseNumber, decreaseNumber]
-}
+import TravelDesButton from '@/components/navigation/navibarButtons/travelDesButton'
 
 export type PersonType = 'adult' | 'child' | 'baby' | 'pet'
 
@@ -39,11 +27,10 @@ export default function HomeNavigation() {
   const [topActivityMenu, setTopActivityMenu] = useState(true)
   const ref = useRef<any>(null)
   const [inputValue, setInputValue] = useState('')
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // 1st refactoring
-  const [child, increaseChild, decreaseChild] = useCounter(0)
-  const [adult, increaseAdult, decreaseAdult] = useCounter(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+
   // 2nd refactoring
   const [person, setPerson] = useState<Person>({
     adult: 0,
@@ -69,22 +56,29 @@ export default function HomeNavigation() {
     }
   }
 
+  //달력 로직
   const [calenderOpen, setCalenderOpen] = useState(false)
   const defaultSelected: DateRange = {
     from: undefined,
     to: undefined,
   }
   const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
+  const [plusDate, setPlusDate] = useState('')
+  const [plusdateClick, setPlusDateClick] = useState(0)
 
   const handleCalender = () => {
     setRange(defaultSelected)
+    setPlusDate('')
+    setPlusDateClick(0)
   }
+
   const handleNumber = () => {
     const resetNumber = { adult: 0, child: 0, baby: 0, pet: 0 }
 
     setPerson(resetNumber)
   }
 
+  // 4개의 버튼을 다닫는 로직
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -93,12 +87,17 @@ export default function HomeNavigation() {
         setCalenderOpen(false)
       }
     }
-
+    if (inputValue.length != 0) {
+      setIsOpen(false)
+      setActiveButton(2)
+      setCalenderOpen(true)
+    }
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [])
+  }, [inputValue])
+
   return (
     <div className='flex flex-col h-40'>
       <div className='flex flex-row h-20 justify-center items-center' role='group'>
@@ -140,19 +139,30 @@ export default function HomeNavigation() {
                 ? 'bg-white border border-gray-300 shadow'
                 : 'hover:bg-navigatorTwoLayoutColor'
             }`}
-            onClick={() => setActiveButton(1)}
+            onClick={() => {
+              setActiveButton(1)
+              setIsOpen(!isOpen)
+            }}
           >
             <span className='text-xs ml-4'>여행지</span>
+
             <input
               placeholder='여행지 검색'
               type='text'
               value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              className={`text-sm mt-1 ml-4 w-52 bg-inherit group-focus:active focus:outline-none text-gray-400 ${
+              onChange={(e) => inputValue}
+              className={`text-sm mt-1 ml-4 w-52 bg-inherit group-focus:active focus:outline-none  ${
                 activeButton === 1 ? 'active' : ''
-              }`}
+              } ${inputValue.length != 0 ? 'text-black' : 'text-gray-400'} `}
+            />
+            <TravelDesButton
+              setInputValue={setInputValue}
+              activeButton={activeButton}
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
             />
           </button>
+
           <span
             className={`text-xl ${
               activeButton === 1 ||
@@ -190,7 +200,9 @@ export default function HomeNavigation() {
                 <span
                   className={`text-sm  col-span-2 flex justify-start ${range?.from ? 'text-black' : 'text-gray-400'} `}
                 >
-                  {range?.from ? format(range.from, 'MMM dd', { locale: ko }) + '일' : '날짜 추가'}
+                  {range?.from
+                    ? format(range.from, 'MMM dd', { locale: ko }) + '일 ' + plusDate
+                    : '날짜 추가'}
                 </span>
               </div>
             </button>
@@ -224,13 +236,19 @@ export default function HomeNavigation() {
                 <span
                   className={`text-sm col-span-2 flex justify-start ${range?.to ? 'text-black' : 'text-gray-400'} `}
                 >
-                  {range?.to ? format(range.to, 'MMM dd', { locale: ko }) + '일' : '날짜 추가'}
+                  {range?.to
+                    ? format(range.to, 'MMM dd', { locale: ko }) + '일 ' + plusDate
+                    : '날짜 추가'}
                 </span>
               </div>
             </button>
           </div>
           <div
             className={`h-full w-72 flex flex-row items-center ${topActivityMenu ? 'hidden' : ''}`}
+            onClick={() => {
+              setCalenderOpen(true)
+              console.log(calenderOpen)
+            }}
           >
             <button
               className={`h-full w-full rounded-full flex flex-col pl-4 pt-3 pb-3 ${
@@ -242,8 +260,23 @@ export default function HomeNavigation() {
                 setActiveButton(3)
               }}
             >
-              <span className='text-xs'>날짜</span>
-              <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
+              <div className='w-full h-full grid grid-cols-3 grid-rows-2'>
+                <span className='text-xs flex justify-start col-span-2'>날짜</span>
+                <div
+                  className={`rounded-full flex items-center justify-end pr-3 row-span-2  ${activeButton === 3 ? '' : 'hidden'}`}
+                  onClick={handleCalender}
+                >
+                  <CloseIcon className={`flex items-center rounded-full  `} />
+                </div>
+                <span
+                  className={`text-sm col-span-2 flex justify-start ${range?.from ? 'text-black' : 'text-gray-400'}`}
+                >
+                  {range?.from ? format(range.from, 'MMM dd', { locale: ko }) + '일 ' : '날짜 추가'}{' '}
+                  {range?.to
+                    ? '- ' + format(range.to, 'MMM dd', { locale: ko }) + '일 ' + plusDate
+                    : ''}
+                </span>
+              </div>
             </button>
           </div>
           {/* 날짜 선택 메뉴*/}
@@ -255,6 +288,9 @@ export default function HomeNavigation() {
               activeButton={activeButton}
               calenderOpen={calenderOpen}
               setCalenderOpen={setCalenderOpen}
+              setPlusDate={setPlusDate}
+              setPlusDateClick={setPlusDateClick}
+              plusdateClick={plusdateClick}
             />
           </div>
           {/* 날짜 선택 끝 */}
