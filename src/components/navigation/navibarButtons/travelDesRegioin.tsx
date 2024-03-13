@@ -9,13 +9,12 @@ export default function RegionButton({ Region, setInputValue }: Props) {
   }
 
   return (
-    <button
-      type='button'
-      className='rounded-3xl text-sm  text-center mt-4 ml-2 border hover:border-black'
+    <div
+      className='rounded-3xl text-sm  text-center mt-4 border flex items-center justify-center hover:border-black'
       style={{ width: '90px', height: '40px' }}
       onClick={handleButtonClick}
     >
       {Region}
-    </button>
+    </div>
   )
 }

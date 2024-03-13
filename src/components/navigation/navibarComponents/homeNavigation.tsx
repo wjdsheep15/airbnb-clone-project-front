@@ -11,20 +11,6 @@ import { ko } from 'date-fns/locale'
 import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
 import TravelDesButton from '@/components/navigation/navibarButtons/travelDesButton'
 
-function useCounter(initialValue: number) {
-  const [number, setNumber] = useState<number>(initialValue)
-
-  const increaseNumber = () => {
-    setNumber((prev: number) => prev + 1)
-  }
-
-  const decreaseNumber = () => {
-    setNumber((prev: number) => prev - 1)
-  }
-
-  return [number, increaseNumber, decreaseNumber]
-}
-
 export type PersonType = 'adult' | 'child' | 'baby' | 'pet'
 
 export interface Person {
@@ -44,11 +30,7 @@ export default function HomeNavigation() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const buttonRef = useRef(null)
 
-  // 1st refactoring
-  const [child, increaseChild, decreaseChild] = useCounter(0)
-  const [adult, increaseAdult, decreaseAdult] = useCounter(0)
   // 2nd refactoring
   const [person, setPerson] = useState<Person>({
     adult: 0,
@@ -103,15 +85,18 @@ export default function HomeNavigation() {
         setActiveButton(0)
         setIsMenuOpen(false)
         setCalenderOpen(false)
-        setIsOpen(false)
       }
     }
-
+    if (inputValue.length != 0) {
+      setIsOpen(false)
+      setActiveButton(2)
+      setCalenderOpen(true)
+    }
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [])
+  }, [inputValue])
 
   return (
     <div className='flex flex-col h-40'>
@@ -156,32 +141,28 @@ export default function HomeNavigation() {
             }`}
             onClick={() => {
               setActiveButton(1)
-              setIsOpen(true)
+              setIsOpen(!isOpen)
             }}
-            ref={buttonRef}
           >
             <span className='text-xs ml-4'>여행지</span>
-            <div ref={ref}>
-              <TravelDesButton
-                setInputValue={setInputValue}
-                activeButton={activeButton}
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
-                buttonRef={buttonRef}
-              />
-            </div>
-            {/* <span className="text-sm mt-1 ml-4 text-gray-400">여행지 검색</span> */}
 
             <input
               placeholder='여행지 검색'
               type='text'
               value={inputValue}
               onChange={(e) => inputValue}
-              className={`text-sm mt-1 ml-4 w-52 bg-inherit group-focus:active focus:outline-none text-gray-400 ${
+              className={`text-sm mt-1 ml-4 w-52 bg-inherit group-focus:active focus:outline-none  ${
                 activeButton === 1 ? 'active' : ''
-              }`}
+              } ${inputValue.length != 0 ? 'text-black' : 'text-gray-400'} `}
+            />
+            <TravelDesButton
+              setInputValue={setInputValue}
+              activeButton={activeButton}
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
             />
           </button>
+
           <span
             className={`text-xl ${
               activeButton === 1 ||
