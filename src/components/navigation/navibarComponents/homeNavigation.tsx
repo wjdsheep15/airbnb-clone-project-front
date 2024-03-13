@@ -9,7 +9,7 @@ import { format } from 'date-fns'
 
 import { ko } from 'date-fns/locale'
 import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
-import TravelDesButton from '../navibarButtons/travelDesButton'
+import TravelDesButton from '@/components/navigation/navibarButtons/travelDesButton'
 
 function useCounter(initialValue: number) {
   const [number, setNumber] = useState<number>(initialValue)
