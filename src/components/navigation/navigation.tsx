@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import HomeNavigation from '@/components/navigation/navibarComponents/homeNavigation'
+import HomeNavigation from './navibarComponents/homeNavigation'
 import RightPartNavibar from '@/components/navigation/navibarComponents/rightPartNavibar'
 import LogoIcon from '/public/images/naviBarIcon/logo.svg'
 
 export default function NavigationBar() {
   return (
-    <div className='flex w-full h-40 justify-center border border-gray-100 '>
+    <div className='flex w-full h-40 justify-center sm:h-60 md:h-60 lg:h-40 xl:h-40 2xl:h-40'>
       <div className='flex w-[91.16%] h-20'>
         <div className='flex w-full h-20 justify-center items-center relative'>
           {/* div 3객 묶는 구역 */}
@@ -18,8 +18,8 @@ export default function NavigationBar() {
 
           {/* 중간 검색 구역 */}
 
-          <div className='min-h-20 max-h-40 mb-4 px-19 grow flex  justify-center items-center absolute translate(-50%, -50%)'>
-            <div className=' flex flex-col min-h-20 max-h-40 p-8'>
+          <div className='flex grow top-0  absolute translate(-50%, -50%) sm:flex sm:top-14 md:flex  md:top-14 lg:flex lg:top-0 xl:flex xl:top-0 2xl:flex 2xl:top-0'>
+            <div className='flex flex-col'>
               <HomeNavigation />
             </div>
           </div>
