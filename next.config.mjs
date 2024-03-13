@@ -15,6 +15,11 @@ const nextConfig = {
         hostname: 'a0.muscache.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.ghibli.jp',
+        pathname: '**',
+      },
     ],
   },
 }
