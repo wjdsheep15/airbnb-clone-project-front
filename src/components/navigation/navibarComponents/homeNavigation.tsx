@@ -41,8 +41,10 @@ export default function HomeNavigation() {
   const [topActivityMenu, setTopActivityMenu] = useState(true)
   const ref = useRef<any>(null)
   const [inputValue, setInputValue] = useState('')
-  const [travelDesOpen, setIsTravelDesOpen] = useState('여행지 검색')
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const buttonRef = useRef(null)
 
   // 1st refactoring
   const [child, increaseChild, decreaseChild] = useCounter(0)
@@ -72,6 +74,7 @@ export default function HomeNavigation() {
     }
   }
 
+  //달력 로직
   const [calenderOpen, setCalenderOpen] = useState(false)
   const defaultSelected: DateRange = {
     from: undefined,
@@ -82,18 +85,21 @@ export default function HomeNavigation() {
   const handleCalender = () => {
     setRange(defaultSelected)
   }
+
   const handleNumber = () => {
     const resetNumber = { adult: 0, child: 0, baby: 0, pet: 0 }
 
     setPerson(resetNumber)
   }
 
+  // 4개의 버튼을 다닫는 로직
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         setActiveButton(0)
         setIsMenuOpen(false)
         setCalenderOpen(false)
+        setIsOpen(false)
       }
     }
 
@@ -102,6 +108,7 @@ export default function HomeNavigation() {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+
   return (
     <div className='flex flex-col h-40'>
       <div className='flex flex-row h-20 justify-center items-center' role='group'>
@@ -143,17 +150,29 @@ export default function HomeNavigation() {
                 ? 'bg-white border border-gray-300 shadow'
                 : 'hover:bg-navigatorTwoLayoutColor'
             }`}
-            onClick={() => setActiveButton(1)}
+            onClick={() => {
+              setActiveButton(1)
+              setIsOpen(true)
+            }}
+            ref={buttonRef}
           >
-            <span className='text-xs ml-4'>
-              <TravelDesButton setIsTravelDesOpen={setIsTravelDesOpen} TravelDes={'여행지'} />
-            </span>
+            <span className='text-xs ml-4'>여행지</span>
+            <div ref={ref}>
+              <TravelDesButton
+                setInputValue={setInputValue}
+                activeButton={activeButton}
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                buttonRef={buttonRef}
+              />
+            </div>
             {/* <span className="text-sm mt-1 ml-4 text-gray-400">여행지 검색</span> */}
+
             <input
-              placeholder={travelDesOpen}
+              placeholder='여행지 검색'
               type='text'
               value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              onChange={(e) => inputValue}
               className={`text-sm mt-1 ml-4 w-52 bg-inherit group-focus:active focus:outline-none text-gray-400 ${
                 activeButton === 1 ? 'active' : ''
               }`}

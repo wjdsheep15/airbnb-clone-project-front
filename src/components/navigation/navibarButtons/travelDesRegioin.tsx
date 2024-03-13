@@ -1,11 +1,11 @@
 interface Props {
   Region: string
-  onClick: (region: string) => void
+  setInputValue: (newValue: string) => void
 }
 
-export default function RegionButton({ Region, onClick }: Props) {
+export default function RegionButton({ Region, setInputValue }: Props) {
   const handleButtonClick = () => {
-    onClick(Region)
+    setInputValue(Region)
   }
 
   return (
