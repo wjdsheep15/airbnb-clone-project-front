@@ -51,9 +51,9 @@ export default async function RoomDetailPage({ params: { id } }: IdParams) {
           <Screen>
             <ReservationScreen roomData={roomData} />
           </Screen>
-          {/* <Screen>
-            <RoomReview />
-          </Screen> */}
+          <Screen>
+            <RoomReview reviews={reviewsData}/>
+          </Screen>
         </div>
       </main>
     </>
