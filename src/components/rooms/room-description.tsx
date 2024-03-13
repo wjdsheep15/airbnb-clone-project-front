@@ -33,7 +33,7 @@ export default function RoomDescription() {
                 {!showMore && description.length > 4 && (
                   <button
                     onClick={showMoreDescription}
-                    className='text-gray-900 dark:text-white text-base font-semibold underline'
+                    className='text-gray-900 text-base font-semibold underline'
                   >
                     더 보기 {'>'}
                   </button>

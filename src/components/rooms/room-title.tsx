@@ -7,9 +7,7 @@ export default async function RoomTitle({ roomName }: { roomName: string }) {
             <div className='px-20 h-30 flex justify-between md:w-[800px] lg:w-[1250px]'>
               {/* 숙소명 */}
               <div className='flex ml-0 mr-auto'>
-                <span className='text-gray-900 dark:text-white text-2xl font-semibold'>
-                  {roomName}
-                </span>
+                <span className='text-gray-900 text-2xl font-semibold'>{roomName}</span>
               </div>
 
               {/* 우측 버튼 그룹 */}
@@ -17,7 +15,7 @@ export default async function RoomTitle({ roomName }: { roomName: string }) {
                 <div className='mr-5 flex'>
                   <span>
                     <svg
-                      className='w-6 h-6 inline-flex text-gray-800 dark:text-white mr-2'
+                      className='w-6 h-6 inline-flex text-gray-800 mr-2'
                       aria-hidden='true'
                       xmlns='http://www.w3.org/2000/svg'
                       fill='none'
@@ -37,7 +35,7 @@ export default async function RoomTitle({ roomName }: { roomName: string }) {
                 <div className='flex'>
                   <span>
                     <svg
-                      className='w-6 h-6 inline-flex text-gray-800 dark:text-white mr-2'
+                      className='w-6 h-6 inline-flex text-gray-800 mr-2'
                       aria-hidden='true'
                       xmlns='http://www.w3.org/2000/svg'
                       fill='none'
