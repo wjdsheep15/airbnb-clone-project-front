@@ -123,6 +123,67 @@ export default function SignUpButton() {
     }
   }
 
+  // 전체 체크박스 해제
+
+  // 체크박스 상태를 변경하는 함수
+  // const handleCheckboxChange = (e: {
+  //   target: { checked: boolean | ((prevState: boolean) => boolean) }
+  // }) => {
+  //   setIsChecked(e.target.checked)
+  // }
+
+  // 버튼 클릭을 처리하는 핸들러
+  type CheckboxStates = {
+    [key: string]: boolean
+  }
+
+  const [checkedLanguage, setCheckedLanguaege] = useState<CheckboxStates>({
+    영어: false,
+    프랑스어: false,
+    독일어: false,
+    일본어: false,
+  })
+
+  const [checkedStates, setCheckedStates] = useState<CheckboxStates>({
+    이탈리아어: false,
+    러시아어: false,
+    스페인어: false,
+    중국어: false,
+  })
+
+  // 체크박스 상태를 변경하는 함수
+  const handleCheckLanguageChange = (event: { target: { name: any; checked: any } }) => {
+    const { name, checked } = event.target
+    setCheckedLanguaege((prevStates) => ({
+      ...prevStates,
+      [name]: checked,
+    }))
+  }
+  const handleCheckboxChange = (event: { target: { name: any; checked: any } }) => {
+    const { name, checked } = event.target
+    setCheckedStates((prevStates) => ({
+      ...prevStates,
+      [name]: checked,
+    }))
+  }
+
+  // 모든 체크박스를 해제하는 함수
+  const handleUncheckAll = () => {
+    setCheckedLanguaege((prevStates) => ({
+      ...Object.keys(prevStates).reduce((newState: CheckboxStates, key: string) => {
+        newState[key] = false // 모든 키에 대해 false 값을 할당
+        return newState
+      }, {}),
+    }))
+
+    setCheckedStates((prevStates) => ({
+      ...Object.keys(prevStates).reduce((newState: CheckboxStates, key: string) => {
+        newState[key] = false // 모든 키에 대해 false 값을 할당
+        return newState
+      }, {}),
+    }))
+  }
+
   return (
     <>
       <button onClick={handleOpen}>Open filter modal</button>
@@ -592,13 +653,6 @@ export default function SignUpButton() {
                   <p className='relative left-4 text-left font-semibold text-lg'>게스트용 별채</p>
                 </div>
               </button>
-
-              {/* <button className='border border-slate-400 transition-transform duration-400 active:scale-90 rounded-lg w-[230px] h-[130px]'>
-                <div className='relative left-4 -top-6'>
-                  <Image src='/images/buildingTypes/hotel.jpg' alt='hotel' width={35} height={35} />
-                  <p className='relative left-4 text-left font-semibold text-lg'>호텔</p>
-                </div>
-              </button> */}
             </div>
             <div className='divide-y-2 divide-gray-400'>
               <div></div>
@@ -613,13 +667,23 @@ export default function SignUpButton() {
             <div className='grid grid-rows-3 gap-4'>
               <div className='flex gap-80'>
                 <div>
-                  <input type='checkbox' id='Internet' className='mt-4  accent-black w-8 h-8' />
+                  <input
+                    type='checkbox'
+                    id='Internet'
+                    className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
+                  />
                   <label htmlFor='Internet' className='text-xl relative left-4 -top-2'>
                     무선 인터넷
                   </label>
                 </div>
                 <div className='relative right-11'>
-                  <input type='checkbox' id='kitchen' className='mt-4  accent-black w-8 h-8' />
+                  <input
+                    type='checkbox'
+                    id='kitchen'
+                    className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
+                  />
                   <label htmlFor='kitchen' className='text-xl relative left-4 -top-2'>
                     주방
                   </label>
@@ -632,13 +696,19 @@ export default function SignUpButton() {
                     type='checkbox'
                     id='washing_machine'
                     className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
                   />
                   <label htmlFor='washing_machine' className='text-xl relative left-4 -top-2'>
                     세탁기
                   </label>
                 </div>
                 <div>
-                  <input type='checkbox' id='dryer' className='mt-4  accent-black w-8 h-8' />
+                  <input
+                    type='checkbox'
+                    id='dryer'
+                    className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
+                  />
                   <label htmlFor='dryer' className='text-xl relative left-4 -top-2'>
                     건조기
                   </label>
@@ -650,13 +720,19 @@ export default function SignUpButton() {
                     type='checkbox'
                     id='air-conditioner'
                     className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
                   />
                   <label htmlFor='air-conditioner' className='text-xl relative left-4 -top-2'>
                     에어컨
                   </label>
                 </div>
                 <div>
-                  <input type='checkbox' id='heater' className='mt-4  accent-black w-8 h-8' />
+                  <input
+                    type='checkbox'
+                    id='heater'
+                    className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
+                  />
                   <label htmlFor='heater' className='text-xl relative left-4 -top-2'>
                     난방
                   </label>
@@ -675,13 +751,19 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='work_space'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='work_space' className='text-xl relative left-4 -top-2'>
                           업무 전용 공간
                         </label>
                       </div>
                       <div className='-ml-2'>
-                        <input type='checkbox' id='tv' className='mt-4  accent-black w-8 h-8' />
+                        <input
+                          type='checkbox'
+                          id='tv'
+                          className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
+                        />
                         <label htmlFor='tv' className='text-xl relative left-4 -top-2'>
                           TV
                         </label>
@@ -693,13 +775,19 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='hairdryer'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='hairdryer' className='text-xl relative left-4 -top-2'>
                           헤어드라이어
                         </label>
                       </div>
                       <div className='ml-1'>
-                        <input type='checkbox' id='iron' className='mt-4  accent-black w-8 h-8' />
+                        <input
+                          type='checkbox'
+                          id='iron'
+                          className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
+                        />
                         <label htmlFor='iron' className='text-xl relative left-4 -top-2'>
                           다리미
                         </label>
@@ -715,13 +803,19 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='swimplace'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='swimplace' className='text-xl relative left-4 -top-2'>
                           수영장
                         </label>
                       </div>
                       <div>
-                        <input type='checkbox' id='jakuju' className='mt-4  accent-black w-8 h-8' />
+                        <input
+                          type='checkbox'
+                          id='jakuju'
+                          className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
+                        />
                         <label htmlFor='jakuju' className='text-xl relative left-4 -top-2'>
                           자쿠지 욕조
                         </label>
@@ -733,6 +827,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='freepark'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='freepark' className='text-xl relative left-4 -top-2'>
                           무료 주차 공간
@@ -743,6 +838,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='electriccharge'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='electriccharge' className='text-xl relative left-4 -top-2'>
                           전기차 충전시설
@@ -755,6 +851,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='babybed'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='babybed' className='text-xl relative left-4 -top-2'>
                           아기 침대
@@ -765,6 +862,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='kingSize'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='kingSize' className='text-xl relative left-4 -top-2'>
                           킹사이즈 침대
@@ -773,13 +871,23 @@ export default function SignUpButton() {
                     </div>
                     <div className='flex gap-80'>
                       <div>
-                        <input type='checkbox' id='gym' className='mt-4  accent-black w-8 h-8' />
+                        <input
+                          type='checkbox'
+                          id='gym'
+                          className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
+                        />
                         <label htmlFor='gym' className='text-xl relative left-4 -top-2'>
                           헬스장
                         </label>
                       </div>
                       <div>
-                        <input type='checkbox' id='grill' className='mt-4  accent-black w-8 h-8' />
+                        <input
+                          type='checkbox'
+                          id='grill'
+                          className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
+                        />
                         <label htmlFor='grill' className='text-xl relative left-4 -top-2'>
                           바비큐 그릴
                         </label>
@@ -791,6 +899,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='breakfast'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='breakfast' className='text-xl relative left-4 -top-2'>
                           아침식사
@@ -801,6 +910,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='innerFireplace'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='innerFireplace' className='text-xl relative left-4 -top-2'>
                           실내 벽난로
@@ -816,6 +926,7 @@ export default function SignUpButton() {
                             type='checkbox'
                             id='nearBeach'
                             className='mt-4  accent-black w-8 h-8'
+                            onChange={handleCheckboxChange}
                           />
                           <label htmlFor='nearBeach' className='text-xl relative left-4 -top-2'>
                             해변에 인접
@@ -826,6 +937,7 @@ export default function SignUpButton() {
                             type='checkbox'
                             id='nearWater'
                             className='mt-4  accent-black w-8 h-8'
+                            onChange={handleCheckboxChange}
                           />
                           <label htmlFor='nearWater' className='text-xl relative left-4 -top-2'>
                             수변에 인접
@@ -838,6 +950,7 @@ export default function SignUpButton() {
                             type='checkbox'
                             id='commingWthSki'
                             className='mt-4  accent-black w-8 h-8'
+                            onChange={handleCheckboxChange}
                           />
                           <label htmlFor='commingWthSki' className='text-xl relative left-4 -top-2'>
                             스키 타고 출입
@@ -852,6 +965,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='fireAlarm'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='fireAlarm' className='text-xl relative left-4 -top-2'>
                           화재경보기
@@ -862,6 +976,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='carbonAlarm'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='carbonAlarm' className='text-xl relative left-4 -top-2'>
                           일산화탄소 경보기
@@ -931,6 +1046,7 @@ export default function SignUpButton() {
                     type='checkbox'
                     id='withoutStairThresholdEntrance'
                     className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
                   />
                   <label
                     htmlFor='withoutStairThresholdEntrance'
@@ -944,6 +1060,7 @@ export default function SignUpButton() {
                     type='checkbox'
                     id='eightyoneEntrance'
                     className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
                   />
                   <label htmlFor='eightyoneEntrance' className='text-xl relative left-4 -top-2'>
                     너비 81cm 이상의 게스트 출입구
@@ -957,6 +1074,7 @@ export default function SignUpButton() {
                     type='checkbox'
                     id='withBathchairPark'
                     className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
                   />
                   <label htmlFor='withBathchairPark' className='text-xl relative left-4 -top-2'>
                     휠체어 접근 가능 주차 공간
@@ -967,6 +1085,7 @@ export default function SignUpButton() {
                     type='checkbox'
                     id='withoutStairEntrance'
                     className='mt-4  accent-black w-8 h-8'
+                    onChange={handleCheckboxChange}
                   />
                   <label htmlFor='withoutStairEntrance' className='text-xl relative left-4 -top-2'>
                     게스트 출입구까지 계단 없음
@@ -987,6 +1106,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='withoutStairBedroom'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label
                           htmlFor='withoutStairBedroom'
@@ -1000,6 +1120,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='eightyoneBedroomEntrance'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label
                           htmlFor='eightyoneBedroomEntrance'
@@ -1017,6 +1138,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='withoutStairBathroom'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label
                           htmlFor='withoutStairBathroom'
@@ -1030,6 +1152,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='eightyoneBathroomEntrance'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label
                           htmlFor='eightyoneBathroomEntrance'
@@ -1045,6 +1168,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='bathroomFixedHandle'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label
                           htmlFor='bathroomFixedHandle'
@@ -1058,6 +1182,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='toiletFixedHandle'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label
                           htmlFor='toiletFixedHandle'
@@ -1073,6 +1198,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='withoutStairThresoldBathroom'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label
                           htmlFor='withoutStairThresoldBathroom'
@@ -1086,6 +1212,7 @@ export default function SignUpButton() {
                           type='checkbox'
                           id='showerChair'
                           className='mt-4  accent-black w-8 h-8'
+                          onChange={handleCheckboxChange}
                         />
                         <label htmlFor='showerChair' className='text-xl relative left-4 -top-2'>
                           샤워/목욕 의자
@@ -1095,7 +1222,12 @@ export default function SignUpButton() {
 
                     <p className='font-semibold mt-8 text-xl'>장애인용 보조 장치</p>
                     <div>
-                      <input type='checkbox' id='lift' className='mt-4  accent-black w-8 h-8' />
+                      <input
+                        type='checkbox'
+                        id='lift'
+                        className='mt-4  accent-black w-8 h-8'
+                        onChange={handleCheckboxChange}
+                      />
                       <label htmlFor='lift' className='text-xl relative left-4 -top-2'>
                         천장형 또는 이동식 리프트
                       </label>
@@ -1119,86 +1251,43 @@ export default function SignUpButton() {
             <Typography variant='h4' className='font-semibold'>
               호스트 언어
             </Typography>
-            <div className='grid grid-rows-3 gap-4'>
-              <div className='flex gap-96'>
-                <div>
-                  <input type='checkbox' id='english' className='mt-4  accent-black w-8 h-8' />
-                  <label htmlFor='english' className='text-xl relative left-4 -top-2'>
-                    영어
-                  </label>
-                </div>
-                <div>
-                  <input type='checkbox' id='french' className='mt-4  accent-black w-8 h-8' />
-                  <label htmlFor='french' className='text-xl relative left-5 -top-2'>
-                    프랑스어
-                  </label>
-                </div>
-              </div>
-
-              <div className='flex gap-80'>
-                <div>
-                  <input type='checkbox' id='german' className='mt-4  accent-black w-8 h-8' />
-                  <label htmlFor='german' className='text-xl relative left-4 -top-2'>
-                    독일어
-                  </label>
-                </div>
-                <div>
+            <div className='grid grid-cols-2 gap-5'>
+              {Object.entries(checkedLanguage).map(([language, isChecked]) => (
+                <div key={language}>
                   <input
                     type='checkbox'
-                    id='japanese'
-                    className='mt-4 relative left-11  accent-black w-8 h-8'
+                    id={language}
+                    name={language}
+                    className='relative left-2 accent-black w-8 h-8'
+                    checked={isChecked}
+                    onChange={handleCheckLanguageChange}
                   />
-                  <label htmlFor='japanese' className='text-xl relative left-16 -top-2'>
-                    일본어
+                  <label htmlFor={language} className='text-xl relative left-6 -top-2'>
+                    {language}
                   </label>
                 </div>
-              </div>
+              ))}
             </div>
             {/* 접기 펼치기 */}
-            <div className='relative -top-12'>
+            <div className='relative top-12'>
               {foldingLanguage ? (
                 <>
-                  <div className='grid grid-rows-3'>
-                    <div className='flex gap-80'>
-                      <div>
+                  <div className='grid grid-cols-2 gap-5 top-20'>
+                    {Object.entries(checkedStates).map(([language, isChecked]) => (
+                      <div key={language}>
                         <input
                           type='checkbox'
-                          id='Italian'
-                          className='mt-4  accent-black w-8 h-8'
+                          id={language}
+                          name={language}
+                          className='relative accent-black w-8 h-8'
+                          checked={isChecked}
+                          onChange={handleCheckboxChange}
                         />
-                        <label htmlFor='Italian' className='text-xl relative left-4 -top-2'>
-                          이탈리아어
+                        <label htmlFor={language} className='text-xl relative left-10 -top-2'>
+                          {language}
                         </label>
                       </div>
-                      <div>
-                        <input
-                          type='checkbox'
-                          id='rusian'
-                          className='mt-4 relative left-1 -top-1 accent-black w-8 h-8'
-                        />
-                        <label htmlFor='rusian' className='text-xl relative left-5 -top-3'>
-                          러시아어
-                        </label>
-                      </div>
-                    </div>
-                    <div className='flex gap-80'>
-                      <div>
-                        <input type='checkbox' id='spain' className='mt-6  accent-black w-8 h-8' />
-                        <label htmlFor='spain' className='text-xl relative left-4 -top-2'>
-                          스페인어
-                        </label>
-                      </div>
-                      <div>
-                        <input
-                          type='checkbox'
-                          id='chinese'
-                          className='mt-4 relative left-6  accent-black w-8 h-8'
-                        />
-                        <label htmlFor='chinese' className='text-xl relative left-10 -top-2'>
-                          중국어
-                        </label>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </>
               ) : null}
@@ -1207,7 +1296,14 @@ export default function SignUpButton() {
               </button>
             </div>
           </div>
-          <button> 전체 해제</button>
+
+          <div className='divide-y-2 divide-gray-400 w-[1000px] -ml-10 mt-2'>
+            <div></div>
+            <div></div>
+          </div>
+          <button className='mt-6 -ml-6 text-xl font-semibold' onClick={handleUncheckAll}>
+            전체 해제
+          </button>
         </Box>
       </Modal>
     </>
