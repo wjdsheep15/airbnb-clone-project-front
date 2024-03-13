@@ -103,6 +103,7 @@ export default function HomeNavigation() {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+
   return (
     <div className='flex flex-col h-40'>
       <div className='flex flex-row h-20 justify-center items-center' role='group'>
@@ -239,6 +240,10 @@ export default function HomeNavigation() {
           </div>
           <div
             className={`h-full w-72 flex flex-row items-center ${topActivityMenu ? 'hidden' : ''}`}
+            onClick={() => {
+              setCalenderOpen(true)
+              console.log(calenderOpen)
+            }}
           >
             <button
               className={`h-full w-full rounded-full flex flex-col pl-4 pt-3 pb-3 ${
@@ -250,8 +255,23 @@ export default function HomeNavigation() {
                 setActiveButton(3)
               }}
             >
-              <span className='text-xs'>날짜</span>
-              <span className='text-sm mt-1 text-gray-400'>날짜 추가</span>
+              <div className='w-full h-full grid grid-cols-3 grid-rows-2'>
+                <span className='text-xs flex justify-start col-span-2'>날짜</span>
+                <div
+                  className={`rounded-full flex items-center justify-end pr-3 row-span-2  ${activeButton === 3 ? '' : 'hidden'}`}
+                  onClick={handleCalender}
+                >
+                  <CloseIcon className={`flex items-center rounded-full  `} />
+                </div>
+                <span
+                  className={`text-sm col-span-2 flex justify-start ${range?.from ? 'text-black' : 'text-gray-400'}`}
+                >
+                  {range?.from ? format(range.from, 'MMM dd', { locale: ko }) + '일 ' : '날짜 추가'}{' '}
+                  {range?.to
+                    ? '- ' + format(range.to, 'MMM dd', { locale: ko }) + '일 ' + plusDate
+                    : ''}
+                </span>
+              </div>
             </button>
           </div>
           {/* 날짜 선택 메뉴*/}
