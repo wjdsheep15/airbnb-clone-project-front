@@ -4,10 +4,10 @@ export default function ReservationCard({ price }: { price: string }) {
   return (
     <>
       <div className='sticky top-8'>
-        <div className='relative max-w-sm max-h-sm p-6 mt-8 bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700'>
+        <div className='relative max-w-sm max-h-sm p-6 mt-8 bg-white border border-gray-200 rounded-lg shadow-lg '>
           <div className='flex flex-col'>
             <div className='relative flex flex-end items-center mb-6'>
-              <span className='text-[22px] font-semibold tracking-tight text-gray-900 dark:text-white'>
+              <span className='text-[22px] font-semibold tracking-tight text-gray-900 '>
                 {`₩${price}`}
               </span>
               <span className='pl-1 text-[16px]'>/박</span>

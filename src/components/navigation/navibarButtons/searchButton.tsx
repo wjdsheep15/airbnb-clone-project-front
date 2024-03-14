@@ -7,9 +7,7 @@ export default function SearchButton({
   buttonsizeboolen: boolean
   searchButtonHover: boolean
 }) {
-  const handleClick = () => {
-    console.log('search button click')
-  }
+  const handleClick = () => {}
   return (
     <div
       className={`flex ${buttonsizeboolen ? 'w-12 h-12' : 'w-8 h-8'}
