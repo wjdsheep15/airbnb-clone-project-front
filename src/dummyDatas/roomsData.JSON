@@ -241,9 +241,9 @@
       "nation": "한국",
       "description": ["편히 쉬다가세요, 아름다운 한국의 글램핑장 자연에서 함께 놀아요"],
       "host": {
-        "name": "Ddnayo",
-        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
-        "career": "8개월",
+        "name": "Mio&Kivanc",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/36d0800e-3905-4df8-bbbc-dcb49d0e67db.jpg?im_w=240",
+        "career": "4개월",
         "isSuperHost": true,
         "isAuth": true,
         "responseRate": null,
@@ -321,9 +321,9 @@
         "싱글침대와 싱글 토퍼 요, 침구 2개가 제공됩니다"
       ],
       "host": {
-        "name": "Ddnayo",
-        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
-        "career": "8개월",
+        "name": "Onda",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/f10784d8-e38c-43d1-9ba6-5ca590bb6481.jpg?im_w=240",
+        "career": "6개월",
         "isSuperHost": true,
         "isAuth": true,
         "responseRate": null,
@@ -399,9 +399,9 @@
         "공간에 감성이 더해져 여러분들의 하루를 더 없이 소중하게 만들어주는 그런 곳으로 여러분을 초대합니다"
       ],
       "host": {
-        "name": "Ddnayo",
-        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
-        "career": "8개월",
+        "name": "Seon Mee",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/91cefcac-775a-4f42-894e-2d6917db8002.jpg?im_w=240",
+        "career": "2개월",
         "isSuperHost": true,
         "isAuth": true,
         "responseRate": null,
@@ -477,9 +477,9 @@
         "이마트와 나들가게 까페 그리고 맛집들도 많이 있어요"
       ],
       "host": {
-        "name": "Ddnayo",
-        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
-        "career": "8개월",
+        "name": "Achy",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/f96adac1-1b2a-4db2-bc52-377790b33800.jpg?im_w=240",
+        "career": "8년",
         "isSuperHost": true,
         "isAuth": true,
         "responseRate": null,
@@ -553,9 +553,9 @@
         "요가원 다니시는 분들 환영합니다!"
       ],
       "host": {
-        "name": "Ddnayo",
-        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
-        "career": "8개월",
+        "name": "Annie",
+        "profileImageUrl": "https://a0.muscache.com/im/Portrait/Avatars/messaging/b3e03835-ade9-4eb7-a0bb-2466ab9a534d.jpg?im_policy=medq_w_text&im_t=A&im_w=240&im_s=133.33&im_f=airbnb-cereal-medium.ttf&im_c=ffffff",
+        "career": "9년",
         "isSuperHost": true,
         "isAuth": true,
         "responseRate": null,
@@ -628,8 +628,8 @@
         "숙소 인근 일몰로 유명한 삼양해수욕장이 있습니다."
       ],
       "host": {
-        "name": "Ddnayo",
-        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/cd41e8f1-91ec-4b9d-9f34-a908f049e2c5.jpg?im_w=240",
+        "name": "미정",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/3eca82f3-1761-4047-8e48-0e200df2c748.jpg?im_w=240",
         "career": "8개월",
         "isSuperHost": true,
         "isAuth": true,
@@ -640,6 +640,389 @@
       "roomDetail": {
         "bedroomCount": 2,
         "bedCount": 2,
+        "bathroomCount": 4
+      },
+      "guestPreference": false,
+      "guestCapacity": 6,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 10,
+      "images": [
+        "https://a0.muscache.com/im/pictures/miso/Hosting-971409209519378572/original/35215558-3e34-4cf5-80a6-facbc14780c7.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-971409209519378572/original/7bbf1aa1-8e6d-42a1-823d-9ef808239569.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-971409209519378572/original/cb39659c-c7e6-4a5d-902b-ab1b992278e7.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-971409209519378572/original/fbd79097-dcc5-4f28-80b8-79651effd2f8.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-971409209519378572/original/d27280c2-0560-4969-9868-0484fb3063b4.jpeg?im_w=720",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-971409209519378572/original/e59266d4-2495-4ff3-8c73-492117028110.jpeg?im_w=720"
+      ],
+      "name": "글램핑 스위트/거실이 있는 1pk/야외 월풀/후우하마 시내 1분/텐트 사우나 체험 1분",
+      "introduction": "Shima,우후하마의 글램핑장",
+      "address": "Shima",
+      "nation": "일본",
+      "description": [
+        "게스트 이용 가능 공간/시설",
+        "집 전체를 사용하실 수 있습니다.",
+        "넓은 주차공간이 있습니다.",
+        "또한 봄부터 가을까지 (4월/5월 ~ 11월/12월) 에는",
+        "해먹에서 휴식을 취할 수 있는 바비큐를 즐길 수 있는 넓은 정원이 있습니다.",
+        "미소라노 7/11까지 차로 3분, 슈퍼마켓 쇼핑을 위한 '큰' 5분 거리."
+      ],
+      "host": {
+        "name": "Ji Soo",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/04f331f8-5087-4691-ad2e-a0e3db57527a.jpg?im_w=240",
+        "career": "8개월",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "432,718",
+      "roomDetail": {
+        "bedroomCount": 4,
+        "bedCount": 1,
+        "bathroomCount": 2
+      },
+      "guestPreference": false,
+      "guestCapacity": 4,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 11,
+      "images": [
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-52225819/original/3eb95e8d-b39d-4ba2-8979-9c25a17d1092.jpeg?im_w=960",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-52225819/original/dbd73d0a-6504-4495-8644-18c7fdc0d8c8.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-52225819/original/0eb505fb-9170-4166-a4a5-5c5ea5a748f6.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-52225819/original/0595ebf0-36fb-4dfb-a3ba-78fa815be6e6.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/prohost-api/Hosting-52225819/original/b6fcf27f-a179-4aa3-971f-786f8c7a2f61.jpeg?im_w=480"
+      ],
+      "name": "초록 물결이 가득한 자연이 묻어나는 숙소의 풀내음방(10평)",
+      "introduction": "Cheongun-myeon, Yangpyeong, 한국의 펜션",
+      "address": "Cheongun-myeon, Yangpyeong",
+      "nation": "한국",
+      "description": [
+        "[숙소와의 연락]",
+        "'호스트에게 연락하기'를 통해선 연락이 어렵습니다. 호스트와의 연락은 아래 방법을 확인해주세요.",
+        "1. Airbnb 메시지 기능을 통해 메시지로 문의해주세요. (Onda 답변 가능 시간: 매주 평일 10:00~18:00)",
+        "2. 예약 확정 고객은 문자 메시지를 확인해주세요. 예약 확정 즉시 숙소 연락처가 문자로 발송됩니다.",
+        "3. 만약 예약 확정 후 문자를 받지 못하셨다면 Airbnb 메시지 기능을 통해 알려주세요.",
+        "4. 예약시 한국 내에서 수신받을 수 있는 연락처를 필히 기재해주세요.",
+        "5. 연락처를 기재하지 않아 발생하는 불이익은 호스트가 책임질 수 없습니다"
+      ],
+      "host": {
+        "name": "위드홈 장한",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/User-539529366/original/e07b5b71-91df-4d04-bb8e-4af383f07ec1.jpeg?im_w=240",
+        "career": "5년",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "35,718",
+      "roomDetail": {
+        "bedroomCount": 4,
+        "bedCount": 1,
+        "bathroomCount": 2
+      },
+      "guestPreference": false,
+      "guestCapacity": 4,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 12,
+      "images": [
+        "https://a0.muscache.com/im/pictures/99963715/cb48bfd1_original.jpg?im_w=960",
+        "https://a0.muscache.com/im/pictures/99959840/3dfe8289_original.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/99958073/f2ba0dea_original.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/99951505/3a7c8830_original.jpg?im_w=480",
+        "https://a0.muscache.com/im/pictures/99956533/fe996dec_original.jpg?im_w=480"
+      ],
+      "name": "스파 욕조가 있는 힐 탑 하우스, 키사미, 시모다",
+      "introduction": "Shimoda-shi, 일본의 집 전체",
+      "address": "Shimoda-shi",
+      "nation": "일본",
+      "description": [
+        "숙소",
+        "205평방미터의 현대적인 공간은 위층의 개방형 거실/식사/주방 공간과 아래층의 놀라운 스파 ",
+        "온천 스타일\" 욕실을 중심으로 합니다."
+      ],
+      "host": {
+        "name": "Hiroko ",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/3981f664-5d32-4f52-9add-8a0ca141051c.jpg?im_w=240",
+        "career": "2년",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "65,718",
+      "roomDetail": {
+        "bedroomCount": 2,
+        "bedCount": 3,
+        "bathroomCount": 2
+      },
+      "guestPreference": false,
+      "guestCapacity": 7,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 13,
+      "images": [
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/2b4fb65e-3026-439d-a131-8c66f96143a0.jpeg?im_w=960",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/87e701cd-0d3b-4b21-8a06-06a7320aaee0.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/ad33de7c-e49e-405b-9516-4c705a9c0d0a.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/138672f0-9167-443f-856c-b376507341c4.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/0d7614e3-750e-4611-8b38-1c830abe1939.jpeg?im_w=480"
+      ],
+      "name": "다모아펜션 #203호",
+      "introduction": "춘천시, 한국의 집 전체",
+      "address": "춘천시",
+      "nation": "한국",
+      "description": [
+        " 강촌 엘리시안 스키장 차량 7분.",
+        "굴봉산역 차량 2분.",
+        "백양리역 차량 6분.",
+        "가평역 차량 10분.",
+        "가평터미널 차량 10분.",
+        "야외바베큐가능[별도비용발생/무한리필패키지별도문의]",
+        "차량픽업가능"
+      ],
+      "host": {
+        "name": "마이노 ",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/07e46fd1-35e1-4f9e-982e-a5f602c23c7f.jpg?im_w=240",
+        "career": "8년",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "656,748",
+      "roomDetail": {
+        "bedroomCount": 2,
+        "bedCount": 3,
+        "bathroomCount": 2
+      },
+      "guestPreference": false,
+      "guestCapacity": 7,
+      "advantages": [
+        {
+          "name": "무료 주차 혜택을 누리세요.",
+          "image": "/svgIcons/roomAdvantageSvgs/freeParking.svg"
+        }
+      ],
+      "comforts": [
+        {
+          "name": "건물 내 무료주차",
+          "image": "/svgIcons/roomComforts/freeParking.svg"
+        },
+        {
+          "name": "무선 인터넷",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "주방",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "에어컨",
+          "image": "/svgIcons/roomComforts/wifi.svg"
+        },
+        {
+          "name": "냉장고",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "전자레인지",
+          "image": "/svgIcons/roomComforts/kitchen.svg"
+        },
+        {
+          "name": "TV",
+          "image": "/svgIcons/roomComforts/tv.svg"
+        }
+      ],
+      "checkIn": "오후 3:00 ~ 오후 10:00",
+      "checkOut": "오전 11시 전까지"
+    },
+    {
+      "id": 14,
+      "images": [
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/2b4fb65e-3026-439d-a131-8c66f96143a0.jpeg?im_w=960",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/87e701cd-0d3b-4b21-8a06-06a7320aaee0.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/ad33de7c-e49e-405b-9516-4c705a9c0d0a.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/138672f0-9167-443f-856c-b376507341c4.jpeg?im_w=480",
+        "https://a0.muscache.com/im/pictures/miso/Hosting-803911686575498146/original/0d7614e3-750e-4611-8b38-1c830abe1939.jpeg?im_w=480"
+      ],
+      "name": "편안한 숙소 넷플,유튜브 “세라비”",
+      "introduction": "중구, 한국의 콘도 전체",
+      "address": "대구, 중구",
+      "nation": "한국",
+      "description": [
+        "취향이 깃든공간_세라비",
+
+        "탁트인 시티뷰전망은 물론 가슴벅찬 노을뷰를 감상하실수 있는곳이에요. ",
+        "연인과 친구와 가족과 함께 감상하며 위로받고 재충전하며 선물같은 공간이 되었으면 좋겠습니다"
+      ],
+      "host": {
+        "name": "마틸다 ",
+        "profileImageUrl": "https://a0.muscache.com/im/pictures/user/bb36f548-d4e2-4e32-aa2b-57c0177a10ed.jpg?im_w=240",
+        "career": "8년",
+        "isSuperHost": true,
+        "isAuth": true,
+        "responseRate": null,
+        "responseTime": null
+      },
+      "price": "76,748",
+      "roomDetail": {
+        "bedroomCount": 2,
+        "bedCount": 8,
         "bathroomCount": 4
       },
       "guestPreference": false,
