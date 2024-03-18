@@ -2,6 +2,7 @@ import { getToken } from '@/components/kakaoLogin/getToken'
 import { useEffect } from 'react'
 import Button from '@mui/material/Button'
 import Image from 'next/image'
+import { isNull } from 'lodash'
 
 const KAKAO_API_KEY = process.env.NEXT_PUBLIC_API_KEY
 const client_id = KAKAO_API_KEY || ''
@@ -58,7 +59,7 @@ export default function KakaoLogin({ KakaoLocation }: KakaoLoginProps) {
         </Button>
       ) : (
         <p className='w-full' onClick={handleLoginClick}>
-          로그인{' '}
+          {' '}
         </p>
       )}
     </div>
