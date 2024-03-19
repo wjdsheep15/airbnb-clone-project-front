@@ -6,7 +6,7 @@ export default function authinfo({ name }: { name: string }) {
       <div className='flex flex-col'>
         <div className='h-1/3'>
           {/* flex 세로 칸 위 */}
-          <h2 className='font-bold text-2xl mt-2 dark:text-white '>{name} 님의 인증 정보</h2>
+          <h2 className='font-bold text-2xl mt-2  '>{name} 님의 인증 정보</h2>
         </div>
 
         {/** 신분증 */}
@@ -44,7 +44,7 @@ export default function authinfo({ name }: { name: string }) {
         </div>
         <a
           href='#'
-          className='relative font-semibold underline text-gray-900 dark:text-white decoration-black bottom-[-30px]'
+          className='relative font-semibold underline text-gray-900 decoration-black bottom-[-30px]'
         >
           본인 인증 절차 자세히 알아보기
         </a>
