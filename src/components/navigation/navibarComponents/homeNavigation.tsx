@@ -10,6 +10,7 @@ import { format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
 import TravelDesButton from '@/components/navigation/navibarButtons/travelDesButton'
+import OneLayerNavibar from '@/components/navigation/navibarComponents/oneLayerNavibar'
 
 export type PersonType = 'adult' | 'child' | 'baby' | 'pet'
 
@@ -100,30 +101,7 @@ export default function HomeNavigation() {
 
   return (
     <div className='flex flex-col h-40'>
-      <div className='flex flex-row h-20 justify-center items-center' role='group'>
-        <button
-          type='button'
-          className={`px-4 h-8 p-3 text-gray-900 flex items-center rounded-full ${
-            topActivityMenu ? 'hover:bg-inherit' : 'hover:bg-gray-100'
-          }`}
-          onClick={() => setTopActivityMenu(true)}
-        >
-          <span className={`${topActivityMenu ? 'text-black' : 'text-gray-400'}`}>숙소</span>
-        </button>
-
-        <button
-          type='button'
-          className={`px-4 h-8 text-gray-900 rounded-full  ${
-            topActivityMenu ? 'hover:bg-gray-100' : 'hover:bg-inherit'
-          }`}
-          onClick={() => setTopActivityMenu(false)}
-        >
-          <span className={`${topActivityMenu ? 'text-gray-400' : 'text-black'}`}>체험</span>
-        </button>
-        <button type='button' className='px-4 h-8 text-gray-900 rounded-full'>
-          온라인 체험
-        </button>
-      </div>
+      <OneLayerNavibar topActivityMenu={topActivityMenu} setTopActivityMenu={setTopActivityMenu} />
 
       {/* 두번쨰 버튼층 */}
       <div className={`flex flex-row h-[79px] justify-center items-center pb-3`}>

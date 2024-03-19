@@ -26,16 +26,29 @@ export default function HorizonScroll({ categoryList }: Props) {
       onSelectIcon={setSelectedIconId}
     />
   ))
-  const scroll = (scrollOffset: number) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft += scrollOffset
 
-      if (scrollRef.current.scrollLeft + scrollOffset < 200) {
+  const scroll = (plusMinus: number) => {
+    if (scrollRef.current) {
+      if (plusMinus === 1) {
+        scrollRef.current.scrollLeft += scrollRef.current.offsetWidth * 0.8
+      } else {
+        scrollRef.current.scrollLeft -= scrollRef.current.offsetWidth * 0.8
+      }
+
+      if (
+        scrollRef.current.scrollLeft - scrollRef.current.offsetWidth * 0.8 <
+          scrollRef.current.offsetWidth * 0.7 &&
+        plusMinus === 0
+      ) {
         SetScrollPosition(0)
         scrollRef.current.scrollLeft = 0
-      } else if (scrollRef.current.scrollLeft + scrollOffset > 3900) {
+      } else if (
+        scrollRef.current.scrollLeft + scrollRef.current.offsetWidth * 0.8 >
+          scrollRef.current.scrollWidth - scrollRef.current.offsetWidth * 1.1 &&
+        plusMinus === 1
+      ) {
         SetScrollPosition(1)
-        scrollRef.current.scrollLeft = scrollRef.current.scrollWidth - 1000
+        scrollRef.current.scrollLeft = scrollRef.current.scrollWidth - scrollRef.current.offsetWidth
       } else {
         SetScrollPosition(2)
       }
@@ -54,7 +67,7 @@ export default function HorizonScroll({ categoryList }: Props) {
       >
         <button
           className='flex items-center rounded-full border bg-white border-gray-300 p-2'
-          onClick={() => scroll(-1000)}
+          onClick={() => scroll(0)}
         >
           <LeftButtonIcon />
         </button>
@@ -75,7 +88,7 @@ export default function HorizonScroll({ categoryList }: Props) {
             : 'bg-gradient-to-r from-transparent-70 from-10% via-white to-white'
         }`}
       >
-        <button className='border border-gray-300 rounded-full p-2' onClick={() => scroll(1000)}>
+        <button className='border border-gray-300 rounded-full p-2' onClick={() => scroll(1)}>
           <RightButtonIcon />
         </button>
       </div>

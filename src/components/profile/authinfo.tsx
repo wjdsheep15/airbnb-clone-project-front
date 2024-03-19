@@ -6,7 +6,7 @@ export default function authinfo({ name }: { name: string }) {
       <div className='flex flex-col'>
         <div className='h-1/3'>
           {/* flex 세로 칸 위 */}
-          <h2 className='font-bold text-2xl mt-2 dark:text-white '>{name} 님의 인증 정보</h2>
+          <h2 className='font-bold text-2xl mt-2'>{name} 님의 인증 정보</h2>
         </div>
         <div className='mt-4 flex items-center'>
           {/* 인증 정보 아이콘 */}
@@ -25,7 +25,7 @@ export default function authinfo({ name }: { name: string }) {
 
         <div>
           {/*flex 세로 칸 아래 */}
-          <h2 className='font-bold text-2xl mt-10  dark:text-white '>본인 인증을 해주세요</h2>
+          <h2 className='font-bold text-2xl mt-10'>본인 인증을 해주세요</h2>
 
           <h1 className='mt-6 text-sm'>
             에어비앤비를 통해 예약하거나 호스팅하려면 이 단계를 완료하셔야 합니다.
