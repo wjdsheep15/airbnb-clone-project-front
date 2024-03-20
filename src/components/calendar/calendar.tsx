@@ -5,13 +5,15 @@ import 'react-day-picker/dist/style.css'
 import { ko } from 'date-fns/locale'
 
 /**
- * 부모에게 설정할 것
+ * 부모에서 작성할 것
+ *
+ * 기본 날짜 지정
  * const defaultSelected: DateRange = {
  * from: undefined,
  * to: undefined,
  * }
  *
- * 날짜 범위 가져오기
+ * 날짜 범위 가져오기, Props로 넘길 것
  * const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
  *
  * 날짜 초기화
