@@ -8,7 +8,7 @@ import { DateRange } from 'react-day-picker'
 import { format } from 'date-fns'
 
 import { ko } from 'date-fns/locale'
-import CalenderMenu from '@/components/navigation/navibarButtons/calenderMenu'
+import CalendarMenu from '@/components/navigation/navibarButtons/calendarMenu'
 import TravelDesButton from '@/components/navigation/navibarButtons/travelDesButton'
 import OneLayerNavibar from '@/components/navigation/navibarComponents/oneLayerNavibar'
 
@@ -58,7 +58,7 @@ export default function HomeNavigation() {
   }
 
   //달력 로직
-  const [calenderOpen, setCalenderOpen] = useState(false)
+  const [calendarOpen, setCalendarOpen] = useState(false)
   const defaultSelected: DateRange = {
     from: undefined,
     to: undefined,
@@ -67,7 +67,7 @@ export default function HomeNavigation() {
   const [plusDate, setPlusDate] = useState('')
   const [plusdateClick, setPlusDateClick] = useState(0)
 
-  const handleCalender = () => {
+  const handleCalendar = () => {
     setRange(defaultSelected)
     setPlusDate('')
     setPlusDateClick(0)
@@ -85,13 +85,13 @@ export default function HomeNavigation() {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         setActiveButton(0)
         setIsMenuOpen(false)
-        setCalenderOpen(false)
+        setCalendarOpen(false)
       }
     }
     if (inputValue.length != 0) {
       setIsOpen(false)
       setActiveButton(2)
-      setCalenderOpen(true)
+      setCalendarOpen(true)
     }
     document.addEventListener('mousedown', handleClickOutside)
     return () => {
@@ -171,7 +171,7 @@ export default function HomeNavigation() {
               }`}
               onClick={() => {
                 setActiveButton(2)
-                setCalenderOpen(true)
+                setCalendarOpen(true)
               }}
             >
               {/* 체크인 */}
@@ -179,7 +179,7 @@ export default function HomeNavigation() {
                 <span className='text-xs flex justify-start col-span-2'>체크인</span>
                 <div
                   className={`rounded-full row-span-2 flex items-center  ${activeButton === 2 ? '' : 'hidden'}`}
-                  onClick={handleCalender}
+                  onClick={handleCalendar}
                 >
                   <CloseIcon className={`flex items-center rounded-full  `} />
                 </div>
@@ -207,7 +207,7 @@ export default function HomeNavigation() {
               }`}
               onClick={() => {
                 setActiveButton(3)
-                setCalenderOpen(true)
+                setCalendarOpen(true)
               }}
             >
               {/* 체크 아웃 */}
@@ -215,7 +215,7 @@ export default function HomeNavigation() {
                 <span className='text-xs flex justify-start col-span-2'>체크아웃</span>
                 <div
                   className={`rounded-full row-span-2 flex items-center  ${activeButton === 3 ? '' : 'hidden'}`}
-                  onClick={handleCalender}
+                  onClick={handleCalendar}
                 >
                   <CloseIcon className={`flex items-center rounded-full  `} />
                 </div>
@@ -232,7 +232,7 @@ export default function HomeNavigation() {
           <div
             className={`h-full w-72 flex flex-row items-center ${topActivityMenu ? 'hidden' : ''}`}
             onClick={() => {
-              setCalenderOpen(true)
+              setCalendarOpen(true)
             }}
           >
             <button
@@ -249,7 +249,7 @@ export default function HomeNavigation() {
                 <span className='text-xs flex justify-start col-span-2'>날짜</span>
                 <div
                   className={`rounded-full flex items-center justify-end pr-3 row-span-2  ${activeButton === 3 ? '' : 'hidden'}`}
-                  onClick={handleCalender}
+                  onClick={handleCalendar}
                 >
                   <CloseIcon className={`flex items-center rounded-full  `} />
                 </div>
@@ -267,12 +267,12 @@ export default function HomeNavigation() {
           {/* 날짜 선택 메뉴*/}
 
           <div ref={ref}>
-            <CalenderMenu
+            <CalendarMenu
               range={range}
               setRange={setRange}
               activeButton={activeButton}
-              calenderOpen={calenderOpen}
-              setCalenderOpen={setCalenderOpen}
+              calendarOpen={calendarOpen}
+              setCalendarOpen={setCalendarOpen}
               setPlusDate={setPlusDate}
               setPlusDateClick={setPlusDateClick}
               plusdateClick={plusdateClick}
