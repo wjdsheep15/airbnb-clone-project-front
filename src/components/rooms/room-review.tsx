@@ -4,6 +4,7 @@ import FullStarIcon from '@/components/rooms/starIcon/full-star'
 import StarRateGenerator from '@/components/rooms/starIcon/starRateGenerator'
 import Image from 'next/image'
 import { useState } from 'react'
+import ReviewButton from './reviewModal'
 
 interface Review {
   id: number
@@ -108,9 +109,12 @@ export default function RoomReview({ reviews }: { reviews: Review[] }) {
                       </p>
                     </div>
                     <div className='ml-0 mr-auto mt-2'>
-                        <button onClick={handleMoreContent} className='text-mainBlack text-[16px] underline'>
-                            더 보기
-                        </button>
+                      <button
+                        onClick={handleMoreContent}
+                        className='text-mainBlack text-[16px] underline'
+                      >
+                        더 보기
+                      </button>
                     </div>
                   </section>
                 ))
@@ -119,11 +123,7 @@ export default function RoomReview({ reviews }: { reviews: Review[] }) {
               )}
             </div>
             <div className='mt-3'>
-              <button className=' px-[23px] py-[13px] bg-white border-[1px] border-mainBlack rounded-lg'>
-                <span className='text-mainBlack text-[16px] font-semibold'>
-                {`리뷰 ${reviews.length}개 모두 보기`}
-                </span>
-              </button>
+              <ReviewButton reviews={reviews} />
             </div>
           </div>
         </div>
