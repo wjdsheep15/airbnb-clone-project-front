@@ -123,7 +123,7 @@ export default function RoomReview({ reviews }: { reviews: Review[] }) {
               )}
             </div>
             <div className='mt-3'>
-              <button className='h-12 w-48  bg-white border-[1px] border-mainBlack rounded-lg'>
+              <button className='h-12 w-48 bg-white border-[1px] border-mainBlack rounded-lg'>
                 <ReviewModal reviews={reviews} />
               </button>
             </div>
