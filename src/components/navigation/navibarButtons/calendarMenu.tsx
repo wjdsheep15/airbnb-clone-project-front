@@ -1,22 +1,22 @@
 'use client'
 
 import PlusMinus from '/public/images/plusMinus.svg'
-import Calender from '@/components/navigation/navibarButtons/calender'
+import Calendar from '@/components/calendar/calendar'
 import { useState, useEffect } from 'react'
 
 interface Props {
   range: any
   setRange: any
-  calenderOpen: boolean
-  setCalenderOpen: (newValue: boolean) => void
+  calendarOpen: boolean
+  setCalendarOpen: (newValue: boolean) => void
   activeButton: number
   setPlusDate: (newValue: string) => void
   setPlusDateClick: (newValue: number) => void
   plusdateClick: number
 }
-export default function CalenderMenu({
-  calenderOpen,
-  setCalenderOpen,
+export default function CalendarMenu({
+  calendarOpen,
+  setCalendarOpen,
   activeButton,
   range,
   setRange,
@@ -28,12 +28,12 @@ export default function CalenderMenu({
 
   useEffect(() => {
     if (activeButton === 1 || activeButton === 4) {
-      setCalenderOpen(false)
+      setCalendarOpen(false)
     }
   }, [activeButton])
   return (
     <>
-      {calenderOpen && (
+      {calendarOpen && (
         <div
           className={`flex items-center justify-center absolute top-[153px] right-0 z-10  w-[740px] h-[555px] origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
           role='menu'
@@ -68,7 +68,7 @@ export default function CalenderMenu({
             {/* 중간 */}
             <div className='absolute top-3 w-full h-full flex items-center justify-center'>
               <div className={` ${menuButton === 1 ? '' : 'hidden'}`}>
-                <Calender range={range} setRange={setRange} />
+                <Calendar range={range} setRange={setRange} />
               </div>
             </div>
 
