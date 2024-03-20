@@ -115,6 +115,12 @@ export default function RoomReview({ reviews }: { reviews: Review[] }) {
                       >
                         더 보기
                       </button>
+                      <button
+                        onClick={handleMoreContent}
+                        className='text-mainBlack text-[16px] underline'
+                      >
+                        더 보기
+                      </button>
                     </div>
                   </section>
                 ))
