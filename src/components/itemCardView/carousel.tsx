@@ -31,14 +31,14 @@ export default function Carousel({ slides, id, guestPreference }: Props) {
     <div className='overflow-hidden w-full h-full relative group'>
       <Link
         href={`/rooms/${id}`}
-        className='flex flex-row transition ease-out duration-40 w-full h-full'
+        className='flex flex-row transition ease-out duration-40 w-full aspect-custom'
         style={{
           transform: `translateX(-${current * 100}%)`,
         }}
       >
         {slides.map((path, index) => {
           return (
-            <img key={index} src={path} alt='' className='w-full h-auto rounded-lg object-fill' />
+            <img key={index} src={path} alt='' className='w-full h-auto rounded-lg object-cover' />
           )
         })}
       </Link>

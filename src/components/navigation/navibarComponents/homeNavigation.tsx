@@ -5,12 +5,11 @@ import { useEffect, useRef, useState } from 'react'
 import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
 import { format } from 'date-fns'
-
 import { ko } from 'date-fns/locale'
 import CalendarMenu from '@/components/navigation/navibarButtons/calendarMenu'
 import TravelDesButton from '@/components/navigation/navibarButtons/travelDesButton'
 import OneLayerNavibar from '@/components/navigation/navibarComponents/oneLayerNavibar'
-import useCalendarLogic from '@/components/navigation/navibarButtons/calendarUseHook'
+import useCalendarLogic from '@/components/navigation/navibarButtons/useCalendarLogic'
 
 export type PersonType = 'adult' | 'child' | 'baby' | 'pet'
 
@@ -60,6 +59,12 @@ export default function HomeNavigation() {
     }
   }
 
+  const handleNumber = () => {
+    const resetNumber = { adult: 0, child: 0, baby: 0, pet: 0 }
+
+    setPerson(resetNumber)
+  }
+
   //달력 로직
   const {
     calendarOpen,
@@ -72,12 +77,6 @@ export default function HomeNavigation() {
     setPlusDateClick,
     handleCalendar,
   } = useCalendarLogic()
-
-  const handleNumber = () => {
-    const resetNumber = { adult: 0, child: 0, baby: 0, pet: 0 }
-
-    setPerson(resetNumber)
-  }
 
   // 4개의 버튼을 다닫는 로직
   useEffect(() => {
