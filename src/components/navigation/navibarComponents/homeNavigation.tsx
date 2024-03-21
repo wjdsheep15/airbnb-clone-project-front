@@ -4,7 +4,6 @@ import SearchButton from '@/components/navigation/navibarButtons/searchButton'
 import { useEffect, useRef, useState } from 'react'
 import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
-import { DateRange } from 'react-day-picker'
 import { format } from 'date-fns'
 
 import { ko } from 'date-fns/locale'
