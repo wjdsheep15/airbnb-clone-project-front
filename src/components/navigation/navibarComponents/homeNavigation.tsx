@@ -4,13 +4,12 @@ import SearchButton from '@/components/navigation/navibarButtons/searchButton'
 import { useEffect, useRef, useState } from 'react'
 import GestNumber from '@/components/navigation/navibarButtons/gestNumber'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
-import { DateRange } from 'react-day-picker'
 import { format } from 'date-fns'
-
 import { ko } from 'date-fns/locale'
 import CalendarMenu from '@/components/navigation/navibarButtons/calendarMenu'
 import TravelDesButton from '@/components/navigation/navibarButtons/travelDesButton'
 import OneLayerNavibar from '@/components/navigation/navibarComponents/oneLayerNavibar'
+import useCalendarLogic from '@/components/navigation/navibarButtons/useCalendarLogic'
 
 export type PersonType = 'adult' | 'child' | 'baby' | 'pet'
 
@@ -22,11 +21,13 @@ export interface Person {
 }
 // named type ->
 export default function HomeNavigation() {
+  const ref = useRef<any>(null)
   const buttonsizeboolen = true
+
   const [searchButtonHover, setSearchButtonHover] = useState(false)
   const [activeButton, setActiveButton] = useState(0)
   const [topActivityMenu, setTopActivityMenu] = useState(true)
-  const ref = useRef<any>(null)
+
   const [inputValue, setInputValue] = useState('')
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -39,6 +40,7 @@ export default function HomeNavigation() {
     baby: 0,
     pet: 0,
   })
+
   const personSetter = (type: PersonType) => {
     return {
       plus: () => {
@@ -57,27 +59,24 @@ export default function HomeNavigation() {
     }
   }
 
-  //달력 로직
-  const [calendarOpen, setCalendarOpen] = useState(false)
-  const defaultSelected: DateRange = {
-    from: undefined,
-    to: undefined,
-  }
-  const [range, setRange] = useState<DateRange | undefined>(defaultSelected)
-  const [plusDate, setPlusDate] = useState('')
-  const [plusdateClick, setPlusDateClick] = useState(0)
-
-  const handleCalendar = () => {
-    setRange(defaultSelected)
-    setPlusDate('')
-    setPlusDateClick(0)
-  }
-
   const handleNumber = () => {
     const resetNumber = { adult: 0, child: 0, baby: 0, pet: 0 }
 
     setPerson(resetNumber)
   }
+
+  //달력 로직
+  const {
+    calendarOpen,
+    setCalendarOpen,
+    range,
+    setRange,
+    plusDate,
+    setPlusDate,
+    plusDateClick,
+    setPlusDateClick,
+    handleCalendar,
+  } = useCalendarLogic()
 
   // 4개의 버튼을 다닫는 로직
   useEffect(() => {
@@ -275,7 +274,7 @@ export default function HomeNavigation() {
               setCalendarOpen={setCalendarOpen}
               setPlusDate={setPlusDate}
               setPlusDateClick={setPlusDateClick}
-              plusdateClick={plusdateClick}
+              plusdateClick={plusDateClick}
             />
           </div>
           {/* 날짜 선택 끝 */}
