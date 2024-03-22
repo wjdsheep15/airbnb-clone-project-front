@@ -1,10 +1,10 @@
 'use client'
 
+import ReviewModal from '@/components/rooms/modal/review-modal'
 import FullStarIcon from '@/components/rooms/starIcon/full-star'
 import StarRateGenerator from '@/components/rooms/starIcon/starRateGenerator'
 import Image from 'next/image'
 import { useState } from 'react'
-import ReviewButton from './reviewModal'
 
 interface Review {
   id: number
@@ -123,7 +123,9 @@ export default function RoomReview({ reviews }: { reviews: Review[] }) {
               )}
             </div>
             <div className='mt-3'>
-              <ReviewButton reviews={reviews} />
+              <button className='h-12 w-48 bg-white border-[1px] border-mainBlack rounded-lg'>
+                <ReviewModal reviews={reviews} />
+              </button>
             </div>
           </div>
         </div>

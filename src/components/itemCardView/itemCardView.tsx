@@ -22,8 +22,8 @@ export default function ItemCardView({
   nation,
 }: Props) {
   return (
-    <div className='max-w-[486px] min-w-[87px]  max-h-[561.75px] min-h-[201.65px] h-auto flex flex-col items-center justify-center space-y-2'>
-      <div className='w-full  h-[270.41px] m-auto rounded-lg relative'>
+    <div className='max-w-[486px] min-w-[87px]   h-auto flex flex-col items-center justify-center space-y-2'>
+      <div className='w-full h-auto m-auto rounded-lg relative'>
         <Carousel key={id} slides={slides} id={id} guestPreference={guestPreference} />
       </div>
       <Link className='grid grid-cols-8 w-full h-100' href={`/rooms/${id}`}>

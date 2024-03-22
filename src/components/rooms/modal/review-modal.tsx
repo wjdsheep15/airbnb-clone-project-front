@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Modal from '@mui/material/Modal'
 import CloseIcon from '/public/svgIcons/closeIcon.svg'
@@ -13,13 +13,24 @@ import Location from '/public/svgIcons/reviewModalSvgs/location.svg'
 import Satisfication from '/public/svgIcons/reviewModalSvgs/satisfactionComparedToPrice.svg'
 import Search from '/public/svgIcons/reviewModalSvgs/search.svg'
 
-export default function reviewButton() {
-  const [open, setOpen] = useState(false)
+interface Review {
+  id: number
+  reviewer: {
+    name: string
+    profileImageUrl: string
+    address: string
+  }
+  content: string
+  date: string
+  roomId: number
+  score: number
+}
 
+export default function ReviewModal({ reviews }: { reviews: Review[] }) {
+  const [open, setOpen] = useState(false)
   const handleOpen = () => {
     setOpen(true)
   }
-
   const handleClose = () => {
     setOpen(false)
   }
@@ -30,13 +41,21 @@ export default function reviewButton() {
     setSelectedMenu(menuName)
   }
 
+  useEffect(() => {
+    handleClose
+  }, [])
   return (
     <>
-      <button onClick={handleOpen}>후기 모두 보기</button>
+      <span
+        className='text-mainBlack text-[16px] h-12 w-48 flex font-semibold flex items-center justify-center'
+        onClick={handleOpen}
+      >
+        {`리뷰 ${reviews.length}개 모두 보기`}
+      </span>{' '}
       <Modal open={open} onClose={handleClose}>
         <Box
           className='relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-2xl
-           bg-white border-2 border-black shadow-lg p-8 w-[1200px] h-[770px]'
+         bg-white border-2 border-mainGray shadow-lg p-8 w-[1200px] h-[770px]'
         >
           <div>
             <header>
@@ -137,7 +156,7 @@ export default function reviewButton() {
                   <p className='pr-1 font-semibold'>{selectedMenu}</p>
                   <svg
                     className='fill-current h-4 w-4 transform group-hover:-rotate-180
-                    transition duration-150 ease-in-out'
+                  transition duration-150 ease-in-out'
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 20 20'
                   >
@@ -146,15 +165,16 @@ export default function reviewButton() {
                 </button>
                 <div
                   className='bg-white border rounded-sm transform scale-0 group-hover:scale-100
-                  absolute transition duration-150 origin-top-left w-40 -translate-x-20'
+                absolute transition duration-150 origin-top-left w-40 -translate-x-20'
                 >
                   <div>
                     <ul>
                       {menus.map((menu, index) => (
-                        <div>
+                        <div key={index}>
+                          {' '}
+                          {/* key 속성을 div 태그에 추가 */}
                           <li
                             className='w-40 h-10 hover:bg-slate-200'
-                            key={index}
                             onClick={() => handleMenuClick(menu)}
                           >
                             {menu}

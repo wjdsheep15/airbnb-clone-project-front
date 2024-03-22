@@ -27,6 +27,9 @@ const config: Config = {
         'transparent-70': 'rgba(255, 255, 255, 0.7)',
         'transparent-90': 'rgba(255, 255, 255, 0.9)',
       },
+      aspectRatio: {
+        custom: '1.0525', // 여기서 'custom'은 사용자가 원하는 이름으로 변경 가능
+      },
     },
   },
   plugins: [],
