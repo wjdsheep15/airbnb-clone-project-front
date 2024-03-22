@@ -1,0 +1,19 @@
+.hrSect {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  margin: 40px -20px;
+}
+
+.hrSect::before,
+.hrSect::after {
+  content: '';
+  font-size: 14px;
+  flex-grow: 2;
+  background: rgba(0, 0, 0, 0.35);
+  height: 1px;
+  line-height: 0px;
+  margin: 10px 16px;
+}
