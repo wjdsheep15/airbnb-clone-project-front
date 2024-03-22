@@ -12,7 +12,7 @@ interface Props {
   activeButton: number
   setPlusDate: (newValue: string) => void
   setPlusDateClick: (newValue: number) => void
-  plusdateClick: number
+  plusDateClick: number
 }
 export default function CalendarMenu({
   calendarOpen,
@@ -22,7 +22,7 @@ export default function CalendarMenu({
   setRange,
   setPlusDate,
   setPlusDateClick,
-  plusdateClick,
+  plusDateClick,
 }: Props) {
   const [menuButton, setMenuButton] = useState(1)
 
@@ -75,7 +75,7 @@ export default function CalendarMenu({
             {/* 끝 */}
             <div className='absolute bottom-0 left-9 w-[740px] h-[48px] flex flex-row gap-x-5 justify-start pl-8 items-center'>
               <button
-                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusdateClick === 0 ? 'border-2 border-black' : 'border-gray-200'}`}
+                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusDateClick === 0 ? 'border-2 border-black' : 'border-gray-200'}`}
                 onClick={() => {
                   setPlusDateClick(0)
                 }}
@@ -83,7 +83,7 @@ export default function CalendarMenu({
                 정확한 날짜
               </button>
               <button
-                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusdateClick === 1 ? 'border-2 border-black' : 'border-gray-200'}`}
+                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusDateClick === 1 ? 'border-2 border-black' : 'border-gray-200'}`}
                 onClick={() => {
                   setPlusDate('±1')
                   setPlusDateClick(1)
@@ -92,7 +92,7 @@ export default function CalendarMenu({
                 <PlusMinus /> 1일
               </button>
               <button
-                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusdateClick === 2 ? 'border-2 border-black' : 'border-gray-200'}`}
+                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusDateClick === 2 ? 'border-2 border-black' : 'border-gray-200'}`}
                 onClick={() => {
                   setPlusDate('±2')
                   setPlusDateClick(2)
@@ -101,7 +101,7 @@ export default function CalendarMenu({
                 <PlusMinus /> 2일
               </button>
               <button
-                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusdateClick === 3 ? 'border-2 border-black' : 'border-gray-200'}`}
+                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusDateClick === 3 ? 'border-2 border-black' : 'border-gray-200'}`}
                 onClick={() => {
                   setPlusDate('±3')
                   setPlusDateClick(3)
@@ -110,7 +110,7 @@ export default function CalendarMenu({
                 <PlusMinus /> 3일
               </button>
               <button
-                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusdateClick === 4 ? 'border-2 border-black' : 'border-gray-200'}`}
+                className={`h-[32px] text-wrap text-xs border rounded-full flex itmes-center p-2 ${plusDateClick === 4 ? 'border-2 border-black' : 'border-gray-200'}`}
                 onClick={() => {
                   setPlusDate('±7')
                   setPlusDateClick(4)
