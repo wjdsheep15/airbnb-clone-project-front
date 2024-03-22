@@ -8,7 +8,6 @@ export default function StarRateGenerator({ score }: { score: number }) {
   }
 
   const fullStarNumber = Math.floor(score)
-  const emptyStarNumber = 5 - fullStarNumber
 
   const starIcons = []
 
