@@ -115,12 +115,6 @@ export default function RoomReview({ reviews }: { reviews: Review[] }) {
                       >
                         더 보기
                       </button>
-                      <button
-                        onClick={handleMoreContent}
-                        className='text-mainBlack text-[16px] underline'
-                      >
-                        더 보기
-                      </button>
                     </div>
                   </section>
                 ))
@@ -129,9 +123,7 @@ export default function RoomReview({ reviews }: { reviews: Review[] }) {
               )}
             </div>
             <div className='mt-3'>
-              <button className='h-12 w-48 bg-white border-[1px] border-mainBlack rounded-lg'>
-                <ReviewModal reviews={reviews} />
-              </button>
+              <ReviewModal reviews={reviews} />
             </div>
           </div>
         </div>
