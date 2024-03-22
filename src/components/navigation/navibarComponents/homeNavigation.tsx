@@ -277,7 +277,7 @@ export default function HomeNavigation() {
               setCalendarOpen={setCalendarOpen}
               setPlusDate={setPlusDate}
               setPlusDateClick={setPlusDateClick}
-              plusdateClick={plusDateClick}
+              plusDateClick={plusDateClick}
             />
           </div>
           {/* 날짜 선택 끝 */}
