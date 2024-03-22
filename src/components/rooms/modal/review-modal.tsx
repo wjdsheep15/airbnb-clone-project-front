@@ -103,7 +103,6 @@ export default function ReviewModal({ reviews }: { reviews: Review[] }) {
                 </div>
               )}
             </div>
-
             <div className='flex relative top-12'>
               <div className='w-44 border-r-2'>
                 <div className=''>전체 평점</div>
