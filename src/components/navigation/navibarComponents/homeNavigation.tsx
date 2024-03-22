@@ -65,6 +65,9 @@ export default function HomeNavigation() {
     setPerson(resetNumber)
   }
 
+  // adult + child
+  const adultChildNumber = person.adult + person.child
+
   //달력 로직
   const {
     calendarOpen,
@@ -274,7 +277,7 @@ export default function HomeNavigation() {
               setCalendarOpen={setCalendarOpen}
               setPlusDate={setPlusDate}
               setPlusDateClick={setPlusDateClick}
-              plusdateClick={plusDateClick}
+              plusDateClick={plusDateClick}
             />
           </div>
           {/* 날짜 선택 끝 */}
@@ -315,16 +318,16 @@ export default function HomeNavigation() {
                   onClick={handleNumber}
                 >
                   <CloseIcon
-                    className={`flex items-center rounded-full  ${person.adult + person.child === 0 ? 'text-transparent hover:none' : 'hover:bg-navigatorOneLayoutColor'}`}
+                    className={`flex items-center rounded-full  ${adultChildNumber === 0 ? 'text-transparent hover:none' : 'hover:bg-navigatorOneLayoutColor'}`}
                   />
                 </div>
 
                 <span
-                  className={`text-sm mt-1 w-[90%] flex justify-start col-span-3 line-clamp-1 ${person.adult + person.child === 0 ? 'text-gray-400' : 'text-black'}`}
+                  className={`text-sm mt-1 w-[90%] flex justify-start col-span-3 line-clamp-1 ${adultChildNumber === 0 ? 'text-gray-400' : 'text-black'}`}
                   style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}
                 >
-                  게스트 {person.adult + person.child === 0 ? '추가' : person.adult + person.child}
-                  {person.adult + person.child === 16 ? ' 이상' : ''}
+                  게스트 {adultChildNumber === 0 ? '추가' : adultChildNumber}
+                  {adultChildNumber === 16 ? ' 이상' : ''}
                   {person.baby === 0 ? '' : ', 유아 ' + person.baby + '명'}
                   {person.pet === 0 ? '' : ', 반려동물 ' + person.pet + '마리'}
                 </span>
