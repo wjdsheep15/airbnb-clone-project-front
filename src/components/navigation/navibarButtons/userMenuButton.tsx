@@ -7,7 +7,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import KakaoLogin from '@/components/kakaoLogin/KakaoLogin'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
@@ -17,6 +17,9 @@ import TextField from '@mui/material/TextField'
 import styles from '@/components/navigation/navibarButtons/styles.module.css'
 import SignUpButton from '@/components/navigation/modal/signUp'
 import Image from 'next/image'
+import { ClassNames } from '@emotion/react'
+import Link from 'next/link'
+import KakaoLogout from '@/components/kakaoLogin/KakaoLogout'
 
 // 셀렉트 박스 값과 CSS
 const options = [
@@ -56,6 +59,18 @@ export default function UserMenuButton() {
     }
   }
 
+  const [existToken, setExistToken] = useState(false)
+
+  useEffect(() => {
+    if (
+      localStorage &&
+      localStorage.getItem('access_token') &&
+      localStorage.getItem('access_token') !== 'undefined'
+    ) {
+      setExistToken(true)
+    }
+  })
+
   return (
     <div>
       <button
@@ -91,6 +106,7 @@ export default function UserMenuButton() {
       >
         {/**회원 가입 */}
         <MenuItem
+          className={` ${existToken ? 'hidden' : ''}`}
           onClick={() => {
             handleClose()
             handleOpen()
@@ -98,8 +114,12 @@ export default function UserMenuButton() {
         >
           회원 가입
         </MenuItem>
+        <Link href={'/users/show/1'}>
+          <MenuItem className={`${existToken ? '' : 'hidden'}`}>계정</MenuItem>
+        </Link>
         {/**로그인 */}
         <MenuItem
+          className={` ${existToken ? 'hidden' : ''}`}
           onClick={() => {
             handleClose()
             handleOpen()
@@ -107,6 +127,7 @@ export default function UserMenuButton() {
         >
           로그인
         </MenuItem>
+        <MenuItem className={` ${existToken ? '' : 'hidden'}`}>{<KakaoLogout />} </MenuItem>
         <hr />
         {/*당신의 공간을 에어비앤비 하세요*/}
         <MenuItem className='pt-3' onClick={handleClose}>
