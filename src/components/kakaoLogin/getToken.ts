@@ -7,6 +7,7 @@ const KAKAO_API_KEY = process.env.NEXT_PUBLIC_API_KEY
 }
 
 export const getToken = async () => {
+  console.log('Aaron : ', window.location)
   const search = new URLSearchParams(window.location.search)
   const code = search.get('code')
 
@@ -31,5 +32,6 @@ export const getToken = async () => {
   })
 
   const result = await response.json()
+  console.log(' ---- : ' + KAKAO_API_KEY + ' ------ : ', result)
   return result
 }

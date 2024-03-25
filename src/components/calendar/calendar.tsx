@@ -67,7 +67,10 @@ export default function CalendarPicker({ range, setRange }: Props) {
     to: undefined,
   }
 
-  useEffect(() => {}, [range])
+  const [disabledDays, setDisabledDays] = useState({ before: new Date() })
+  useEffect(() => {
+    setDisabledDays({ before: new Date() })
+  }, [range])
 
   return (
     <div className='CalendarPicker'>
@@ -77,6 +80,7 @@ export default function CalendarPicker({ range, setRange }: Props) {
         locale={ko}
         selected={range}
         onSelect={setRange}
+        disabled={disabledDays}
         numberOfMonths={2}
         modifiersClassNames={{
           selected: 'my-selected',
